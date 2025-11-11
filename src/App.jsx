@@ -12,26 +12,34 @@ import Series from './pages/OTT_Series/Series'
 import Movie from './pages/OTT_Movie/Movie'
 import Main from './pages/OTT_Main/Main'
 import OTTPeovider from './api/OTT_Context'
+// import Header from './commom/OTT_Header/Header'
+// import Footer from './commom/OTT_Footer/Footer'
 
 function App() {
   
   // const netflixData= useOttData();
-  //  console.log(netflixData);
-   const [PopularData,ActionData,AniData,DramaData,ComedyData,SFData] = useOttData()
+  // console.log(netflixData);
+  const [PopularData,ActionData,AniData,DramaData,ComedyData,SFData,ActionData02,ActionData03,PopularDramaData,AniData02,AniData03,ComedyData02,ComedyData03,SFData02,SFData03] = useOttData();
   console.log(PopularData)
+
   return (
     <>
-
-        <OTTPeovider>
-          <BrowserRouter>
+      <OTTPeovider>
+        <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/Login' element={<Login />} />
+          </Routes>
+          {/* <Header /> */}
+          <Routes>
             <Route path='/Series' element={<Series />} />
             <Route path='/Movie' element={<Movie />} />
-            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData}/>} />
+            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData} ActionData02={ActionData02} ActionData03={ActionData03} PopularDramaData={PopularDramaData}
+              AniData={AniData} ComedyData={ComedyData} SFData={SFData} AniData02={AniData02} AniData03={AniData03} ComedyData02={ComedyData02} ComedyData03={ComedyData03}
+              SFData02={SFData02} SFData03={SFData03}/>} />
           </Routes>
-          </BrowserRouter>
+          {/* <Footer /> */}
+        </BrowserRouter>
       </OTTPeovider>
     </>
   )
