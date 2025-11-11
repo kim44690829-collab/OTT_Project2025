@@ -1,14 +1,12 @@
-
-
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import '../OTT_Home/Home.css'
+import '../OTT_Main/Main.css'
 
-export default function Home(){
+export default function Main(){
     return(
-        <div className="Home">
+        <div className="Main">
             <header>
                 <img src="Netflix_Logo_RGB.png" alt="로고"/>
                 <Link to='/Login'><button type="button">로그인</button></Link>
