@@ -1,7 +1,9 @@
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+// import useOttData from './api/OTT_Data'
 import useOttData from './api/OTT_Data'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/OTT_Home/Home'
@@ -18,6 +20,7 @@ function App() {
   
   // const netflixData= useOttData();
   //  console.log(netflixData);
+<<<<<<< HEAD
   const [
     PopularData,PopularData1,PopularData2,PopularData3, PopularData4, PopularData5,
     ActionData,ActionData1,ActionData2,ActionData3,ActionData4,ActionData5,
@@ -34,6 +37,9 @@ function App() {
   ] = useOttData()
   // console.log(AniData2, '2')
   // const a = OTT_Data()
+=======
+   const [PopularData,ActionData,AniData,DramaData,ComedyData,SFData] = useOttData()
+>>>>>>> 4762986284a75992385f39e226d4bc867216636b
   console.log(PopularData)
   return (
     <>
@@ -140,13 +146,12 @@ function App() {
             <Route path='/Login' element={<Login />} />
             <Route path='/Series' element={<Series />} />
             <Route path='/Movie' element={<Movie />} />
-            <Route path='/Home' element={<Home />} />
+            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData}/>} />
           </Routes>
           </BrowserRouter>
       </OTTPeovider> */}
     // </>
   // )
 // }
-
 
 export default App
