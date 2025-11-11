@@ -64,7 +64,7 @@
 .Main section .sec01 input{
     width: 407px;
     height: 56px;
-    background-color: transparent;
+    background-color: #0000005d;
     border: 1px solid #888;
     border-radius: 5px;
     padding: 20px;
@@ -100,11 +100,50 @@
 .Main section .sec02 h2{
     font-size: 27px;
 }
-.Main section .sec02 ul{
+.Main section .sec02 ul.Top10{
+    display: flex;
+}
+.Main section .sec02 ul.Top10 li{
+    width: 180px;
+    height: 252px;
+    position: relative;
+    margin: 0 30px 0 40px;
+    padding: 0 170px 0 0;
+}
+.Main section .sec02 ul.Top10 li h2.TOP10_H2{
+    font-size: 150px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: -50px;
+    /* -webkit-text-stroke: 3px #ccc; */
+    color: #000;
+    z-index: 10;
+}
+.Main section .sec02 ul.Top10 li h2.TOP10_H2Border{
+    font-size: 150px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: -50px;
+    -webkit-text-stroke: 5px #ccc;
+    color: #000;
+    z-index: 8;
+}
+
+.Main section .sec02 ul.Top10 li img{
+    width: 180px;
+    height: 252px;
+    position: absolute;
+    z-index: 90;
+    padding-left: 20px;
+}
+
+.Main section .sec02 ul.info{
     display: flex;
     justify-content: space-between;
 }
-.Main section .sec02 ul li{
+.Main section .sec02 ul.info li{
     width: 258px;
     height: 358px;
     padding: 20px;
@@ -112,15 +151,19 @@
     /* background-color: #192247; */
     background: linear-gradient(to right bottom, #192247, #210e17);
     position: relative;
+    word-break: keep-all;
 }
-.Main section .sec02 ul li h3{
+.Main section .sec02 ul.info li h3{
     font-size: 20px;
+    line-height: 30px;
+    margin: 10px 0 30px 0;
 }
-.Main section .sec02 ul li p{
+.Main section .sec02 ul.info li p{
     font-size: 17px;
     color: #ccc;
+    line-height: 23px;
 }
-.Main section .sec02 ul li i{
+.Main section .sec02 ul.info li i{
     position: absolute;
     bottom: 20px;
     right: 30px;
@@ -135,20 +178,38 @@
 .Main section .sec03 h2{
     font-size: 27px;
 }
-.Main section .sec03 ul li{
+.Main section .sec03 ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Main section .sec03 ul li div{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 84px;
     padding: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
     background-color: #222;
     cursor: pointer;
 }
-.Main section .sec03 ul li span,
-.Main section .sec03 ul li p{
+.Main section .sec03 ul li div span,
+.Main section .sec03 ul li div p{
     font-size: 20px;
 }
+.Main section .sec03 ul li h4{
+    background-color: #222;
+    /* height: 84px; */
+    padding: 30px;
+    margin: 0;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 25px;
+    word-break: keep-all;
+}
+/* .Main section .sec03 ul li p{
+    transition: 0.3s;
+} */
 .Main section .sec03 .sec03_start{
     text-align: center;
 }

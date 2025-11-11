@@ -14,6 +14,7 @@
     font-size: 23px;
     color: #ccc;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .Footer ul{
@@ -28,6 +29,10 @@
     color: #888;
     font-size: 12px;
     margin-bottom: 20px;
+    cursor: pointer;
+}
+.Footer ul li:hover{
+    text-decoration: underline;
 }
 
 .Footer .company_info{

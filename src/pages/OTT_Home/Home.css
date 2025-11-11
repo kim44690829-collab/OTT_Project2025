@@ -2,9 +2,9 @@
     color: #fff;
 }
 .all{
-    background-color: #1f1f1f ;
+    background-color: #171717 ;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
 }
 .all .mainPart{
@@ -37,7 +37,7 @@
     width: 30px;
     height: 30px;
     display: block;
-    background-color: red;
+    /* background-color: red; */
     font-size: 11px;
     padding: 5px;
     border-radius: 5px;
@@ -81,6 +81,8 @@
 .all .mainPart .content .detail:hover{
     background-color: rgba(146, 146, 146, 0.3);
 }
+
+/* 02. 오늘 대한민국의 TOP10 시리즈 */
 .all .Top10_series{
     position: absolute;
     top: 530px;
@@ -93,36 +95,54 @@
 .all .Top10_series ul{
     display: flex;
     width: 1200px;
+    gap: 35px;
 }
 .all .Top10_series ul li{
     display: flex;
-    width: 254px;
+    width: 354px;
     height: 200px;
-    
+    /* border: 1px solid red; */
+    /* position: relative; */
 }
 .all .Top10_series ul li h1{
-    font-size: 250px;
+    font-size: 200px;
     height: 200px;
     align-items: center;
-    line-height: 150px;
+    line-height: 225px;
     margin: 0;
+    color: rgba(146, 146, 146, 0.4);
+
 }
 .all .Top10_series ul li img{
     width: 150px;
     height: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* position: absolute; */
+    /* right: 220px; */
 }
 
+/* 하단 장르별 리스트 */
+.all .list{
+    margin-left: 70px;
+}
+
+/* 03. 액션 & 어드벤처 영화 */
 .all .list .list03{
     margin-bottom: 40px;
-    display: flex;
-    /* margin-right: 20px; */
 }
-.all .list .list03 p{
+.all .list .list03 .textPart{
     cursor: pointer;
+    display: flex;
+    margin-bottom: 15px;
 }
-.all .list .seeAll{
+.all .list .list03 .textPart .title03{
+    font-size: 19px;
+}
+.all .list .list03 .textPart .seeAll{
     margin-left: 30px;
     cursor: pointer;
+    color: mediumaquamarine;
 }
 .all .list .list03 .action_movie{
     display: flex;
@@ -132,4 +152,27 @@
     width: 295px;
     height : 200px;
     border-radius : 5px;
+    cursor: pointer;
+}
+
+/* 모두보기 모달창 */
+.all .overlay{
+    position: fixed;
+    top: 0;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+}
+.all .overlay .modal{
+    width: 1328px;
+    height: 700px;
+    background-color: rgb(24, 24, 24);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.all .overlay .modal p{
+    cursor: pointer;
 }

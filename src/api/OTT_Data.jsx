@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 
 export default function OTT_Data(){
     //가져오는 데이터 목록
-    const [PopularData,setPopularDate] = useState([])//인기순
+    const [PopularData,setPopularData] = useState([])//인기순
     const [ActionData,setActionDate] = useState([])//액션 영화
     const [AniData,setAniDate] = useState([])//애니메이션
     const [DramaData,setDramaData] = useState([])//드라마
     const [ComedyData,setComedyData] = useState([])//코미디
     const [SFData,setSFData] = useState([])//SF
-    const [data,setData]=useState([]);
+    // const [data,setData]=useState([]);
     
     //에러 메시지
     const [errMsg,setErrMsg] = useState(null)
@@ -29,7 +29,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setPopularDate(data.results)
+            setPopularData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)

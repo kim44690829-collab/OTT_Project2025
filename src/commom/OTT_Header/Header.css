@@ -5,8 +5,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
     padding: 0 60px;
+    position: fixed;
+    z-index: 100;
 }
 
 .Header .HeadLeft{
@@ -15,7 +16,7 @@
     gap: 50px;
 }
 .Header .HeadLeft img{
-    height: 31px;
+    height: 25px;
 }
 .Header .HeadLeft ul{
     width: 230px;
@@ -32,12 +33,14 @@
     align-items: center;
     gap: 20px;
 }
-.Header .HeadRight i{
+.Header .HeadRight i.inputButton{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 10px;
     font-size: 20px;
+    /* color: red; */
+    cursor: pointer;
 }
 .Header .HeadRight input{
     padding: 7px 40px;
@@ -48,5 +51,10 @@
     color: #999;
 }
 .Header .HeadRight p{
+    color: #ffffffda;
+}
+.Header .HeadRight .iButton{
+    cursor: pointer;
+    font-size: 20px;
     color: #ffffffda;
 }
