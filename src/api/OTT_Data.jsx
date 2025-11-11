@@ -1,63 +1,4 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
-
-export default function useData(){
-    const [data, setData] = useState([])
-    // const [ottData, setOttData] = useState([])
-    const [ottData, setOttData] = useState(1)
-
-    useEffect(() => {
-        // for(let i = 1; i < 10; i++){
-            fetch(`https://api.themoviedb.org/3/tv/popular?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&page=${ottData}`)
-            .then((res) => {
-            if(!res.ok){
-                throw new Error(`에러 : ${res.status}`)
-            }
-            return res.json()
-            })
-            .then((data) => {
-                setData(data.results)
-                console.log('여기 : ' , data.results)
-                // const ottDataCopy = [...ottData]
-                // ottDataCopy.push(data.results)
-                // setOttData(ottDataCopy)
-                // console.log('여기 : ' , ottData)
-            })
-            .catch((err) => {
-                console.log(err.message)
-            })
-            .finally(() => {
-                console.log('요청 완료')
-            })
-
-        // }
-        
-    },[])
-    return data;
-=======
-import { useState,useEffect } from "react";
-<<<<<<< HEAD
-
-export default function useOttData(){
-
-    const [data,setData]=useState([]);
-
-    useEffect(()=>{
-        console.log('데이터 시작')
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&page=1')
-        .then((res)=>{
-            return res.json();
-        })
-        .then((data)=>{
-            console.log('데이터 내용',data)
-            setData(data.results);
-        })
-        .finally(()=>{
-            console.log('완료')
-        })
-    },[]);
-    return data;
-=======
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -69,6 +10,7 @@ export default function OTT_Data(){
     const [DramaData,setDramaData] = useState([])//드라마
     const [ComedyData,setComedyData] = useState([])//코미디
     const [SFData,setSFData] = useState([])//SF
+    const [data,setData]=useState([]);
     
     //에러 메시지
     const [errMsg,setErrMsg] = useState(null)
@@ -211,14 +153,21 @@ export default function OTT_Data(){
         .finally(()=>{
             setLoading(false)
         })
-        
-        
     },[])
+    useEffect(()=>{
+        console.log('데이터 시작')
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&page=1')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setData(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
     
-
-    
-    
-    return [PopularData,ActionData,AniData,DramaData,ComedyData,SFData];
->>>>>>> 8aa6924f9ae1ca0bf291133214fb67bc6fefd9fe
->>>>>>> 082f0c0b8853cbecfb7928592a29dae9777274f4
+    return [PopularData,ActionData,AniData,DramaData,ComedyData,SFData, data];
 }

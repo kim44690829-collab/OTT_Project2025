@@ -8,6 +8,8 @@ import OTT_Data from './api/OTT_Data'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/OTT_Home/Home'
 import Login from './pages/OTT_Login/Login'
+import Series from './pages/OTT_Series/Series'
+import Movie from './pages/OTT_Movie/Movie'
 
 function App() {
   
@@ -17,11 +19,12 @@ function App() {
   console.log(PopularData)
   return (
     <>
-      
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/Login' element={<Login />} />
+        <Route path='/Series' element={<Series />} />
+        <Route path='/Movie' element={<Movie />} />
         <Home data={netflixData}/>
       </Routes>
     </BrowserRouter>
