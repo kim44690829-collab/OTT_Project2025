@@ -2,33 +2,43 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-<<<<<<< HEAD
-import OTT_Data from './api/OTT_Data'
-=======
+import useOttData from './api/OTT_Data'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
 import Home from './pages/OTT_Home/Home'
 import Login from './pages/OTT_Login/Login'
->>>>>>> 4dea487070699c6f9d663de63bc184f1853910d9
+import Series from './pages/OTT_Series/Series'
+import Movie from './pages/OTT_Movie/Movie'
+import Main from './pages/OTT_Main/Main'
+import OTTPeovider from './api/OTT_Context'
+
+import ModalS from './pages/OTT_ModalS/ModalS'
+import ModalB from './pages/OTT_ModalB/ModalB'
+
 
 function App() {
-  const [PopularData,ActionData,AniData,DramaData,ComedyData,SFData] = OTT_Data()
+  
+  // const netflixData= useOttData();
+  //  console.log(netflixData);
+    const [PopularData,ActionData,AniData,DramaData,ComedyData,SFData] = useOttData()
   console.log(PopularData)
-
   return (
     <>
-<<<<<<< HEAD
-      
-=======
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Login' element={<Login />} />
-      </Routes>
-    </BrowserRouter>
->>>>>>> 4dea487070699c6f9d663de63bc184f1853910d9
+
+        {/* <OTTPeovider>
+          <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Series' element={<Series />} />
+            <Route path='/Movie' element={<Movie />} />
+            <Route path='/Home' element={<Home />} />
+          </Routes>
+          </BrowserRouter>
+      </OTTPeovider> */}
+      <ModalB />
     </>
   )
 }
+
 
 export default App

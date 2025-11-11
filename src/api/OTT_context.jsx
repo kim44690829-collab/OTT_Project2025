@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const OTTContext = createContext()
 
-export default function OTTPeovider({chidren}){
+export default function OTTPeovider({children}){
     // 로그인 유저
     const [user, setUser] = useState(null)
 
@@ -18,7 +18,7 @@ export default function OTTPeovider({chidren}){
     return(
         <>
         <OTTContext.Provider value={{user, login, logout}}>
-            {chidren}
+            {children}
         </OTTContext.Provider>
         </>
     )

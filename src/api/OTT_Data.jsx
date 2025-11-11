@@ -1,15 +1,16 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-export default function OTT_Data(){
+export default function useOttData(){
     //가져오는 데이터 목록
-    const [PopularData,setPopularDate] = useState([])//인기순
-    const [ActionData,setActionDate] = useState([])//액션 영화
-    const [AniData,setAniDate] = useState([])//애니메이션
+    const [PopularData,setPopularData] = useState([])//인기순
+    const [ActionData,setActionData] = useState([])//액션 영화
+    const [AniData,setAniData] = useState([])//애니메이션
     const [DramaData,setDramaData] = useState([])//드라마
     const [ComedyData,setComedyData] = useState([])//코미디
     const [SFData,setSFData] = useState([])//SF
+    const [data,setData]=useState([]);
     
     //에러 메시지
     const [errMsg,setErrMsg] = useState(null)
@@ -28,7 +29,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setPopularDate(data.results)
+            setPopularData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -51,7 +52,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setActionDate(data.results)
+            setActionData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -74,7 +75,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setAniDate(data.results)
+            setAniData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -152,12 +153,21 @@ export default function OTT_Data(){
         .finally(()=>{
             setLoading(false)
         })
-        
-        
     },[])
-    
-
-    
+    // useEffect(()=>{
+    //     console.log('데이터 시작')
+    //     fetch('https://api.themoviedb.org/3/movie/popular?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&page=1')
+    //     .then((res)=>{
+    //         return res.json();
+    //     })
+    //     .then((data)=>{
+    //         console.log('데이터 내용',data)
+    //         setData(data.results);
+    //     })
+    //     .finally(()=>{
+    //         console.log('완료')
+    //     })
+    // },[]);
     
     return [PopularData,ActionData,AniData,DramaData,ComedyData,SFData];
 }
