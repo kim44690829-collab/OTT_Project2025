@@ -1,0 +1,135 @@
+*{
+    color: #fff;
+}
+.all{
+    background-color: #1f1f1f ;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.all .mainPart{
+    width: 100%;
+    height: 850px;
+    position: relative;
+}
+.all .mainPart img{
+    display: inline-block;
+    width: 100%;
+    height: 754px;
+}
+.all .mainPart .content{
+    position: absolute;
+    bottom: 350px;
+    left: 0;
+    padding: 70px;
+}
+.all .mainPart .content h1{
+    font-size: 120px;
+    margin:0;
+    font-weight: 600;   
+}
+.all .mainPart .content .rankPart{
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+.all .mainPart .content .rankBox{
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-color: red;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+.all .mainPart .content .mainPart_rank{
+    font-size:1.6vw;
+    font-weight: 700;
+}
+.all .mainPart .content .mainPart_text{
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+.all .mainPart .content .play{
+    color: #222;
+    width: 100px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 17px;
+}
+.all .mainPart .content .play:hover{
+    background-color: #d9d9d9;
+}
+.all .mainPart .content .detail{
+    color: #fff;
+    width: 115px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: rgba(146, 146, 146, 0.7);
+    cursor: pointer;
+    font-size: 17px;
+}
+.all .mainPart .content .detail:hover{
+    background-color: rgba(146, 146, 146, 0.3);
+}
+.all .Top10_series{
+    position: absolute;
+    top: 530px;
+}
+.all .Top10_series .title02{
+    font-size: 19px;
+    font-weight: 550;
+    margin: 15px 70px;
+}
+.all .Top10_series ul{
+    display: flex;
+    width: 1200px;
+}
+.all .Top10_series ul li{
+    display: flex;
+    width: 254px;
+    height: 200px;
+    
+}
+.all .Top10_series ul li h1{
+    font-size: 250px;
+    height: 200px;
+    align-items: center;
+    line-height: 150px;
+    margin: 0;
+}
+.all .Top10_series ul li img{
+    width: 150px;
+    height: 200px;
+}
+
+.all .list .list03{
+    margin-bottom: 40px;
+    display: flex;
+    /* margin-right: 20px; */
+}
+.all .list .list03 p{
+    cursor: pointer;
+}
+.all .list .seeAll{
+    margin-left: 30px;
+    cursor: pointer;
+}
+.all .list .list03 .action_movie{
+    display: flex;
+    gap:15px;
+}
+.all .list .list03 .action_movie li img{
+    width: 295px;
+    height : 200px;
+    border-radius : 5px;
+}

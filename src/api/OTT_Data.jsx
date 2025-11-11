@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -10,6 +10,7 @@ export default function OTT_Data(){
     const [DramaData,setDramaData] = useState([])//드라마
     const [ComedyData,setComedyData] = useState([])//코미디
     const [SFData,setSFData] = useState([])//SF
+    const [data,setData]=useState([]);
     
     //에러 메시지
     const [errMsg,setErrMsg] = useState(null)
@@ -152,12 +153,21 @@ export default function OTT_Data(){
         .finally(()=>{
             setLoading(false)
         })
-        
-        
     },[])
+    useEffect(()=>{
+        console.log('데이터 시작')
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&page=1')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setData(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
     
-
-    
-    
-    return [PopularData,ActionData,AniData,DramaData,ComedyData,SFData];
+    return [PopularData,ActionData,AniData,DramaData,ComedyData,SFData, data];
 }
