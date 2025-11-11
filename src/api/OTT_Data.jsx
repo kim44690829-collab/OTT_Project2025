@@ -52,7 +52,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setActionDate(data.resultes)
+            setActionDate(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -75,7 +75,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setAniDate(data.resultes)
+            setAniDate(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -98,7 +98,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setDramaData(data.resultes)
+            setDramaData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -121,7 +121,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setComedyData(data.resultes)
+            setComedyData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)
@@ -144,7 +144,7 @@ export default function OTT_Data(){
         })
         .then((data)=>{
             console.log(data,'받아온 데이터')
-            setSFData(data.resultes)
+            setSFData(data.results)
         })
         .catch((err)=>{
             console.log("X 에러 발생",err)

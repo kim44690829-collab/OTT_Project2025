@@ -7,7 +7,7 @@ import '../OTT_Main/Main.css'
 export default function Main(){
     return(
         <div className="Main">
-            <header>
+            <header className="MainHeader">
                 <img src="Netflix_Logo_RGB.png" alt="로고"/>
                 <Link to='/Login'><button type="button">로그인</button></Link>
             </header>
@@ -84,7 +84,7 @@ export default function Main(){
                     </div>
                 </div>
             </section>
-            <footer>
+            <footer className="MainFooter">
                 <h3>질문이 있으신가요? 문의 전화 : <span>00-308-321-0161 (수신자 부담)</span></h3>
                 <ul>
                     <li>자주 묻는 질문</li>
