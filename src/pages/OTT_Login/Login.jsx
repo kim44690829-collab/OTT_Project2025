@@ -11,14 +11,14 @@ export default function Login(){
     const [id, setId] = useState('')
     const [pw, setPw] = useState('')
 
-    const {user} = useContext(OTTContext)
+    const {user, login} = useContext(OTTContext)
     console.log(user)
     const navigate = useNavigate()
 
     const onChangeHandeler = () => {
         if(id === '1jo' && pw === '1111'){
             login(id)
-            navigate('/')
+            navigate('/Home')
         }else{
             alert('아이디, 비밀번호를 확인하세요')
         }
@@ -27,7 +27,7 @@ export default function Login(){
     return(
         <div className="Login">
             <header>
-                <img src="Netflix_Logo_RGB.png" alt="로고"/>
+                <Link to='/'><img src="Netflix_Logo_RGB.png" alt="로고"/></Link>
             </header>
             <section>
                 <h1>로그인</h1>

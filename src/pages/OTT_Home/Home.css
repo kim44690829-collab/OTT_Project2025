@@ -2,14 +2,14 @@
     color: #fff;
 }
 .all{
-    background-color: #1f1f1f ;
+    background-color: #171717 ;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
 }
 .all .mainPart{
     width: 100%;
-    height: 850px;
+    /* height: 850px; */
     position: relative;
 }
 .all .mainPart img{
@@ -19,9 +19,18 @@
 }
 .all .mainPart .content{
     position: absolute;
-    bottom: 350px;
+    bottom: 300px;
     left: 0;
     padding: 70px;
+}
+.all .mainPart .gra{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#171717,#00000000);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 .all .mainPart .content h1{
     font-size: 120px;
@@ -81,9 +90,11 @@
 .all .mainPart .content .detail:hover{
     background-color: rgba(146, 146, 146, 0.3);
 }
+
+/* 02. 오늘 대한민국의 TOP10 영화 */
 .all .Top10_series{
     position: absolute;
-    top: 530px;
+    top: 500px;
 }
 .all .Top10_series .title02{
     font-size: 19px;
@@ -93,36 +104,65 @@
 .all .Top10_series ul{
     display: flex;
     width: 1200px;
+    gap: 35px;
 }
 .all .Top10_series ul li{
-    display: flex;
-    width: 254px;
+    width: 354px;
     height: 200px;
-    
+    position: relative;
+    margin: 0 133px 0 50px;
 }
-.all .Top10_series ul li h1{
-    font-size: 250px;
-    height: 200px;
-    align-items: center;
-    line-height: 150px;
+.all .Top10_series ul li .num1{
+    font-size: 206px;
+    line-height: 274px;
     margin: 0;
+    color: #0b0b0b;
+    position: absolute;
+    bottom: 0;
+    left: -85px;
+    z-index: 50;
+}
+.all .Top10_series ul li .num2{
+    font-size: 206px;
+    line-height: 274px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: -85px;
+    z-index: 40;
+    -webkit-text-stroke: 7px #626262;
 }
 .all .Top10_series ul li img{
-    width: 150px;
-    height: 200px;
+    width: 111px;
+    height: 158px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 60;
 }
 
+/* 하단 장르별 리스트 */
+.all .list{
+    margin-left: 70px;
+}
+
+/* 03. 액션 & 어드벤처 영화 */
 .all .list .list03{
     margin-bottom: 40px;
+}
+.all .list .list03 .textPart{
+    cursor: pointer;
     display: flex;
-    /* margin-right: 20px; */
+    margin-bottom: 15px;
 }
-.all .list .list03 p{
-    cursor: pointer;
+.all .list .list03 .textPart .title03{
+    font-size: 19px;
 }
-.all .list .seeAll{
-    margin-left: 30px;
+.all .list .list03 .textPart .seeAll{
+    margin-left: 20px;
+    padding-top: 1.5px;
     cursor: pointer;
+    color: #54b9c5;
 }
 .all .list .list03 .action_movie{
     display: flex;
@@ -132,4 +172,98 @@
     width: 295px;
     height : 200px;
     border-radius : 5px;
+    cursor: pointer;
+}
+
+/* 모두보기 모달창 */
+.all .overlay{
+    position: fixed;
+    top: 0;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+.all .overlay .modal{
+    width: 1136px;
+    height: 700px;
+    max-height: 700px; /* 원하는 높이 제한 */
+    overflow-y: auto; /* 세로 스크롤 허용 */
+    box-sizing: border-box;
+    background-color: rgb(24, 24, 24);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    position: relative;
+    z-index: 200;
+}
+/* 스크롤바 스타일 (선택) */
+.all .overlay .modal::-webkit-scrollbar {
+  width: 6px;
+}
+.all .overlay .modal::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+.all .overlay .modal p{
+    cursor: pointer;
+    text-align: right;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 15px;
+}
+.all .overlay .modal h3{
+    /* display: inline-block; */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px 0 50px 0;
+    /* padding-bottom: 40px; */
+}
+.all .overlay .modal span{
+    padding: 43px;
+    color: #d9d9d9;
+    font-size: 17px;
+    font-weight: 550;
+}
+.all .overlay .modal .modalList{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px 15px 40px 15px;
+}
+.all .overlay .modal .modalList li img{
+    width: 250px;
+    height: 141px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.all .overlay .modal .modalList li img:hover{
+    transform: scale(1.3);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+}
+/* 모달 선 그리기 */
+.all .overlay .modal .line{
+    border: 1px solid #474747;
+    margin: 0 43px;
+    margin-bottom: 40px;
+}
+.all .overlay .modal strong{
+    position: absolute;
+    top: 1045px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #474747;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgb(24, 24, 24);
+    cursor: pointer;
 }

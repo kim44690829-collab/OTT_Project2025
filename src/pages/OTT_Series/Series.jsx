@@ -1,5 +1,5 @@
 import '../OTT_Series/Series.css'
-export default function Series({data}){
+export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama,AniDrama,MedicalDrama}){
     return(
         <div className='series_container'>
             <div className="sec_top">
@@ -19,16 +19,16 @@ export default function Series({data}){
                     그 미소의 주인이 다시 환영을 건네올 때, <br/>
                     이들은 과연 무엇을 마주하게 될 것인가",
                 </p>
-                <button type='button'>▶ 재생</button>
+                <button type='button' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='movies'>
-                <h2 className='h2_1'>로맨틱한 한국 시리즈</h2>
+                <h2 className='h2_1'>세계적으로 인기있는 시리즈</h2>
                 <div className='series1'>
                     <div className='series'>
                         <button type='button' className='left'>◁</button>
                         <ul>
-                            {data.map((item) => (
+                            {PopularDrama.map((item) => (
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li>
@@ -37,11 +37,23 @@ export default function Series({data}){
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>어워드 수상 시리즈</h2>
+                <h2 className='h2_2'>한국 시리즈</h2>
                 <div className='series series2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {data.map((item) => (
+                        {KoreaDrama.map((item) => (
+                            <li key={item.id}>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                            </li>
+                        ))}
+                    </ul>
+                    <button type='button' className='right'>▷</button>
+                </div>
+                <h2 className='h2_2'>해외 시리즈</h2>
+                <div className='series series2'>
+                    <button type='button' className='left'>◁</button>
+                    <ul>
+                        {OverseasDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
@@ -53,7 +65,7 @@ export default function Series({data}){
                 <div className='series series3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {data.map((item) => (
+                        {CrimeDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
@@ -61,11 +73,11 @@ export default function Series({data}){
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>액션 본능이 폭발한다</h2>
+                <h2 className='h2_2'>애니메이션</h2>
                 <div className='series series4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {data.map((item) => (
+                        {AniDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
@@ -73,35 +85,11 @@ export default function Series({data}){
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>감정을 파고드는 시리즈</h2>
+                <h2 className='h2_2'>매디컬 시리즈</h2>
                 <div className='series series5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {data.map((item) => (
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
-                            </li>
-                        ))}
-                    </ul>
-                    <button type='button' className='right'>▷</button>
-                </div>
-                <h2 className='h2_2'>삼각관계를 다룬 시리즈</h2>
-                <div className='series series6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
-                        {data.map((item) => (
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
-                            </li>
-                        ))}
-                    </ul>
-                    <button type='button' className='right'>▷</button>
-                </div>
-                <h2 className='h2_2'>밥친구</h2>
-                <div className='series series7'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
-                        {data.map((item) => (
+                        {MedicalDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>

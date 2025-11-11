@@ -1,0 +1,60 @@
+.Header{
+    height: 68px;
+    width: 100%;
+    background: linear-gradient(to bottom, #000, #00000000);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    position: fixed;
+    z-index: 100;
+}
+
+.Header .HeadLeft{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.Header .HeadLeft img{
+    height: 25px;
+}
+.Header .HeadLeft ul{
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+}
+.Header .HeadLeft ul li{
+    color: #ffffffda;
+}
+
+.Header .HeadRight{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.Header .HeadRight i.inputButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 20px;
+    /* color: red; */
+    cursor: pointer;
+}
+.Header .HeadRight input{
+    padding: 7px 40px;
+    border: 1px solid #ccc;
+    background-color: #000;
+}
+.Header .HeadRight input::placeholder{
+    color: #999;
+}
+.Header .HeadRight p{
+    color: #ffffffda;
+}
+.Header .HeadRight .iButton{
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffffda;
+}
