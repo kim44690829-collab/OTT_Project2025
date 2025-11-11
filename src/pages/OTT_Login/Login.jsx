@@ -11,8 +11,8 @@ export default function Login(){
     const [id, setId] = useState('')
     const [pw, setPw] = useState('')
 
-    const {login} = useContext(OTTContext)
-
+    const {user} = useContext(OTTContext)
+    console.log(user)
     const navigate = useNavigate()
 
     const onChangeHandeler = () => {
