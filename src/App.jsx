@@ -5,13 +5,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 // import useOttData from './api/OTT_Data'
 import useOttData from './api/OTT_Data'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom'
 import Home from './pages/OTT_Home/Home'
 import Login from './pages/OTT_Login/Login'
 import Series from './pages/OTT_Series/Series'
 import Movie from './pages/OTT_Movie/Movie'
 import Main from './pages/OTT_Main/Main'
 import OTTPeovider from './api/OTT_Context'
+import Header from './commom/OTT_Header/Header'
+import Footer from './commom/OTT_Footer/Footer'
+import MoviePopular from './pages/OTT_Movie/MoviePopular'
+import MovieAction from './pages/OTT_Movie/MovieAction'
+import AniMovie from './pages/OTT_Movie/AniMovie'
 
 function App() {
   
@@ -27,29 +32,39 @@ function App() {
     AniData,AniData1,AniData2,AniData3,AniData4,AniData5,
     DramaData,
     ComedyData,
+    ComedyData1,
+    ComedyData2,
     SFData,
+    SFData1,
     SFData2,
-    SFData3,
     PopularDrama,
     KoreaDrama,
     OverseasDrama,
     CrimeDrama,
     AniDrama,
-    MedicalDrama,
+    MedicalDrama
   ] = useOttData()
   // console.log(AniData2, '2')
   // const a = OTT_Data()
+  console.log(AniDrama, 'dddddd')
+
+  // const location = useLocation() //커스텀 훅
+  // const paths = location.pathname // <Route paht="/" /> 이 경로 가져오기
+  // if(location.pathname === '/' || location.pathname === '/Login'){
+  //   return null
+  // }
+  // console.log('경로')
+  // console.log(paths);
 
   return (
     <>
       <OTTPeovider>
         <BrowserRouter>
+          {/* {paths !== '/' || paths !== '/Login' ? <Header /> : null} */}
+          <Header />
           <Routes>
-            <Route path='/' element={<Main />} />
-            <Route path='/Login' element={<Login />} />
-          </Routes>
-          {/* <Header /> */}
-          <Routes>
+            <Route path='/' element={<Main PopularData ={PopularData}/>}/>
+            <Route path='/Login' element={<Login />}/>
             <Route path='/Series' 
             element={
             <Series 
@@ -100,49 +115,15 @@ function App() {
             AniData4 = {AniData4}
             AniData5 = {AniData5}
             />} />
-            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData} ActionData02={ActionData2} ActionData03={ActionData3} PopularDrama={PopularDrama}
-              AniData={AniData} ComedyData={ComedyData} SFData={SFData} AniData02={AniData2} AniData03={AniData3} ComedyData02={ComedyData2} ComedyData03={ComedyData03}
-              SFData02={SFData2} SFData03={SFData3}/>} />
+            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData} ActionData02={ActionData2} ActionData03={ActionData3} PopularDramaData={PopularDrama}
+              AniData={AniData} ComedyData={ComedyData} SFData={SFData} AniData02={AniData2} AniData03={AniData3} ComedyData02={ComedyData1} ComedyData03={ComedyData2}
+              SFData02={SFData1} SFData03={SFData2}/>} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </OTTPeovider>
     </>
   )
 }
-
-// export default App
-//         <OTTPeovider>
-//           <BrowserRouter>
-//           <Routes>
-//             <Route path='/' element={<Main />} />
-//             <Route path='/Login' element={<Login />} />
-//             <Route path='/Series' 
-//             element={
-//             <Series 
-//             PopularDrama = {PopularDrama} 
-//             KoreaDrama = {KoreaDrama}
-//             CrimeDrama = {CrimeDrama}
-//             AniDrama = {AniDrama}
-//             />} />
-//             <Route path='/Movie' 
-//             element={
-//             <Movie 
-//             PopularData={PopularData} 
-//             ActionData = {ActionData} 
-//             AniData = {AniData}
-//             DramaData = {DramaData}
-//             ComedyData = {ComedyData}
-//             SFData = {SFData}
-//             />} />
-//             <Route path='/Home' element={<Home />} />
-//           </Routes>
-//           </BrowserRouter>
-//       </OTTPeovider>
-
-        
-//     </>
-//   )
-// }
 
 export default App

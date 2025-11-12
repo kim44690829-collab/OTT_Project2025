@@ -24,14 +24,21 @@ export default function useOttData(){
     const [AniData5,setAniData5] = useState([])//애니메이션6
 
     const [DramaData,setDramaData] = useState([])//드라마
-    const [ComedyData,setComedyData] = useState([])//코미디
-    const [SFData,setSFData] = useState([])//SF
-    const [SFData2,setSFData2] = useState([])//SF 2
-    const [SFData3,setSFData3] = useState([])//SF 3
+    const [ComedyData,setComedyData] = useState([])//코미디1
+    const [ComedyData1,setComedyData1] = useState([])//코미디2
+    const [ComedyData2,setComedyData2] = useState([])//코미디3
+    /* 11-12 수정 */
+    const [SFData,setSFData] = useState([])//SF1
+    const [SFData1,setSFData1] = useState([])//SF2
+    const [SFData2,setSFData2] = useState([])//SF3
 
     // 드라마(시리즈)
-    const [PopularDrama,setPopularDrama]=useState([]); // 인기순
-    const [KoreaDrama,setKoreaDrama]=useState([]); // 한국 드라마
+    const [PopularDrama,setPopularDrama]=useState([]); // 인기순1
+    const [PopularDrama1,setPopularDrama1]=useState([]); // 인기순2
+    const [PopularDrama2,setPopularDrama2]=useState([]); // 인기순3
+    const [KoreaDrama,setKoreaDrama]=useState([]); // 한국 드라마1
+    const [KoreaDrama1,setKoreaDrama1]=useState([]); // 한국 드라마2
+    const [KoreaDrama2,setKoreaDrama2]=useState([]); // 한국 드라마3
     const [OverseasDrama,setOverseasDrama]=useState([]); // 해외 드라마
     const [CrimeDrama,setCrimeDrama]=useState([]); // 범죄 드라마
     const [AniDrama,setAniDrama]=useState([]); // 애니메이션
@@ -469,6 +476,52 @@ export default function useOttData(){
         
         
     },[])
+    //장르 코미디1
+    useEffect(()=>{    
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=35&page=2`)
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error(`HTTP Error! status, ${res.status}`)
+            }
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data,'받아온 데이터')
+            setComedyData1(data.results)
+        })
+        .catch((err)=>{
+            console.log("X 에러 발생",err)
+            setErrMsg(err.message)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+        
+        
+    },[])
+    //장르 코미디2
+    useEffect(()=>{    
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=35&page=3`)
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error(`HTTP Error! status, ${res.status}`)
+            }
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data,'받아온 데이터')
+            setComedyData2(data.results)
+        })
+        .catch((err)=>{
+            console.log("X 에러 발생",err)
+            setErrMsg(err.message)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+        
+        
+    },[])
     //장르 SF
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=1`)
@@ -490,9 +543,30 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
-    //장르 SF 02
+    //장르 SF1
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=2`)
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error(`HTTP Error! status, ${res.status}`)
+            }
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data,'받아온 데이터')
+            setSFData1(data.results)
+        })
+        .catch((err)=>{
+            console.log("X 에러 발생",err)
+            setErrMsg(err.message)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+    },[])
+    //장르 SF2
+    useEffect(()=>{    
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=3`)
         .then((res)=>{
             if(!res.ok){
                 throw new Error(`HTTP Error! status, ${res.status}`)
@@ -511,29 +585,8 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
-    //장르 SF 03
-    useEffect(()=>{    
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=3`)
-        .then((res)=>{
-            if(!res.ok){
-                throw new Error(`HTTP Error! status, ${res.status}`)
-            }
-            return res.json()
-        })
-        .then((data)=>{
-            console.log(data,'받아온 데이터')
-            setSFData3(data.results)
-        })
-        .catch((err)=>{
-            console.log("X 에러 발생",err)
-            setErrMsg(err.message)
-        })
-        .finally(()=>{
-            setLoading(false)
-        })
-    },[])
     // -------------------------------------------------------------------------------------------------------------------------------------
-    // 인기순 드라마(시리즈)
+    // 인기순 드라마(시리즈)1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=1')
         .then((res)=>{
@@ -547,15 +600,71 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 한국 드라마(시리즈)
+    // 인기순 드라마(시리즈)2
     useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=1')
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=2')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama1(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈)3
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=3')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama2(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 한국 드라마(시리즈)1
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=2')
         .then((res)=>{
             return res.json();
         })
         .then((data)=>{
             console.log('데이터 내용',data)
             setKoreaDrama(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 한국 드라마(시리즈)2
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=3')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setKoreaDrama1(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 한국 드라마(시리즈)3
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=4')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setKoreaDrama2(data.results);
         })
         .finally(()=>{
             console.log('완료')
@@ -596,7 +705,7 @@ export default function useOttData(){
             return res.json();
         })
         .then((data)=>{
-            console.log('데이터 내용',data)
+            console.log('데이터 내용111111111',data)
             setAniDrama(data.results);
         })
         .finally(()=>{
@@ -623,14 +732,20 @@ export default function useOttData(){
             AniData,AniData1,AniData2,AniData3,AniData4,AniData5,
             DramaData,
             ComedyData,
+            ComedyData1,
+            ComedyData2,
             SFData,
+            SFData1,
+            SFData2,
             PopularDrama,
+            PopularDrama1,
+            PopularDrama2,
             KoreaDrama,
+            KoreaDrama1,
+            KoreaDrama2,
             OverseasDrama,
             CrimeDrama,
             AniDrama,
             MedicalDrama,
-            SFData2,
-            SFData3
         ];
 }
