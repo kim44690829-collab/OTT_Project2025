@@ -33,13 +33,13 @@ export default function Main({PopularData}){
                 <div className="sec02">
                     <h2>지금 뜨는 콘텐츠</h2>
                     <ul className="Top10">
-                        {PopularData.map((item, index) => (
+                        {PopularData.slice(0, 10).map((item, index) => (
                             <li key={index}>
                                 <h2 className="TOP10_H2">{index + 1}</h2>
                                 <h2 className="TOP10_H2Border">{index + 1}</h2>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.name} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.title} />
                             </li>
-                        )).slice(0, 10)}
+                        ))}
                     </ul>
                     <h2>가입해야 하는 또 다른 이유</h2>
                     <ul className="info">

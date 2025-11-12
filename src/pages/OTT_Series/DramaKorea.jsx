@@ -1,39 +1,33 @@
 import { Link } from 'react-router-dom'
-import '../OTT_Movie/AniMovie.css'
+import '../OTT_Series/DramaKorea.css'
 import { useState } from 'react'
-export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
-    console.log(AniData2, '1')
+export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDrama3,KoreaDrama4,KoreaDrama5,}){
     return(
-        <div className='movieAni_container'>
+        <div className='DramaKorea_container'>
             <div className="sec_top">
-                <Link to='/Movie'>
-                    <h1>영화</h1>
+                <Link to='/Series'>
+                    <h1>시리즈</h1>
                 </Link>
                 <span>▶</span>
-                <h1>애니메이션 영화</h1>
+                <h1>한국 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'}/>
-            <div className='movieAni_info'>
-                <h1>극장판 체인소 맨: 레제편</h1>
-                <p>
-                    데블 헌터로 일하는 소년 ‘덴지’는 조직의 배신으로 죽음에 내몰린 순간 <br/>
-                    전기톱 악마견 ‘포치타’와의 계약으로 하나로 합쳐져 누구도 막을 수 없는 존재 <br/>
-                    ‘체인소 맨’으로 다시 태어난다. <br/>
-                    악마와 사냥꾼, 그리고 정체불명의 적들이 얽힌 잔혹한 전쟁 속에서 <br/>
-                    ‘레제’라는 이름의 미스터리한 소녀가 ‘덴지’ 앞에 나타나는데… <br/>
-                    ‘덴지’는 사랑이라는 감정에 이끌려 지금껏 가장 위험한 배틀에 몸을 던진다!<br/>
+            <img src={'https://image.tmdb.org/t/p/original//cqkmEHLE4LjPHSqKdLt4pJFJv0f.jpg'}/>
+            <div className='DramaKorea_info'>
+                <h1>조각도시</h1>
+                <p>평범하게 살아가던 한 남자가 어느 날 갑자기 삶이 송두리째 조작돼 <br/>
+                    나락에 떨어지자 지옥에서 돌아와 벌이는 핏빛 복수극
                 </p>
                 <button type='button' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
-            <div className='movieAnis'>
-                <h2 className='h2_1'>스크린 위의 애니메이션</h2>
-                <div className='movieAni1'>
-                    <div className='movieAni'>
+            <div className='DramaKoreas'>
+                <h2 className='h2_1' style={{color:'black'}}>마음을 여는 이야기</h2>
+                <div className='DramaKorea1'>
+                    <div className='DramaKorea'>
                         <button type='button' className='left'>◁</button>
                         <ul>
-                            {AniData.map((item, index) => (
-                                AniData[index].backdrop_path !== null ?
+                            {KoreaDrama.map((item, index) => (
+                                KoreaDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
@@ -42,12 +36,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>극장판 애니메이션 컬렉션</h2>
-                <div className='movieAni movieAni2'>
+                <h2 className='h2_2'>숨 가쁜 전개 속으로</h2>
+                <div className='DramaKorea DramaKorea2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData1.map((item, index) => (
-                            AniData1[index].backdrop_path !== null ? 
+                        {KoreaDrama1.map((item, index) => (
+                            KoreaDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -55,12 +49,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>장벽을 넘는 애니 스토리</h2>
-                <div className='movieAni movieAni3'>
+                <h2 className='h2_2'>하루를 담은 순간들</h2>
+                <div className='DramaKorea DramaKorea3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData2.map((item,index) => (
-                            AniData2[index].backdrop_path !== null ?
+                        {KoreaDrama2.map((item,index) => (
+                            KoreaDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> :null
@@ -68,12 +62,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 월드: 극장판 에디션</h2>
-                <div className='movieAni movieAni4'>
+                <h2 className='h2_2'>현실 너머 풍경</h2>
+                <div className='DramaKorea DramaKorea4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData3.map((item,index) => (
-                            AniData3[index].backdrop_path !== null ?
+                        {KoreaDrama3.map((item,index) => (
+                            KoreaDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -81,12 +75,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션의 극장 속 여정</h2>
-                <div className='movieAni movieAni5'>
+                <h2 className='h2_2'>시선을 끄는 이야기들</h2>
+                <div className='DramaKorea DramaKorea5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData4.map((item,index) => (
-                            AniData4[index].backdrop_path !== null ?
+                        {KoreaDrama4.map((item,index) => (
+                            KoreaDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -94,12 +88,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>극장 스펙터클 애니메이션</h2>
-                <div className='movieAni movieAni6'>
+                <h2 className='h2_2'>가볍게 빠져드는 밤</h2>
+                <div className='DramaKorea DramaKorea6'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData5.map((item,index) => (
-                            AniData5[index].backdrop_path !== null ?
+                        {KoreaDrama5.map((item,index) => (
+                            KoreaDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null

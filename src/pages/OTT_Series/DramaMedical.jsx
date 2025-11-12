@@ -1,39 +1,37 @@
 import { Link } from 'react-router-dom'
-import '../OTT_Movie/AniMovie.css'
+import '../OTT_Series/DramaMedical.css'
 import { useState } from 'react'
-export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
-    console.log(AniData2, '1')
+export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,MedicalDrama3,MedicalDrama4,MedicalDrama5}){
     return(
-        <div className='movieAni_container'>
+        <div className='DramaMedical_container'>
             <div className="sec_top">
-                <Link to='/Movie'>
-                    <h1>영화</h1>
+                <Link to='/Series'>
+                    <h1>시리즈</h1>
                 </Link>
                 <span>▶</span>
-                <h1>애니메이션 영화</h1>
+                <h1>매디컬 드라마</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'}/>
-            <div className='movieAni_info'>
-                <h1>극장판 체인소 맨: 레제편</h1>
+            <img src={'https://image.tmdb.org/t/p/original//r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg'}/>
+            <div className='DramaMedical_info'>
+                <h1>하우스</h1>
                 <p>
-                    데블 헌터로 일하는 소년 ‘덴지’는 조직의 배신으로 죽음에 내몰린 순간 <br/>
-                    전기톱 악마견 ‘포치타’와의 계약으로 하나로 합쳐져 누구도 막을 수 없는 존재 <br/>
-                    ‘체인소 맨’으로 다시 태어난다. <br/>
-                    악마와 사냥꾼, 그리고 정체불명의 적들이 얽힌 잔혹한 전쟁 속에서 <br/>
-                    ‘레제’라는 이름의 미스터리한 소녀가 ‘덴지’ 앞에 나타나는데… <br/>
-                    ‘덴지’는 사랑이라는 감정에 이끌려 지금껏 가장 위험한 배틀에 몸을 던진다!<br/>
+                    2004년 11월 FOX에서 방영을 시작한 미스터리 의학 시리즈. <br/>
+                    프린스턴 플레인즈보로 대학병원의 진단의학과 과장인 그레고리 하우스는 환자들을 성심성의껏 돌보는 데는 영 꽝인 의사. <br/>
+                    사사건건 병원 원장인 리사 커디와 부딪히는 그는 못된 매너와 그 매너를 더욱 돋보이게 하는 외모로 유명하지만, <br/>
+                    또한 창조적인 생각과 결점없는 의학적 본능을 유감없이 발휘하는 최고의 의사이기도 하다. <br/>
+                    천재적인 분석능력을 갖춘 전염병 전문의로서 그가 이제 인명을 살리기 위한 흥미롭고 미스터리한 의학의 퍼즐을 풀어간다.<br/>
                 </p>
                 <button type='button' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
-            <div className='movieAnis'>
-                <h2 className='h2_1'>스크린 위의 애니메이션</h2>
-                <div className='movieAni1'>
-                    <div className='movieAni'>
+            <div className='DramaMedicals'>
+                <h2 className='h2_1'>생명선 위에서</h2>
+                <div className='DramaMedical1'>
+                    <div className='DramaMedical'>
                         <button type='button' className='left'>◁</button>
                         <ul>
-                            {AniData.map((item, index) => (
-                                AniData[index].backdrop_path !== null ?
+                            {MedicalDrama.map((item, index) => (
+                                MedicalDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
@@ -42,12 +40,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>극장판 애니메이션 컬렉션</h2>
-                <div className='movieAni movieAni2'>
+                <h2 className='h2_2'>응급실 속 이야기</h2>
+                <div className='DramaMedical DramaMedical2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData1.map((item, index) => (
-                            AniData1[index].backdrop_path !== null ? 
+                        {MedicalDrama1.map((item, index) => (
+                            MedicalDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -55,12 +53,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>장벽을 넘는 애니 스토리</h2>
-                <div className='movieAni movieAni3'>
+                <h2 className='h2_2'>마음과 메스 사이</h2>
+                <div className='DramaMedical DramaMedical3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData2.map((item,index) => (
-                            AniData2[index].backdrop_path !== null ?
+                        {MedicalDrama2.map((item,index) => (
+                            MedicalDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> :null
@@ -68,12 +66,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 월드: 극장판 에디션</h2>
-                <div className='movieAni movieAni4'>
+                <h2 className='h2_2'>의료 현장의 하루</h2>
+                <div className='DramaMedical DramaMedical4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData3.map((item,index) => (
-                            AniData3[index].backdrop_path !== null ?
+                        {MedicalDrama3.map((item,index) => (
+                            MedicalDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -81,12 +79,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션의 극장 속 여정</h2>
-                <div className='movieAni movieAni5'>
+                <h2 className='h2_2'>치유와 갈등의 기록</h2>
+                <div className='DramaMedical DramaMedical5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData4.map((item,index) => (
-                            AniData4[index].backdrop_path !== null ?
+                        {MedicalDrama4.map((item,index) => (
+                            MedicalDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -94,12 +92,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>극장 스펙터클 애니메이션</h2>
-                <div className='movieAni movieAni6'>
+                <h2 className='h2_2'>회복을 향한 도전</h2>
+                <div className='DramaMedical DramaMedical6'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData5.map((item,index) => (
-                            AniData5[index].backdrop_path !== null ?
+                        {MedicalDrama5.map((item,index) => (
+                            MedicalDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null

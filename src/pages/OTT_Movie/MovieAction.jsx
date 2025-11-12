@@ -24,7 +24,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
             <div className='movieActions'>
-                <h2 className='h2_1'>인기있는 액션 영화</h2>
+                <h2 className='h2_1'>전 세계를 누비는 액션</h2>
                 <div className='movieAction1'>
                     <div className='movieAction'>
                         <button type='button' className='left'>◁</button>
@@ -39,7 +39,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>액션 영화</h2>
+                <h2 className='h2_2'>한계 없는 스펙터클</h2>
                 <div className='movieAction movieAction2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -52,7 +52,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 영화</h2>
+                <h2 className='h2_2'>속도와 충격의 순간</h2>
                 <div className='movieAction movieAction3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -65,7 +65,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>드라마 장르 영화</h2>
+                <h2 className='h2_2'>극한의 대결</h2>
                 <div className='movieAction movieAction4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -78,7 +78,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>코미디 영화</h2>
+                <h2 className='h2_2'>글로벌 어드벤처 필름</h2>
                 <div className='movieAction movieAction5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -91,7 +91,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>SF 영화</h2>
+                <h2 className='h2_2'>화면 밖 전쟁터</h2>
                 <div className='movieAction movieAction6'>
                     <button type='button' className='left'>◁</button>
                     <ul>

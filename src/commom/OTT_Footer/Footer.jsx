@@ -11,10 +11,10 @@ export default function Footer(){
         <>
         <footer className="Footer">
             <div className="SNS">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-youtube"></i>
+                <i className="fa-brands fa-facebook-f"></i>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-twitter"></i>
+                <i className="fa-brands fa-youtube"></i>
             </div>
             <ul>
                 <li>화면 해설</li>
