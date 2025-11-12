@@ -15,6 +15,7 @@ import OTTPeovider from './api/OTT_Context'
 import Header from './commom/OTT_Header/Header'
 import Footer from './commom/OTT_Footer/Footer'
 
+
 function App() {
   
   // const netflixData= useOttData();
