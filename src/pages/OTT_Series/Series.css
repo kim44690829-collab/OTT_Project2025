@@ -59,7 +59,7 @@ body{
     color: #fff;
     border: 1px solid #fff;
 }
-.series_container h1{
+.series_container > h1{
     color: #fff;
 }
 /* series ul */
@@ -67,23 +67,24 @@ body{
     background-color: #111;
     margin-top: 150px;
 }
-.series_container > .movies .series > ul{
+.series_container .movies .series >ul{
     display: flex;
     gap: 6px;
     width: 7114px;
     float:left;
     margin-left: 0;
 }
-.series_container h2{
+.series_container .movies >h2{
     color: #333;
     margin-top: 50px;
     color: #fff;
 }
-.series_container > .movies .series > ul > li > img{
+.series_container .movies .series > ul > li > img{
     width: 350px;
     height: 200px;
     border-radius: 5px;
 }
+
 /* 첫번째 ul li position으로 메인 이미지 위로 띄우기 위함 */
 .series_container .movies .series1{
     position: absolute;
@@ -143,3 +144,14 @@ body{
     border: 1px solid #fff;
     background-color: rgba(0,0,0,0.7);
 }
+/* 11-12 수정 */
+/* .series_container .movies .series >ul >li{
+    position: relative;
+}
+.series_container .movies .series >ul >li .modalS_postion{
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */

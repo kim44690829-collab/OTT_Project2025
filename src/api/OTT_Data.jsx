@@ -508,8 +508,7 @@ export default function useOttData(){
         
         
     },[])
-    // 김광민 11-12 드라마 패치 추가 -------------------------------------------------------------------------------------------------------
-    //장르 드라마 한국어 영화 sub1
+     //장르 드라마 한국어 영화 sub1
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=18&page=2`)
         .then((res)=>{
@@ -614,8 +613,6 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
-    // 김광민 11-12 드라마 패치 추가 끝 --------------------------------------------------------------------------------------------
-
     //장르 코미디
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=35&page=1`)
@@ -683,7 +680,6 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
-    // 김광민 11-12 코미디 패치 추가 ------------------------------------------------------------------------------------------------
     //장르 코미디3
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=35&page=4`)
@@ -747,7 +743,6 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
-
     //장르 SF
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=1`)
@@ -811,7 +806,6 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
-    // 김광민 SF 패치 추가 ----------------------------------------------------------------------------------------------------
     //장르 SF3
     useEffect(()=>{    
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=4`)
@@ -876,7 +870,7 @@ export default function useOttData(){
         })
     },[])
     // -------------------------------------------------------------------------------------------------------------------------------------
-    // 인기순 드라마(시리즈)
+    // 인기순 드라마(시리즈)1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=1')
         .then((res)=>{
@@ -965,13 +959,97 @@ export default function useOttData(){
     
     // 한국 드라마(시리즈)
     useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=1')
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=2')
         .then((res)=>{
             return res.json();
         })
         .then((data)=>{
             console.log('데이터 내용',data)
-            setKoreaDrama(data.results);
+            setPopularDrama1(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈)3
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=3')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama2(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈) sub1
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=2')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama1(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈) sub2
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=3')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama2(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈) sub3
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=4')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama3(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈) sub4
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=5')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama4(data.results);
+        })
+        .finally(()=>{
+            console.log('완료')
+        })
+    },[]);
+    // 인기순 드라마(시리즈) sub5
+    useEffect(()=>{
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=6')
+        .then((res)=>{
+            return res.json();
+        })
+        .then((data)=>{
+            console.log('데이터 내용',data)
+            setPopularDrama5(data.results);
         })
         .finally(()=>{
             console.log('완료')
@@ -1063,7 +1141,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 11-12 해외 드라마 패치 추가 -------------------------------------------------------------------------------------
     // 해외 드라마(시리즈) sub1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country!=KR&page=2')
@@ -1134,7 +1211,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 해외 드라마 패치 추가 끝 ------------------------------------------------------------------------------------------
     // 범죄 드라마(시리즈)
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=80,18&page=1')
@@ -1149,8 +1225,7 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 11-12 범죄 드라마 패치 추가 ---------------------------------------------------------------------------------
-    // 범죄 드라마(시리즈) sub1
+     // 범죄 드라마(시리즈) sub1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=80,18&page=2')
         .then((res)=>{
@@ -1220,7 +1295,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 범죄드라마 패치 추가 끝 -----------------------------------------------------------------------------------
     // 애니메이션(시리즈)
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=16&page=1')
@@ -1235,7 +1309,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 11-12 애니메이션 패치 추가 ------------------------------------------------------------------------------
     // 애니메이션(시리즈) sub1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=16&page=2')
@@ -1306,7 +1379,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 애니메이션 패치 추가 끝 ------------------------------------------------------------------------------------------------------
     // 매디컬 드라마(시리즈)
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_keywords=208788&page=1')
@@ -1321,7 +1393,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 11-12 매디컬 드라마 패치 추가 -----------------------------------------------------------------------------------
     // 매디컬 드라마(시리즈) sub1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_keywords=208788&page=2')
@@ -1392,7 +1463,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-    // 김광민 매디컬 드라마 패치 추가 끝 -----------------------------------------------------------------
     
     return [PopularData,PopularData1,PopularData2,PopularData3,PopularData4,PopularData5,
             ActionData,ActionData1,ActionData2,ActionData3,ActionData4,ActionData5,

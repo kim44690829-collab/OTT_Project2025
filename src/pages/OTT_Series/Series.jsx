@@ -1,6 +1,8 @@
 import '../OTT_Series/Series.css'
 import { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ModalS from '../OTT_ModalS/ModalS'
+import ModalB from '../OTT_ModalB/ModalB'
 
 export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama,AniDrama,MedicalDrama}){
     const [MovieMenu, setMovieMenu] = useState(false)
@@ -49,9 +51,8 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
         }else if(currentX5 < 0 && num === 6){
             setCurrentX5(currentX5 + 1780)            
         }
-    }
-    
-
+    } 
+      
     return(
         <div className='series_container'>
             <div className="sec_top">
@@ -120,12 +121,13 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularDrama.map((item) => (
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                                 </li>
                             ))}
                         </ul>
                         <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
+                    {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-12 수정 */}
                 </div>
                 <h2 className='h2_2'>한국 시리즈</h2>
                 <div className='series series2'>
@@ -133,7 +135,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {KoreaDrama.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
@@ -145,7 +147,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {OverseasDrama.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
@@ -157,7 +159,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {CrimeDrama.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
@@ -169,7 +171,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniDrama.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
@@ -181,7 +183,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>

@@ -17,7 +17,10 @@ import Footer from './commom/OTT_Footer/Footer'
 import MoviePopular from './pages/OTT_Movie/MoviePopular'
 import MovieAction from './pages/OTT_Movie/MovieAction'
 import AniMovie from './pages/OTT_Movie/AniMovie'
-// 11-12 김광민 --------------------------------------------
+//11-12 정호준 수정
+import LikeAuthProvider from './pages/OTT_Like/LikeAutn'
+import Like from './pages/OTT_Like/Like'
+//11-12 김광민
 import DramaMovie from './pages/OTT_Movie/DramaMovie'
 import ComedyMovie from './pages/OTT_Movie/ComedyMovie'
 import SFMovie from './pages/OTT_Movie/SFMovie'
@@ -28,7 +31,6 @@ import DramaCrime from './pages/OTT_Series/DramaCrime'
 import DramaAni from './pages/OTT_Series/DramaAni'
 import DramaMedical from './pages/OTT_Series/DramaMedical'
 
-
 function App() {
   
   // const netflixData= useOttData();
@@ -37,6 +39,7 @@ function App() {
   // const [PopularData,ActionData,AniData,DramaData,ComedyData,SFData,ActionData02,ActionData03,PopularDramaData,AniData02,AniData03,ComedyData02,ComedyData03,SFData02,SFData03] = useOttData();
 
   //  console.log(netflixData);
+
   const [
     PopularData,PopularData1,PopularData2,PopularData3, PopularData4, PopularData5,
     ActionData,ActionData1,ActionData2,ActionData3,ActionData4,ActionData5,
@@ -51,6 +54,7 @@ function App() {
     AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDrama4,AniDrama5,
     MedicalDrama,MedicalDrama1,MedicalDrama2,MedicalDrama3,MedicalDrama4,MedicalDrama5
   ] = useOttData()
+
   // console.log(AniData2, '2')
   // const a = OTT_Data()
   console.log(AniDrama, 'dddddd')
@@ -65,10 +69,9 @@ function App() {
 
   return (
     <>
-      <OTTPeovider>
-        <BrowserRouter>
-          {/* {paths !== '/' || paths !== '/Login' ? <Header /> : null} */}
-          <Header />
+    <LikeAuthProvider>
+      
+          <Header PopularData = {PopularData} />
           <Routes>
             <Route path='/' element={<Main PopularData ={PopularData}/>}/>
             <Route path='/Login' element={<Login />}/>
@@ -122,7 +125,6 @@ function App() {
             AniData4 = {AniData4}
             AniData5 = {AniData5}
             />} />
-            {/* 김광민 11-12 ---------------------------------------------------------------------- */}
             <Route path='/DramaMovie' 
             element={
             <DramaMovie
@@ -213,14 +215,13 @@ function App() {
             MedicalDrama4 = {MedicalDrama4}
             MedicalDrama5 = {MedicalDrama5}
               />} />
-            
             <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData} ActionData02={ActionData2} ActionData03={ActionData3} PopularDramaData={PopularDrama}
               AniData={AniData} ComedyData={ComedyData} SFData={SFData} AniData02={AniData2} AniData03={AniData3} ComedyData02={ComedyData1} ComedyData03={ComedyData2}
-              SFData02={SFData1} SFData03={SFData2}/>} />
+              SFData02={SFData1} SFData03={SFData2} PopularDrama1={PopularDrama1} PopularDrama2={PopularDrama2} KoreaDrama={KoreaDrama} KoreaDrama1={KoreaDrama1} KoreaDrama2={KoreaDrama2}/>} />
+            <Route path='/Like' element={<Like/>}/>
           </Routes>
           <Footer />
-        </BrowserRouter>
-      </OTTPeovider>
+      </LikeAuthProvider>
     </>
   )
 }
