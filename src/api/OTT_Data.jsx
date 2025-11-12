@@ -52,17 +52,6 @@ export default function useOttData(){
 
     // 드라마(시리즈)
     const [PopularDrama,setPopularDrama]=useState([]); // 인기순1
-<<<<<<< HEAD
-    const [PopularDrama1,setPopularDrama1]=useState([]); // 인기순2
-    const [PopularDrama2,setPopularDrama2]=useState([]); // 인기순3
-    const [KoreaDrama,setKoreaDrama]=useState([]); // 한국 드라마1
-    const [KoreaDrama1,setKoreaDrama1]=useState([]); // 한국 드라마2
-    const [KoreaDrama2,setKoreaDrama2]=useState([]); // 한국 드라마3
-    const [OverseasDrama,setOverseasDrama]=useState([]); // 해외 드라마
-    const [CrimeDrama,setCrimeDrama]=useState([]); // 범죄 드라마
-    const [AniDrama,setAniDrama]=useState([]); // 애니메이션
-    const [MedicalDrama,setMedicalDrama]=useState([]); // 매디컬 드라마
-=======
     // 김광민 11-12 인기 드라마 추가 ----------------------------------------------------------------
     const [PopularDrama1,setPopularDrama1]=useState([]); // 인기순2
     const [PopularDrama2,setPopularDrama2]=useState([]); // 인기순3
@@ -109,7 +98,6 @@ export default function useOttData(){
     const [MedicalDrama3,setMedicalDrama3]=useState([]); // 매디컬 드라마4
     const [MedicalDrama4,setMedicalDrama4]=useState([]); // 매디컬 드라마5
     const [MedicalDrama5,setMedicalDrama5]=useState([]); // 매디컬 드라마6
->>>>>>> f3543c47f0b76de65db693602385c83b390f677d
 
     
     //에러 메시지
@@ -896,44 +884,10 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-<<<<<<< HEAD
-    // 인기순 드라마(시리즈)2
-    useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=2')
-        .then((res)=>{
-            return res.json();
-        })
-        .then((data)=>{
-            console.log('데이터 내용',data)
-            setPopularDrama1(data.results);
-        })
-        .finally(()=>{
-            console.log('완료')
-        })
-    },[]);
-    // 인기순 드라마(시리즈)3
-    useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=3')
-        .then((res)=>{
-            return res.json();
-        })
-        .then((data)=>{
-            console.log('데이터 내용',data)
-            setPopularDrama2(data.results);
-        })
-        .finally(()=>{
-            console.log('완료')
-        })
-    },[]);
-    // 한국 드라마(시리즈)1
-    useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=2')
-=======
     // 김광민 11-12 인기순 드라마 패치 추가 -------------------------------------------------------------------------------------------------
     // 인기순 드라마(시리즈) sub1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=2')
->>>>>>> f3543c47f0b76de65db693602385c83b390f677d
         .then((res)=>{
             return res.json();
         })
@@ -945,11 +899,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-<<<<<<< HEAD
-    // 한국 드라마(시리즈)2
-    useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=3')
-=======
     // 인기순 드라마(시리즈) sub2
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=3')
@@ -1110,7 +1059,6 @@ export default function useOttData(){
     // 한국 드라마(시리즈) sub1
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=2')
->>>>>>> f3543c47f0b76de65db693602385c83b390f677d
         .then((res)=>{
             return res.json();
         })
@@ -1122,15 +1070,9 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-<<<<<<< HEAD
-    // 한국 드라마(시리즈)3
-    useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=4')
-=======
     // 한국 드라마(시리즈) sub2
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=3')
->>>>>>> f3543c47f0b76de65db693602385c83b390f677d
         .then((res)=>{
             return res.json();
         })
@@ -1142,8 +1084,6 @@ export default function useOttData(){
             console.log('완료')
         })
     },[]);
-<<<<<<< HEAD
-=======
     // 한국 드라마(시리즈) sub3
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=4')
@@ -1187,7 +1127,6 @@ export default function useOttData(){
         })
     },[]);
     // 김광민 한국드라마 패치 추가 끝---------------------------------------------------------------------------
->>>>>>> f3543c47f0b76de65db693602385c83b390f677d
     // 해외 드라마(시리즈)
     useEffect(()=>{
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country!=KR&page=1')
@@ -1528,25 +1467,6 @@ export default function useOttData(){
     return [PopularData,PopularData1,PopularData2,PopularData3,PopularData4,PopularData5,
             ActionData,ActionData1,ActionData2,ActionData3,ActionData4,ActionData5,
             AniData,AniData1,AniData2,AniData3,AniData4,AniData5,
-<<<<<<< HEAD
-            DramaData,
-            ComedyData,
-            ComedyData1,
-            ComedyData2,
-            SFData,
-            SFData1,
-            SFData2,
-            PopularDrama,
-            PopularDrama1,
-            PopularDrama2,
-            KoreaDrama,
-            KoreaDrama1,
-            KoreaDrama2,
-            OverseasDrama,
-            CrimeDrama,
-            AniDrama,
-            MedicalDrama,
-=======
             DramaData,DramaData1,DramaData2,DramaData3,DramaData4,DramaData5,
             ComedyData,ComedyData1,ComedyData2,ComedyData3,ComedyData4,ComedyData5,
             SFData,SFData1,SFData2,SFData3,SFData4,SFData5,
@@ -1556,6 +1476,5 @@ export default function useOttData(){
             CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDrama3,CrimeDrama4,CrimeDrama5,
             AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDrama4,AniDrama5,
             MedicalDrama,MedicalDrama1,MedicalDrama2,MedicalDrama3,MedicalDrama4,MedicalDrama5
->>>>>>> f3543c47f0b76de65db693602385c83b390f677d
         ];
 }
