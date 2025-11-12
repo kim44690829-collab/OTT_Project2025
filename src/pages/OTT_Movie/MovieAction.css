@@ -5,7 +5,7 @@ body{
 /* movieAction 전체 css */
 .movieAction_container{
     width: 2000px;
-    margin: 68px auto;
+    margin: 0 auto;
     position: relative;
 }
 /* movieAction 상단 이름 및 버튼 css */
@@ -16,6 +16,7 @@ body{
     top: 0;
     left: 0;
     margin-left: 30px;
+    margin-top: 68px;
     align-items: center;
 }
 .sec_top button{

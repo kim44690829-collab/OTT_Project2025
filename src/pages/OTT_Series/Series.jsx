@@ -1,5 +1,9 @@
 import '../OTT_Series/Series.css'
+import { useState,useEffect } from 'react'
+
 export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama,AniDrama,MedicalDrama}){
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='series_container'>
             <div className="sec_top">

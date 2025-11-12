@@ -14,6 +14,9 @@ import Main from './pages/OTT_Main/Main'
 import OTTPeovider from './api/OTT_Context'
 import Header from './commom/OTT_Header/Header'
 import Footer from './commom/OTT_Footer/Footer'
+import MoviePopular from './pages/OTT_Movie/MoviePopular'
+import MovieAction from './pages/OTT_Movie/MovieAction'
+import AniMovie from './pages/OTT_Movie/AniMovie'
 
 function App() {
   
@@ -29,7 +32,11 @@ function App() {
     AniData,AniData1,AniData2,AniData3,AniData4,AniData5,
     DramaData,
     ComedyData,
+    ComedyData1,
+    ComedyData2,
     SFData,
+    SFData1,
+    SFData2,
     PopularDrama,
     KoreaDrama,
     OverseasDrama,
@@ -39,6 +46,7 @@ function App() {
   ] = useOttData()
   // console.log(AniData2, '2')
   // const a = OTT_Data()
+  console.log(AniDrama, 'dddddd')
 
   // const location = useLocation() //커스텀 훅
   // const paths = location.pathname // <Route paht="/" /> 이 경로 가져오기
@@ -53,8 +61,10 @@ function App() {
       <OTTPeovider>
         <BrowserRouter>
           {/* {paths !== '/' || paths !== '/Login' ? <Header /> : null} */}
-          {/* <Header /> */}
+          <Header />
           <Routes>
+            <Route path='/' element={<Main PopularData ={PopularData}/>}/>
+            <Route path='/Login' element={<Login />}/>
             <Route path='/Series' 
             element={
             <Series 
@@ -105,11 +115,11 @@ function App() {
             AniData4 = {AniData4}
             AniData5 = {AniData5}
             />} />
-            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData} ActionData02={ActionData02} ActionData03={ActionData03} PopularDramaData={PopularDramaData}
-              AniData={AniData} ComedyData={ComedyData} SFData={SFData} AniData02={AniData02} AniData03={AniData03} ComedyData02={ComedyData02} ComedyData03={ComedyData03}
-              SFData02={SFData02} SFData03={SFData03}/>} />
+            <Route path='/Home' element={<Home data={PopularData} ActionData={ActionData} ActionData02={ActionData2} ActionData03={ActionData3} PopularDramaData={PopularDrama}
+              AniData={AniData} ComedyData={ComedyData} SFData={SFData} AniData02={AniData2} AniData03={AniData3} ComedyData02={ComedyData1} ComedyData03={ComedyData2}
+              SFData02={SFData1} SFData03={SFData2}/>} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </OTTPeovider>
     </>

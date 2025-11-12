@@ -25,10 +25,12 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
     const [clickIndex,setClickIndex]=useState(null);
 
     // top 10
-    const top10=data.slice(10,20);
+    const top10=data.slice(0,10);
 
     // 모달 -> 다음 페이지 더보기 버튼 클릭 시 항목 더보기 toggle
     const [toggle,setToggle]=useState(false);
+
+   /*  let pictureNull=titleArr[clickIndex].dataAll; */
 
 
     return(
@@ -53,11 +55,12 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                 <p className="title02">오늘 대한민국의 TOP10 영화</p>
                 <ul>
                     {top10.map((item,index)=>(
+                        top10.backdrop_path !== null?
                         <li key={item.id}>
                             <h1 className="num1">{index+1}</h1>
                             <h1 className="num2">{index+1}</h1>
                             <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
-                        </li>
+                        </li> : null
                     ))}
                 </ul>
             </div>
@@ -164,10 +167,10 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                     {/* 01 페이지 */}
                     <ul className="modalList">
                         {titleArr[clickIndex].dataAll.map((item,index)=>(
-                            // titleArr[clickIndex].dataAll.
+                            titleArr[clickIndex].dataAll[index].backdrop_path !== null?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
-                            </li>
+                            </li>:null
                         ))}
                     </ul>
 
@@ -177,10 +180,11 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
 
                     {/* 02 페이지 */}
                     {toggle && <ul className="modalList">
-                        {titleArr[clickIndex].dataAll02.map((item)=>(
+                        {titleArr[clickIndex].dataAll02.map((item,index)=>(
+                            titleArr[clickIndex].dataAll02[index].backdrop_path !== null?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
-                            </li>
+                            </li>:null
                         ))}
                     </ul>}
 
