@@ -1,33 +1,11 @@
 import "../OTT_ModalB/ModalB.css"
 import { useState,useEffect } from "react"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { LikeAuth } from "../OTT_Like/LikeAutn"
 
-export default function ModalB(){
-    const [PopularData,setPopularData] = useState(null)
-    
-        useEffect(()=>{    
-            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&page=1`)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error(`HTTP Error! status, ${res.status}`)
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                console.log(data,'받아온 데이터')
-                setPopularData(data.results)
-            })
-            .catch((err)=>{
-                console.log("X 에러 발생",err)
-                setErrMsg(err.message)
-            })
-            .finally(()=>{
-                setLoading(false)
-            })
-            
-            
-        },[])
-        console.log(PopularData[0].backdrop_path)
+export default function ModalB(props){
+    const {wishlist,setWishlist,addToWishlist,removeFromWishlist} = useContext(LikeAuth)
         const genre =(item)=>{
         if(item===14){
             return '판타지'
@@ -69,37 +47,51 @@ export default function ModalB(){
         else if(item === 37){
             return '서부극'
         }
+        else if(item === 10765){
+            return 'SF & 판타지'
+        }
+        else if(item === 9648){
+            return '미스터리'
+        }
+        else if(item === 10759){
+            return '액션 & 어드벤처'
+        }
     }
     return(
         
-        <div className="ModalB_container">
+        <div className="ModalB_container" >
             <div className="ModalB_box">
-                <img src={`https://image.tmdb.org/t/p/original${PopularData[0].backdrop_path}`} alt="" />
+                <img src={`https://image.tmdb.org/t/p/original${props.item.backdrop_path}`} alt="" />
             </div>
             <div className="ModalB_box">
-                <button type="button" className="close_btn"><i class="fa-solid fa-xmark"></i></button>
+                <button type="button" className="close_btn" onClick={()=>props.setOpenB(!props.openB)}><i className="fa-solid fa-xmark"></i></button>
                 <ul>
-                    <li><h1>{PopularData[0].title}</h1></li>
+                    <li><h1>{props.item.name}</h1></li>
                     <li className="MB_btn_group">
                         <div className="left_group">
                             <button type="button" className="play_btn">▶ 재생</button>
-                            <button type="button" className="like_btn">❤</button>
+                            {wishlist.find((wishlist)=>wishlist.id===props.item.id) === undefined ?
+                            <button type="button" className="like_btn" onClick={()=>{addToWishlist(props.item)}}>❤</button>
+                            :
+                            <button type="button" className="like_btn" style={{color:'red'}} onClick={()=>{removeFromWishlist(props.item.id)}}>❤</button>
+                            }
+                            
                         </div>
                         <div className="right_group">
-                            <button type="button"><i class="fa-solid fa-volume-high"></i></button>
+                            <button type="button"><i className="fa-solid fa-volume-high"></i></button>
                         </div>
                     </li>
                     <li className="info_group">
                         <div className="L_info">
                             <p>리미티드 시리즈 <span>HD</span></p>
                             <p><img src="15_40x40.png" alt="시청 연령" /></p>
-                            <p>{PopularData[0].overview}</p>
+                            <p>{props.item.overview}</p>
                         </div>
                         <div className="R_info">
-                            <p><span>장르 : {PopularData[0].genre_ids.map((item,index)=>(
-                                <span key={index}>{genre(item)}  </span>
-                            ))}</span> </p>
-                            <p><span>개봉일자 :</span>{PopularData[0].release_date}</p>                            
+                            <p><span className="tag">장르 : </span> <br/>{props.item.genre_ids.map((item,index)=>(
+                                <span key={index}>{genre(item)},<br/> </span>
+                            ))} </p>
+                            <p><span className="tag">개봉일자 :</span> {props.item.first_air_date}</p>                            
                         </div>
                     </li>
                 </ul>

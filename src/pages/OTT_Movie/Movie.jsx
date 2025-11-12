@@ -27,15 +27,21 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                                         <button type='button'>애니메이션 영화</button>
                                     </li>
                                 </Link>
-                                <li>
-                                    <button type='button'>드라마 장르 영화</button>
-                                </li>
-                                <li>
-                                    <button type='button'>코미디 영화</button>
-                                </li>
-                                <li>
-                                    <button type='button'>SF 영화</button>
-                                </li>
+                                <Link to='/DramaMovie'>
+                                    <li>
+                                        <button type='button'>드라마 장르 영화</button>
+                                    </li>
+                                </Link>
+                                <Link to='/ComedyMovie'>
+                                    <li>
+                                        <button type='button'>코미디 영화</button>
+                                    </li>
+                                </Link>
+                                <Link to='/SFMovie'>
+                                    <li>
+                                        <button type='button'>SF 영화</button>
+                                    </li>
+                                </Link>
                             </ul>
                         )}
                     </li>

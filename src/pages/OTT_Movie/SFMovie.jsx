@@ -1,39 +1,35 @@
 import { Link } from 'react-router-dom'
-import '../OTT_Movie/AniMovie.css'
+import '../OTT_Movie/SFMovie.css'
 import { useState } from 'react'
-export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
-    console.log(AniData2, '1')
+export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}){
     return(
-        <div className='movieAni_container'>
+        <div className='movieSF_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
                     <h1>영화</h1>
                 </Link>
                 <span>▶</span>
-                <h1>애니메이션 영화</h1>
+                <h1>코미디 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'}/>
-            <div className='movieAni_info'>
-                <h1>극장판 체인소 맨: 레제편</h1>
+            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'}/>
+            <div className='movieSF_info'>
+                <h1>프레데터: 죽음의 땅</h1>
                 <p>
-                    데블 헌터로 일하는 소년 ‘덴지’는 조직의 배신으로 죽음에 내몰린 순간 <br/>
-                    전기톱 악마견 ‘포치타’와의 계약으로 하나로 합쳐져 누구도 막을 수 없는 존재 <br/>
-                    ‘체인소 맨’으로 다시 태어난다. <br/>
-                    악마와 사냥꾼, 그리고 정체불명의 적들이 얽힌 잔혹한 전쟁 속에서 <br/>
-                    ‘레제’라는 이름의 미스터리한 소녀가 ‘덴지’ 앞에 나타나는데… <br/>
-                    ‘덴지’는 사랑이라는 감정에 이끌려 지금껏 가장 위험한 배틀에 몸을 던진다!<br/>
+                   프레데터로서 존재를 증명하기 위해 우주에서 가장 위험한 행성으로 첫 사냥에 나선 덱. <br/>
+                   죽음의 땅에 도사린 모든 것으로부터 공격을 받던 순간, 휴머노이드 티아를 만난다. <br/>
+                   최상위 포식자 칼리스크에 맞서게 된 둘은 생존과 각자의 목적을 위해 극한의 사투를 벌이게 되는데…<br/>
                 </p>
                 <button type='button' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
-            <div className='movieAnis'>
-                <h2 className='h2_1'>스크린 위의 애니메이션</h2>
-                <div className='movieAni1'>
-                    <div className='movieAni'>
+            <div className='movieSFs'>
+                <h2 className='h2_1'>인기있는 한국 영화</h2>
+                <div className='movieSF1'>
+                    <div className='movieSF'>
                         <button type='button' className='left'>◁</button>
                         <ul>
-                            {AniData.map((item, index) => (
-                                AniData[index].backdrop_path !== null ?
+                            {SFData.map((item, index) => (
+                                SFData[index].backdrop_path !== null ?
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
@@ -42,12 +38,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>극장판 애니메이션 컬렉션</h2>
-                <div className='movieAni movieAni2'>
+                <h2 className='h2_2'>액션 영화</h2>
+                <div className='movieSF movieSF2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData1.map((item, index) => (
-                            AniData1[index].backdrop_path !== null ? 
+                        {SFData1.map((item, index) => (
+                            SFData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -55,12 +51,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>장벽을 넘는 애니 스토리</h2>
-                <div className='movieAni movieAni3'>
+                <h2 className='h2_2'>애니메이션 영화</h2>
+                <div className='movieSF movieSF3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData2.map((item,index) => (
-                            AniData2[index].backdrop_path !== null ?
+                        {SFData2.map((item,index) => (
+                            SFData2[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> :null
@@ -68,12 +64,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 월드: 극장판 에디션</h2>
-                <div className='movieAni movieAni4'>
+                <h2 className='h2_2'>드라마 장르 영화</h2>
+                <div className='movieSF movieSF4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData3.map((item,index) => (
-                            AniData3[index].backdrop_path !== null ?
+                        {SFData3.map((item,index) => (
+                            SFData3[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -81,12 +77,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션의 극장 속 여정</h2>
-                <div className='movieAni movieAni5'>
+                <h2 className='h2_2'>코미디 영화</h2>
+                <div className='movieSF movieSF5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData4.map((item,index) => (
-                            AniData4[index].backdrop_path !== null ?
+                        {SFData4.map((item,index) => (
+                            SFData4[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -94,12 +90,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>극장 스펙터클 애니메이션</h2>
-                <div className='movieAni movieAni6'>
+                <h2 className='h2_2'>SF 영화</h2>
+                <div className='movieSF movieSF6'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData5.map((item,index) => (
-                            AniData5[index].backdrop_path !== null ?
+                        {SFData5.map((item,index) => (
+                            SFData5[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null

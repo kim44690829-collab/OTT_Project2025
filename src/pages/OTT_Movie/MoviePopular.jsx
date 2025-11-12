@@ -31,7 +31,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
             <div className='movieSub1s'>
-                <h2 className='h2_1'>인기있는 한국 영화</h2>
+                <h2 className='h2_1' style={{color:'black'}}>스크린을 뒤흔든 명작들</h2>
                 <div className='movieSub11'>
                     <div className='movieSub1'>
                         <button type='button' className='left'>◁</button>
@@ -46,7 +46,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>액션 영화</h2>
+                <h2 className='h2_2'>오늘의 화제작 한국영화</h2>
                 <div className='movieSub1 movieSub12'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -59,7 +59,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 영화</h2>
+                <h2 className='h2_2'>감동을 부르는 순간들</h2>
                 <div className='movieSub1 movieSub13'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -72,7 +72,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>드라마 장르 영화</h2>
+                <h2 className='h2_2'>반전을 담은 이야기</h2>
                 <div className='movieSub1 movieSub14'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -85,7 +85,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>코미디 영화</h2>
+                <h2 className='h2_2'>현실과 마주한 스토리</h2>
                 <div className='movieSub1 movieSub15'>
                     <button type='button' className='left'>◁</button>
                     <ul>
@@ -98,7 +98,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>SF 영화</h2>
+                <h2 className='h2_2'>가볍게 즐기는 한국영화 밤</h2>
                 <div className='movieSub1 movieSub16'>
                     <button type='button' className='left'>◁</button>
                     <ul>
