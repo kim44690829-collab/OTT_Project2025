@@ -5,7 +5,7 @@ body{
 /* series 전체 css */
 .series_container{
     width: 2000px;
-    margin: 68px auto;
+    margin: 0 auto;
     position: relative;
 }
 /* series 상단 이름 및 버튼 css */
@@ -17,8 +17,9 @@ body{
     left: 0;
     margin-left: 30px;
     align-items: center;
+    margin-top: 68px;
 }
-.sec_top button{
+.sec_top > .dep1 > li > button{
     width: 70px;
     height: 30px;
     background-color: transparent;
@@ -66,16 +67,19 @@ body{
     background-color: #111;
     margin-top: 150px;
 }
-.series_container ul{
+.series_container > .movies .series > ul{
     display: flex;
     gap: 6px;
+    width: 7114px;
+    float:left;
+    margin-left: 0;
 }
 .series_container h2{
     color: #333;
     margin-top: 50px;
     color: #fff;
 }
-.series_container ul li img{
+.series_container > .movies .series > ul > li > img{
     width: 350px;
     height: 200px;
     border-radius: 5px;
@@ -96,9 +100,9 @@ body{
     display: flex;
     position: relative;
     width: 1780px;
-    /* margin: 0 auto; */
     margin-left: 70px;
     overflow: hidden;
+    margin-right: 1780px;
 }
 .series_container .movies .h2_2{
     margin-left: 70px;
