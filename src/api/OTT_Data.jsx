@@ -26,6 +26,8 @@ export default function useOttData(){
     const [DramaData,setDramaData] = useState([])//드라마
     const [ComedyData,setComedyData] = useState([])//코미디
     const [SFData,setSFData] = useState([])//SF
+    const [SFData2,setSFData2] = useState([])//SF 2
+    const [SFData3,setSFData3] = useState([])//SF 3
 
     // 드라마(시리즈)
     const [PopularDrama,setPopularDrama]=useState([]); // 인기순
@@ -488,6 +490,48 @@ export default function useOttData(){
             setLoading(false)
         })
     },[])
+    //장르 SF 02
+    useEffect(()=>{    
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=2`)
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error(`HTTP Error! status, ${res.status}`)
+            }
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data,'받아온 데이터')
+            setSFData2(data.results)
+        })
+        .catch((err)=>{
+            console.log("X 에러 발생",err)
+            setErrMsg(err.message)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+    },[])
+    //장르 SF 03
+    useEffect(()=>{    
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&with_genres=878&page=3`)
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error(`HTTP Error! status, ${res.status}`)
+            }
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data,'받아온 데이터')
+            setSFData3(data.results)
+        })
+        .catch((err)=>{
+            console.log("X 에러 발생",err)
+            setErrMsg(err.message)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+    },[])
     // -------------------------------------------------------------------------------------------------------------------------------------
     // 인기순 드라마(시리즈)
     useEffect(()=>{
@@ -585,6 +629,8 @@ export default function useOttData(){
             OverseasDrama,
             CrimeDrama,
             AniDrama,
-            MedicalDrama
+            MedicalDrama,
+            SFData2,
+            SFData3
         ];
 }
