@@ -24,9 +24,12 @@
     display: flex;
     justify-content: space-between;
 }
-.Header .HeadLeft ul li{
+/* .Header .HeadLeft ul li{
     color: #ffffffda;
-}
+} */
+/* .Header .HeadLeft ul li.active{
+    color: #fff;
+} */
 
 .Header .HeadRight{
     position: relative;
