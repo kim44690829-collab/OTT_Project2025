@@ -42,9 +42,8 @@ export default function OTTPeovider({children}){
                 
             }else if(currentX5 > -5334 && num === 6  ){
                 setCurrentX5(currentX5 - 1780)
-                
             }
-    }
+            }
     const slideLeft = (num) => {
         if(currentX < 0 && num === 1){
             setCurrentX(currentX + 1780)
@@ -58,7 +57,8 @@ export default function OTTPeovider({children}){
         }else if(currentX4 < 0 && num === 5){
             setCurrentX4(currentX4 + 1780)    
         }else if(currentX5 < 0 && num === 6){
-            setCurrentX5(currentX5 + 1780)            
+            setCurrentX5(currentX5 + 1780)     
+            
         }
     } 
     return(
