@@ -4,10 +4,13 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function MoviePopular({PopularData, PopularData1, PopularData2, PopularData3, PopularData4, PopularData5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
-
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='movieSub1_container'>
             <div className="sec_top">
@@ -17,7 +20,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                 <span style={{color:'black'}}>▶</span>
                 <h1 style={{color:'black'}}>인기있는 한국 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//yOFqBpJ0PEkBdQqalDEaeOiaKbz.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//yOFqBpJ0PEkBdQqalDEaeOiaKbz.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='movieSub1_info'>
                 <h1 style={{color:'black'}}>사마귀</h1>
                 <p style={{color:'black'}}>
@@ -38,7 +41,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                             {PopularData.map((item, index) => (
                                 PopularData[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -52,7 +55,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         {PopularData1.map((item, index) => (
                             PopularData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -65,7 +68,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         {PopularData2.map((item,index) => (
                             PopularData2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -78,7 +81,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         {PopularData3.map((item,index) => (
                             PopularData3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -91,7 +94,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         {PopularData4.map((item,index) => (
                             PopularData4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -104,13 +107,14 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         {PopularData5.map((item,index) => (
                             PopularData5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

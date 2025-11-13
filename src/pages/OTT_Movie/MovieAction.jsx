@@ -4,10 +4,13 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function MovieAction({ActionData, ActionData1, ActionData2, ActionData3, ActionData4, ActionData5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
-
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='movieAction_container'>
             <div className="sec_top">
@@ -17,7 +20,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                 <span>▶</span>
                 <h1>인기있는 액션 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='movieAction_info'>
                 <h1>프레데터: 죽음의 땅</h1>
                 <p>
@@ -37,7 +40,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                             {ActionData.map((item, index) => (
                                 ActionData[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -51,7 +54,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         {ActionData1.map((item, index) => (
                             ActionData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -64,7 +67,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         {ActionData2.map((item,index) => (
                             ActionData2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -77,7 +80,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         {ActionData3.map((item,index) => (
                             ActionData3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -90,7 +93,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         {ActionData4.map((item,index) => (
                             ActionData4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -103,13 +106,14 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         {ActionData5.map((item,index) => (
                             ActionData5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

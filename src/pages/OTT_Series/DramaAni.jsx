@@ -4,9 +4,14 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDrama4,AniDrama5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
+
     return(
         <div className='DramaAni_container'>
             <div className="sec_top">
@@ -16,7 +21,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                 <span>▶</span>
                 <h1>애니메이션</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//3AXLSxMuqyZt8HyrKKfrcJtkswD.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//3AXLSxMuqyZt8HyrKKfrcJtkswD.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='DramaAni_info'>
                 <h1>원펀맨</h1>
                 <p>
@@ -38,7 +43,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                             {AniDrama.map((item, index) => (
                                 AniDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}` } alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -52,7 +57,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                         {AniDrama1.map((item, index) => (
                             AniDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -65,7 +70,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                         {AniDrama2.map((item,index) => (
                             AniDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -78,7 +83,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                         {AniDrama3.map((item,index) => (
                             AniDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -91,7 +96,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                         {AniDrama4.map((item,index) => (
                             AniDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -104,13 +109,15 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                         {AniDrama5.map((item,index) => (
                             AniDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {/* 11-13 정호준 수정 상세보기 모달 */}
+                        {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

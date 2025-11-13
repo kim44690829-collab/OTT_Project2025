@@ -8,6 +8,7 @@
     box-sizing: border-box;
     position: relative;
     min-height: 1000px;
+    padding: 0 60px;
    
 }
 .section_Like .Like > h1{
@@ -16,7 +17,7 @@
     margin-bottom: 148px;
 }
 /* 모두 지우기 버튼 */
-.section_Like .Like > button{
+.section_Like .Like > div > button{
     position: absolute;
     top: 10px;
     right: 64px;
@@ -27,7 +28,7 @@
     border-radius: 20px;
     cursor: pointer;
 }
-.section_Like .Like > button:hover{
+.section_Like .Like > div > button:hover{
     color: crimson;
     border:2px solid crimson;
 }

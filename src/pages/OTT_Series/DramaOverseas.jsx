@@ -4,9 +4,13 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDrama2,OverseasDrama3,OverseasDrama4,OverseasDrama5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
 
     return(
         <div className='DramaOverseas_container'>
@@ -17,7 +21,7 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                 <span>▶</span>
                 <h1>해외 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//foGkPxpw9h8zln81j63mix5B7m8.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//foGkPxpw9h8zln81j63mix5B7m8.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='DramaOverseas_info'>
                 <h1>위쳐</h1>
                 <p>세계적인 판타지 대작이 넷플릭스 시리즈로 다시 태어난다. <br/>
@@ -36,7 +40,7 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                             {OverseasDrama.map((item, index) => (
                                 OverseasDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -50,7 +54,7 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                         {OverseasDrama1.map((item, index) => (
                             OverseasDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -63,7 +67,7 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                         {OverseasDrama2.map((item,index) => (
                             OverseasDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -76,7 +80,7 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                         {OverseasDrama3.map((item,index) => (
                             OverseasDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -89,7 +93,7 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                         {OverseasDrama4.map((item,index) => (
                             OverseasDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -102,13 +106,15 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                         {OverseasDrama5.map((item,index) => (
                             OverseasDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {/* 11-13 정호준 수정 상세보기 모달 */}
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

@@ -4,10 +4,14 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
     console.log(AniData2, '1')
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='movieAni_container'>
             <div className="sec_top">
@@ -17,7 +21,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                 <span>▶</span>
                 <h1>애니메이션 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='movieAni_info'>
                 <h1>극장판 체인소 맨: 레제편</h1>
                 <p>
@@ -40,7 +44,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                             {AniData.map((item, index) => (
                                 AniData[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -54,7 +58,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         {AniData1.map((item, index) => (
                             AniData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -67,7 +71,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         {AniData2.map((item,index) => (
                             AniData2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -80,7 +84,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         {AniData3.map((item,index) => (
                             AniData3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -93,7 +97,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         {AniData4.map((item,index) => (
                             AniData4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -106,13 +110,14 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         {AniData5.map((item,index) => (
                             AniData5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

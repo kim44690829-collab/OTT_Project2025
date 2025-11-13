@@ -4,8 +4,13 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
+
 export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,PopularDrama3,PopularDrama4,PopularDrama5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='dramaPopular_container'>
             <div className="sec_top">
@@ -15,7 +20,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                 <span>▶</span>
                 <h1>세계적으로 인기있는 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='dramaPopular_info'>
                 <h1>그것: 웰컴 투 데리</h1>
                 <p>"그곳은 항상 사라짐으로 시작된다"<br/>
@@ -40,7 +45,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                             {PopularDrama.map((item, index) => (
                                 PopularDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -54,7 +59,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                         {PopularDrama1.map((item, index) => (
                             PopularDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -67,7 +72,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                         {PopularDrama2.map((item,index) => (
                             PopularDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -80,7 +85,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                         {PopularDrama3.map((item,index) => (
                             PopularDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -93,7 +98,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                         {PopularDrama4.map((item,index) => (
                             PopularDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -106,13 +111,15 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                         {PopularDrama5.map((item,index) => (
                             PopularDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {/* 11-13 정호준 수정 상세보기 모달 */}
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function Movie({PopularData, ActionData, AniData, DramaData, ComedyData, SFData}){
     const [MovieMenu, setMovieMenu] = useState(false)
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
-
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='movie_container'>
             <div className="sec_top">
@@ -53,7 +56,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </li>
                 </ul>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//5A01YSCPYoCOZOhh9tU7F3Htxkf.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//5A01YSCPYoCOZOhh9tU7F3Htxkf.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='movie_info'>
                 <h1>거룩한 밤: 데몬 헌터스</h1>
                 <p>
@@ -76,7 +79,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                             {PopularData.map((item,index) => (
                                 PopularData[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -89,7 +92,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {ActionData.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -101,7 +104,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {AniData.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -113,7 +116,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {DramaData.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -125,7 +128,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {ComedyData.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -137,13 +140,14 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {SFData.map((item) => (
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

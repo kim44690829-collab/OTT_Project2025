@@ -4,10 +4,13 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,DramaData4,DramaData5,}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
-
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
     return(
         <div className='movieDrama_container'>
             <div className="sec_top">
@@ -17,7 +20,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                 <span>▶</span>
                 <h1>드라마 장르 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='movieDrama_info'>
                 <h1>프랑켄슈타인</h1>
                 <p>
@@ -36,7 +39,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                             {DramaData.map((item, index) => (
                                 DramaData[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -50,7 +53,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                         {DramaData1.map((item, index) => (
                             DramaData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -63,7 +66,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                         {DramaData2.map((item,index) => (
                             DramaData2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -76,7 +79,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                         {DramaData3.map((item,index) => (
                             DramaData3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -89,7 +92,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                         {DramaData4.map((item,index) => (
                             DramaData4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -102,13 +105,14 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                         {DramaData5.map((item,index) => (
                             DramaData5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

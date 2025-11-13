@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 19900;
 }
 .ModalB_container .modal_back{
     width: 100%;
@@ -32,8 +32,13 @@
     margin-top: 250px;
     padding: 0 45px;
 }
-.ModalB_container .ModalB_box > ul >li >h1{
+.ModalB_container .ModalB_box > ul >li >.Title_logo{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 80px;
     font-size: 80px;
+    margin-top: 20px;
+    overflow: hidden;
 }
 .ModalB_container .ModalB_box > ul .MB_btn_group{
     height: 57px;

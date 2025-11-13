@@ -4,6 +4,8 @@ import "./Home.css";
 import { useContext } from "react";
 // import { OTTContext } from "../../api/OTT_context";
 import { OTTContext } from "../../api/OTT_Context";
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function Home({
     data,
@@ -101,14 +103,20 @@ export default function Home({
 
     // 마우스 오버하면 슬라이드 버튼 생기기
     const [slide,setSlide]=useState(false);
- 
+
+    //11-13 정호준 모달
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
+
+
+
     return(
     <div className="xall">
         {isAll && <p onClick={()=>{setIsAll(false);setToggle(false)}}>✕</p>}
         <div className="all">
             {/* 01. 맨 위 대표 메인 파트 */}
             <div className="mainPart">
-                <img src={`https://image.tmdb.org/t/p/original/${top10[main].backdrop_path}`}/>
+                <img src={`https://image.tmdb.org/t/p/original/${top10[main].backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                 <div className="mainOverlay"></div>
                 <div className="content">
                     <h1>{top10[main].name}</h1>
@@ -137,7 +145,7 @@ export default function Home({
                             <li key={item.id}>
                                 <h1 className="num1">{index+1}</h1>
                                 <h1 className="num2">{index+1}</h1>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -188,7 +196,7 @@ export default function Home({
                         <ul className="action_movie" style={{marginLeft:`${currentX}px`}}>
                             {titleArr[0].dataName.map((item)=>(
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li>
                             ))}
                         </ul>
@@ -211,7 +219,7 @@ export default function Home({
                         <ul className="action_movie" style={{marginLeft:`${currentX1}px`}}>
                             {titleArr[1].dataName.map((item)=>(
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li>
                             ))}
                         </ul>
@@ -234,7 +242,7 @@ export default function Home({
                         <ul className="action_movie" style={{marginLeft:`${currentX2}px`}}>
                         {titleArr[2].dataName.map((item)=>(
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -257,7 +265,7 @@ export default function Home({
                         <ul className="action_movie" style={{marginLeft:`${currentX3}px`}}>
                         {titleArr[3].dataName.map((item)=>(
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -282,7 +290,7 @@ export default function Home({
                         <ul className="action_movie" style={{marginLeft:`${currentX4}px`}}>
                         {titleArr[5].dataName.map((item)=>(
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -305,7 +313,7 @@ export default function Home({
                         <ul className="action_movie" style={{marginLeft:`${currentX5}px`}}>
                         {titleArr[6].dataName.map((item)=>(
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
                     </ul>
@@ -328,7 +336,7 @@ export default function Home({
                         {titleArr[clickIndex].dataAll.map((item,index)=>(
                             titleArr[clickIndex].dataAll[index].backdrop_path !== null?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-13 정호준 온클릭 추가 */}
                             </li>:null
                         ))}
                     </ul>
@@ -342,12 +350,15 @@ export default function Home({
                         {titleArr[clickIndex].dataAll02.map((item,index)=>(
                             titleArr[clickIndex].dataAll02[index].backdrop_path !== null?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-13 정호준 온클릭 추가 */}
                             </li>:null
                         ))}
                     </ul>}
                 </div>
             </div>}
+
+            {/* 11-13 정호준 수정 상세보기 모달 */}
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     </div>
     )

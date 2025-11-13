@@ -4,9 +4,14 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDrama3,KoreaDrama4,KoreaDrama5,}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
+
     return(
         <div className='DramaKorea_container'>
             <div className="sec_top">
@@ -16,7 +21,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                 <span>▶</span>
                 <h1>한국 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//cqkmEHLE4LjPHSqKdLt4pJFJv0f.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//cqkmEHLE4LjPHSqKdLt4pJFJv0f.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='DramaKorea_info'>
                 <h1>조각도시</h1>
                 <p>평범하게 살아가던 한 남자가 어느 날 갑자기 삶이 송두리째 조작돼 <br/>
@@ -34,7 +39,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                             {KoreaDrama.map((item, index) => (
                                 KoreaDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -48,7 +53,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                         {KoreaDrama1.map((item, index) => (
                             KoreaDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -61,7 +66,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                         {KoreaDrama2.map((item,index) => (
                             KoreaDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -74,7 +79,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                         {KoreaDrama3.map((item,index) => (
                             KoreaDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -87,7 +92,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                         {KoreaDrama4.map((item,index) => (
                             KoreaDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -100,13 +105,15 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                         {KoreaDrama5.map((item,index) => (
                             KoreaDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {/* 11-13 정호준 수정 상세보기 모달 */}
+                        {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }

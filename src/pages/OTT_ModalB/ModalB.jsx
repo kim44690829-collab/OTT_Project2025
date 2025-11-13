@@ -67,7 +67,7 @@ export default function ModalB(props){
             <div className="ModalB_box">
                 <button type="button" className="close_btn" onClick={()=>props.setOpenB(!props.openB)}><i className="fa-solid fa-xmark"></i></button>
                 <ul>
-                    <li><h1>{props.item.name}</h1></li>
+                    <li><h3 className="Title_logo">{props.item.name}{props.item.title}</h3></li>
                     <li className="MB_btn_group">
                         <div className="left_group">
                             <button type="button" className="play_btn">▶ 재생</button>
@@ -86,13 +86,13 @@ export default function ModalB(props){
                         <div className="L_info">
                             <p>리미티드 시리즈 <span>HD</span></p>
                             <p><img src="15_40x40.png" alt="시청 연령" /></p>
-                            <p>{props.item.overview}</p>
+                            <p>{props.item.overview.slice(0,150)}...</p>
                         </div>
                         <div className="R_info">
                             <p><span className="tag">장르 : </span> <br/>{props.item.genre_ids.map((item,index)=>(
                                 <span key={index}>{genre(item)},<br/> </span>
                             ))} </p>
-                            <p><span className="tag">개봉일자 :</span> {props.item.first_air_date}</p>                            
+                            <p><span className="tag">개봉일자 :</span> {props.item.first_air_date}{props.item.release_date}</p>                            
                         </div>
                     </li>
                 </ul>

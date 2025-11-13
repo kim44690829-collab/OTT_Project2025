@@ -4,9 +4,13 @@ import { useState } from 'react'
 // 11-13 김광민 추가
 import { useContext } from 'react'
 import { OTTContext } from '../../api/OTT_Context'
+//11-13 정호준 모달 import
+import ModalB from "../OTT_ModalB/ModalB";
 
 export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}){
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+    const [openS,setOpenS] = useState(false)
+    const [openB,setOpenB] = useState(false)
 
     return(
         <div className='movieSF_container'>
@@ -17,7 +21,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                 <span>▶</span>
                 <h1>코미디 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'}/>
+            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
             <div className='movieSF_info'>
                 <h1>프레데터: 죽음의 땅</h1>
                 <p>
@@ -37,7 +41,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                             {SFData.map((item, index) => (
                                 SFData[index].backdrop_path !== null ?
                                 <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                                 </li> : null
                             ))}
                         </ul>
@@ -51,7 +55,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                         {SFData1.map((item, index) => (
                             SFData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -64,7 +68,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                         {SFData2.map((item,index) => (
                             SFData2[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
                     </ul>
@@ -77,7 +81,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                         {SFData3.map((item,index) => (
                             SFData3[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -90,7 +94,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                         {SFData4.map((item,index) => (
                             SFData4[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
@@ -103,13 +107,14 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                         {SFData5.map((item,index) => (
                             SFData5[index].backdrop_path !== null ?
                             <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
                     </ul>
                     <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
+            {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-13 수정 */}
         </div>
     )
 }
