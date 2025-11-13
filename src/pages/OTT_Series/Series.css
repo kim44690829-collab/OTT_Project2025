@@ -1,12 +1,13 @@
 /* body */
-body{
-    background-color: #111;
-}
+/* body{
+    background-color: red;
+} */
 /* series 전체 css */
 .series_container{
     width: 2000px;
     margin: 0 auto;
     position: relative;
+    background-color: #0c0c0c;
 }
 /* series 상단 이름 및 버튼 css */
 .sec_top{
@@ -16,16 +17,54 @@ body{
     top: 0;
     left: 0;
     margin-left: 30px;
-    align-items: center;
     margin-top: 68px;
+    align-items: center;
+    padding-left: 30px;
+    height: 70px;
+    box-sizing: border-box;
 }
-.sec_top > .dep1 > li > button{
-    width: 70px;
-    height: 30px;
-    background-color: transparent;
-    color: #fff;
+.sec_top  .dep1 > li > .dep1_btn{
+    width: 100px;
+    height: 40px;
+    background-color:rgba(0,0,0,0.7);
+    border: none;
     border: 1px solid #fff;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 6px;
 }
+.sec_top .dep1{
+    display: flex;
+    flex-direction: column;
+}
+.series_dep1{
+    padding-top: 23px;
+}
+.sec_top .dep1 > li{
+    position: relative;
+} 
+.sec_top .dep1 li .dep2{
+    display: flex;
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff;
+    margin-top: 11px;
+}
+.sec_top .dep2 li > button{
+    width: 160px;
+    cursor: pointer;
+    padding: 0 20px;
+    margin-top: 2px;
+    direction: rtl;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* series 메인 이미지 css */
 .series_container > img{
     width: 2000px;
@@ -35,7 +74,7 @@ body{
 .series_container .movie_info{
     position: absolute;
     top: 200px;
-    left: 30px;
+    left: 60px;
 }
 .series_container .movie_info h1{
     font-size: 50px;
@@ -45,34 +84,49 @@ body{
     color: #fff;
     line-height: 1.5em;
 }
-.series_container .movie_info > button{
-    margin: 30px 5px 0 0;
-    width: 150px;
-    padding: 20px;
-    border: 1px solid #fff;
-    outline: none;
+ .series_container .movie_info .play{
+    color: #222;
+    width: 100px;
+    padding: 12px 0;
+    border: none;
     border-radius: 5px;
-    font-size: 20px;
-}
+    font-weight: 700;
+    margin-right: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 17px;
+ }
+ .series_container .movie_info .play:hover{
+    background-color: #d9d9d9;
+ }
 .series_container .movie_info .detailInfo{
-    background-color: transparent;
     color: #fff;
-    border: 1px solid #fff;
+    width: 115px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: rgba(146, 146, 146, 0.7);
+    cursor: pointer;
+    font-size: 17px;
+}
+.series_container .movie_info .detailInfo:hover{
+    background-color: rgba(146, 146, 146, 0.3);
 }
 .series_container > h1{
     color: #fff;
 }
 /* series ul */
 .series_container .movies{
-    background-color: #111;
+    background-color: #0c0c0c;
+    padding-bottom: 60px;
     margin-top: 150px;
 }
 .series_container .movies .series >ul{
     display: flex;
     gap: 6px;
     width: 7114px;
-    float:left;
-    margin-left: 0;
+    transition: 0.5s;
 }
 .series_container .movies >h2{
     color: #333;
@@ -83,6 +137,7 @@ body{
     width: 350px;
     height: 200px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* 첫번째 ul li position으로 메인 이미지 위로 띄우기 위함 */

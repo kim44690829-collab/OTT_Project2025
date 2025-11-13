@@ -18,34 +18,34 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
         <div className='series_container'>
             <div className="sec_top">
                 <h1>시리즈</h1>
-                <ul className='dep1'>
-                    <li><button type="button" onClick={() => setMovieMenu(!MovieMenu)}>장르 ▼</button></li>
+                <ul className='dep1 series_dep1'>
+                    <li><button type="button" className='dep1_btn' onClick={() => setMovieMenu(!MovieMenu)}>장르 ▼</button></li>
                     <li>
                         {MovieMenu && (
                             <ul className='dep2'>
                                 <Link to='/PopularDrama'>
                                     <li>
-                                        <button type='button'>세계적으로 인기있는 시리즈</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff', width:'160px'}}>세계적으로 인기있는 시리즈</button>
                                     </li>
                                 </Link>
                                 <Link to='/KoreaDrama'>
                                     <li>
-                                        <button type='button'>한국 시리즈</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>한국 시리즈</button>
                                     </li>
                                 </Link>
                                 <Link to='/OverseasDrama'>
                                     <li>
-                                        <button type='button'>해외 시리즈</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>해외 시리즈</button>
                                     </li>
                                 </Link>
                                 <Link to='/CrimeDrama'>
                                     <li>
-                                        <button type='button'>범죄 시리즈</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>범죄 시리즈</button>
                                     </li>
                                 </Link>
                                 <Link to='/AniDrama'>
                                     <li>
-                                        <button type='button'>애니메이션</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>애니메이션</button>
                                     </li>
                                 </Link>
                                 <Link to='/MedicalDrama'>
@@ -71,7 +71,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     그 미소의 주인이 다시 환영을 건네올 때, <br/>
                     이들은 과연 무엇을 마주하게 될 것인가",
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
+                <button type='button' className='play'>▶ 재생</button>
                 <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='movies'>

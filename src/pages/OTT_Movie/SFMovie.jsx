@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Movie/SFMovie.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}){
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+
     return(
         <div className='movieSF_container'>
             <div className="sec_top">
@@ -26,8 +32,8 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                 <h2 className='h2_1'>인기있는 한국 영화</h2>
                 <div className='movieSF1'>
                     <div className='movieSF'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {SFData.map((item, index) => (
                                 SFData[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -35,13 +41,13 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>액션 영화</h2>
                 <div className='movieSF movieSF2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {SFData1.map((item, index) => (
                             SFData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -49,12 +55,12 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>애니메이션 영화</h2>
                 <div className='movieSF movieSF3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {SFData2.map((item,index) => (
                             SFData2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -62,12 +68,12 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>드라마 장르 영화</h2>
                 <div className='movieSF movieSF4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {SFData3.map((item,index) => (
                             SFData3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -75,12 +81,12 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>코미디 영화</h2>
                 <div className='movieSF movieSF5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {SFData4.map((item,index) => (
                             SFData4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -88,12 +94,12 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>SF 영화</h2>
                 <div className='movieSF movieSF6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {SFData5.map((item,index) => (
                             SFData5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -101,7 +107,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>
