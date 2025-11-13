@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Series/DramaCrime.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDrama3,CrimeDrama4,CrimeDrama5}){
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
     return(
         <div className='DramaCrime_container'>
             <div className="sec_top">
@@ -19,15 +24,15 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                     범죄를 또 저지르기 전에 다음 수를 예측한다. <br/>
                     팀원들은 함께 성장하며, 이 행동 분석팀은 전문 지식으로 범죄자의 동기를 찾아내고 범죄를 저지하는 노력을 계속한다.<br/>
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
-                <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
+                <button type='button' className='play'>▶ 재생</button>
+                <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='DramaCrimes'>
                 <h2 className='h2_1'>밤을 밝히는 수사</h2>
                 <div className='DramaCrime1'>
                     <div className='DramaCrime'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {CrimeDrama.map((item, index) => (
                                 CrimeDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -35,13 +40,13 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>어둠 속 진실</h2>
                 <div className='DramaCrime DramaCrime2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {CrimeDrama1.map((item, index) => (
                             CrimeDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -49,12 +54,12 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>죄와 벌의 기록</h2>
                 <div className='DramaCrime DramaCrime3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {CrimeDrama2.map((item,index) => (
                             CrimeDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -62,12 +67,12 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>은밀한 추격전</h2>
                 <div className='DramaCrime DramaCrime4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {CrimeDrama3.map((item,index) => (
                             CrimeDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -75,12 +80,12 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>범죄의 현장</h2>
                 <div className='DramaCrime DramaCrime5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {CrimeDrama4.map((item,index) => (
                             CrimeDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -88,12 +93,12 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>고요 속의 반격</h2>
                 <div className='DramaCrime DramaCrime6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {CrimeDrama5.map((item,index) => (
                             CrimeDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -101,7 +106,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

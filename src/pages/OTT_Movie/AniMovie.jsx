@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Movie/AniMovie.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
     console.log(AniData2, '1')
     return(
         <div className='movieAni_container'>
@@ -30,8 +35,8 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                 <h2 className='h2_1'>스크린 위의 애니메이션</h2>
                 <div className='movieAni1'>
                     <div className='movieAni'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {AniData.map((item, index) => (
                                 AniData[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -39,13 +44,13 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>극장판 애니메이션 컬렉션</h2>
                 <div className='movieAni movieAni2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {AniData1.map((item, index) => (
                             AniData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -53,12 +58,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>장벽을 넘는 애니 스토리</h2>
                 <div className='movieAni movieAni3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {AniData2.map((item,index) => (
                             AniData2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -66,12 +71,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>애니메이션 월드: 극장판 에디션</h2>
                 <div className='movieAni movieAni4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {AniData3.map((item,index) => (
                             AniData3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -79,12 +84,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>애니메이션의 극장 속 여정</h2>
                 <div className='movieAni movieAni5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniData4.map((item,index) => (
                             AniData4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -92,12 +97,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>극장 스펙터클 애니메이션</h2>
                 <div className='movieAni movieAni6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {AniData5.map((item,index) => (
                             AniData5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -105,7 +110,7 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

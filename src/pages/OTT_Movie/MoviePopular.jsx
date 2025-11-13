@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Movie/MoviePopular.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function MoviePopular({PopularData, PopularData1, PopularData2, PopularData3, PopularData4, PopularData5}){
-// export default function movieSub1Sub1({PopularData}){
-    console.log('이미지 null')
-    console.log(PopularData)
-    for(let i = 0; i < PopularData.length; i++){
-        
-        console.log(PopularData[i].backdrop_path === null ? 'Ok':'noOK')
-    }
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+
     return(
         <div className='movieSub1_container'>
             <div className="sec_top">
@@ -27,15 +26,15 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     혼돈 속에서 기회를 노리는 실력자 사마귀. <br/>
                     그의 손끝에서 새로운 킬러들의 시대가 열린다."<br/>
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
-                <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
+                <button type='button' className='play'>▶ 재생</button>
+                <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='movieSub1s'>
                 <h2 className='h2_1' style={{color:'black'}}>스크린을 뒤흔든 명작들</h2>
                 <div className='movieSub11'>
                     <div className='movieSub1'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularData.map((item, index) => (
                                 PopularData[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -43,13 +42,13 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>오늘의 화제작 한국영화</h2>
                 <div className='movieSub1 movieSub12'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {PopularData1.map((item, index) => (
                             PopularData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -57,12 +56,12 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>감동을 부르는 순간들</h2>
                 <div className='movieSub1 movieSub13'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {PopularData2.map((item,index) => (
                             PopularData2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -70,12 +69,12 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>반전을 담은 이야기</h2>
                 <div className='movieSub1 movieSub14'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {PopularData3.map((item,index) => (
                             PopularData3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -83,12 +82,12 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>현실과 마주한 스토리</h2>
                 <div className='movieSub1 movieSub15'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {PopularData4.map((item,index) => (
                             PopularData4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -96,12 +95,12 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>가볍게 즐기는 한국영화 밤</h2>
                 <div className='movieSub1 movieSub16'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {PopularData5.map((item,index) => (
                             PopularData5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -109,7 +108,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

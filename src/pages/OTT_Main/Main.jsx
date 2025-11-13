@@ -13,6 +13,22 @@ export default function Main({PopularData}){
         setIsOpen(isOpen === index ? null : index)
     }
 
+    // 슬라이드
+    const [currentX, setCurrentX] = useState(0)
+
+    // 슬라이드
+    const slideRight = (num) => {
+        console.log(num)
+            if(currentX > -1300 && num === 1){
+                setCurrentX(currentX - 265)
+            }
+    }
+    const slideLeft = (num) => {
+        if(currentX < 0 && num === 1){
+            setCurrentX(currentX + 265)
+        }
+    } 
+
     return(
         <div className="Main">
             <header className="MainHeader">
@@ -27,21 +43,27 @@ export default function Main({PopularData}){
                     <p>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</p>
                     <div className="inputBox">
                         <input type="email" placeholder="이메일 주소" id="email"></input>
-                        <button type="submit">시작하기&nbsp; 〉</button>
+                        <button type="submit">시작하기&nbsp; <i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
                 <div className="sec02">
                     <h2>지금 뜨는 콘텐츠</h2>
-                    <ul className="Top10">
-                        {PopularData.slice(0, 10).map((item, index) => (
-                            <li key={index}>
-                                <h2 className="TOP10_H2">{index + 1}</h2>
-                                <h2 className="TOP10_H2Border">{index + 1}</h2>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.title} />
-                            </li>
-                        ))}
-                    </ul>
-                    <h2>가입해야 하는 또 다른 이유</h2>
+                    <div className="slide">
+                        <i className="fa-solid fa-chevron-left" onClick={() => slideLeft(1)}></i>
+                        <div className="slideBox">
+                            <ul className="Top10" style={{marginLeft:`${currentX}px`}}>
+                                {PopularData.slice(0, 10).map((item, index) => (
+                                    <li key={index}>
+                                        <h2 className="TOP10_H2">{index + 1}</h2>
+                                        <h2 className="TOP10_H2Border">{index + 1}</h2>
+                                        <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.title} />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <i className="fa-solid fa-chevron-right" onClick={() => slideRight(1)}></i>
+                    </div>
+                    <h2 style={{marginTop: '80px'}}>가입해야 하는 또 다른 이유</h2>
                     <ul className="info">
                         <li>
                             <h3>TV로 즐기세요</h3>
@@ -143,7 +165,7 @@ export default function Main({PopularData}){
                     <div className="sec03_start">
                         <p>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</p>
                         <input type="email" placeholder="이메일 주소" id="email"></input>
-                        <button type="submit">시작하기&nbsp; 〉</button>
+                        <button type="submit">시작하기&nbsp; <i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
             </section>

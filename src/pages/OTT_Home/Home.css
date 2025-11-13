@@ -117,6 +117,7 @@
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 400;
 }
 .xall .all .Top10_series .title02{
     font-size: 19px;

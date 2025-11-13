@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Movie/DramaMovie.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,DramaData4,DramaData5,}){
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+
     return(
         <div className='movieDrama_container'>
             <div className="sec_top">
@@ -25,8 +31,8 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                 <h2 className='h2_1'>인생의 한 컷</h2>
                 <div className='movieDrama1'>
                     <div className='movieDrama'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {DramaData.map((item, index) => (
                                 DramaData[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -34,13 +40,13 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>마음을 움직이는 이야기</h2>
                 <div className='movieDrama movieDrama2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {DramaData1.map((item, index) => (
                             DramaData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -48,12 +54,12 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>갈등 속 진실</h2>
                 <div className='movieDrama movieDrama3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {DramaData2.map((item,index) => (
                             DramaData2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -61,12 +67,12 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>조용한 울림</h2>
                 <div className='movieDrama movieDrama4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {DramaData3.map((item,index) => (
                             DramaData3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -74,12 +80,12 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>성장의 기록</h2>
                 <div className='movieDrama movieDrama5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {DramaData4.map((item,index) => (
                             DramaData4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -87,12 +93,12 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>현실을 비추는 거울</h2>
                 <div className='movieDrama movieDrama6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {DramaData5.map((item,index) => (
                             DramaData5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -100,7 +106,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

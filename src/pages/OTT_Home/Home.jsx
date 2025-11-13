@@ -128,7 +128,7 @@ export default function Home({
                 {/* <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button> */}
                 {/* 슬라이드 */}
                 <div className="slide">
-                    <button type='button' className='left' onClick={() => {slideLeft(7)}}>
+                    <button type='button' className='left' onClick={() => {slideLeft1(7)}}>
                         <i className="fa-solid fa-chevron-left"></i>
                     </button>
                     <ul className="action_movie" style={{marginLeft:`${currentX6}px`}}>
@@ -141,7 +141,7 @@ export default function Home({
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(7)}}>
+                    <button type='button' className='right' onClick={() => {slideRight1(7)}}>
                         <i className="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>

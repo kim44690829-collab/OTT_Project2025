@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Series/DramaAni.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDrama4,AniDrama5}){
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
     return(
         <div className='DramaAni_container'>
             <div className="sec_top">
@@ -21,15 +26,15 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                     압도적인 힘이란 재미없는거야... 그런 정열과, 모발을 잃은 평온한 최강 히어로 앞에 새로운 강적이 나타난다. <br/>
                     오늘이야말로 진심을 다해 싸울 수 있을 것인가!?<br/>
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
-                <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
+                <button type='button' className='play'>▶ 재생</button>
+                <button type='button' className='detailInfo' >ⓘ 상세 정보</button>
             </div>
             <div className='DramaAnis'>
                 <h2 className='h2_1'>긴장감 넘치는 액션</h2>
                 <div className='DramaAni1'>
                     <div className='DramaAni'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {AniDrama.map((item, index) => (
                                 AniDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -37,13 +42,13 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>감성 충전 스토리</h2>
                 <div className='DramaAni DramaAni2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {AniDrama1.map((item, index) => (
                             AniDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -51,12 +56,12 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>기술과 미래의 이야기</h2>
                 <div className='DramaAni DramaAni3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {AniDrama2.map((item,index) => (
                             AniDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -64,12 +69,12 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>일상 속의 모험</h2>
                 <div className='DramaAni DramaAni4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {AniDrama3.map((item,index) => (
                             AniDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -77,12 +82,12 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>판타지 월드 속으로</h2>
                 <div className='DramaAni DramaAni5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniDrama4.map((item,index) => (
                             AniDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -90,12 +95,12 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>꿈을 여는 애니메이션</h2>
                 <div className='DramaAni DramaAni6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {AniDrama5.map((item,index) => (
                             AniDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -103,7 +108,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

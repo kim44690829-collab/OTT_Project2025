@@ -40,7 +40,7 @@ export default function OTTPeovider({children}){
             }else if(currentX4 > -5334 && num === 5 ){
                 setCurrentX4(currentX4 - 1780)
                 
-            }else if(currentX5 > -5334 && num === 6  ){
+            }else{
                 setCurrentX5(currentX5 - 1780)
             }
             }
@@ -56,9 +56,8 @@ export default function OTTPeovider({children}){
             setCurrentX3(currentX3 + 1780)    
         }else if(currentX4 < 0 && num === 5){
             setCurrentX4(currentX4 + 1780)    
-        }else if(currentX5 < 0 && num === 6){
-            setCurrentX5(currentX5 + 1780)     
-            
+        }else{
+            setCurrentX5(currentX5 + 1780)            
         }
     } 
     return(

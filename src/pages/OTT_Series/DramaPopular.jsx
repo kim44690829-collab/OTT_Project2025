@@ -28,8 +28,8 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                     그 미소의 주인이 다시 환영을 건네올 때, <br/>
                     이들은 과연 무엇을 마주하게 될 것인가",
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
-                <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
+                <button type='button' className='play'>▶ 재생</button>
+                <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='dramaPopulars'>
                 <h2 className='h2_1'>글로벌 히트 스토리</h2>
@@ -49,8 +49,8 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                 </div>
                 <h2 className='h2_2'>장르 넘버원!</h2>
                 <div className='dramaPopular dramaPopular2'>
-                    <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
-                    <ul style={{marginLeft:`${currentX}px`}}>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {PopularDrama1.map((item, index) => (
                             PopularDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -58,12 +58,12 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>모두가 말하는 화제작</h2>
                 <div className='dramaPopular dramaPopular3'>
-                    <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
-                    <ul style={{marginLeft:`${currentX}px`}}>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {PopularDrama2.map((item,index) => (
                             PopularDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -71,12 +71,12 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>상상 그 이상</h2>
                 <div className='dramaPopular dramaPopular4'>
-                    <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
-                    <ul style={{marginLeft:`${currentX}px`}}>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {PopularDrama3.map((item,index) => (
                             PopularDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -84,12 +84,12 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>가볍게 빠져드는</h2>
                 <div className='dramaPopular dramaPopular5'>
-                    <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
-                    <ul style={{marginLeft:`${currentX}px`}}>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {PopularDrama4.map((item,index) => (
                             PopularDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -97,12 +97,12 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>현실을 담다</h2>
                 <div className='dramaPopular dramaPopular6'>
-                    <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
-                    <ul style={{marginLeft:`${currentX}px`}}>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {PopularDrama5.map((item,index) => (
                             PopularDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -110,7 +110,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

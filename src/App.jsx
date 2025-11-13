@@ -221,7 +221,7 @@ function App() {
               SFData02={SFData1} SFData03={SFData2} PopularDrama1={PopularDrama1} PopularDrama2={PopularDrama2} KoreaDrama={KoreaDrama} KoreaDrama1={KoreaDrama1} KoreaDrama2={KoreaDrama2}/>} />
             <Route path='/Like' element={<Like/>}/>
           </Routes>
-          <Footer />
+          {pathname === '/' || pathname === '/Login' ? null:<Footer /> }
     </>
   )
 }

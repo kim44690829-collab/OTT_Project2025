@@ -1,40 +1,46 @@
 import '../OTT_Movie/Movie.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function Movie({PopularData, ActionData, AniData, DramaData, ComedyData, SFData}){
     const [MovieMenu, setMovieMenu] = useState(false)
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+
     return(
         <div className='movie_container'>
             <div className="sec_top">
                 <h1>영화</h1>
                 <ul className='dep1'>
-                    <li><button type="button" onClick={() => setMovieMenu(!MovieMenu)}>장르 ▼</button></li>
+                    <li><button type="button" onClick={() => setMovieMenu(!MovieMenu)} className='MovieDep1'>장르 ▼</button></li>
                     <li>
                         {MovieMenu && (
                             <ul className='dep2'>
                                 <Link to='/PopularMovie'>
                                     <li>
-                                        <button type='button'>인기있는 한국영화</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>인기있는 한국영화</button>
                                     </li>
                                 </Link>
                                 <Link to='/ActionMovie'>
                                     <li>
-                                        <button type='button'>액션 영화</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>액션 영화</button>
                                     </li>
                                 </Link>
                                 <Link to='/AniMovie'>
                                     <li>
-                                        <button type='button'>애니메이션 영화</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>애니메이션 영화</button>
                                     </li>
                                 </Link>
                                 <Link to='/DramaMovie'>
                                     <li>
-                                        <button type='button'>드라마 장르 영화</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>드라마 장르 영화</button>
                                     </li>
                                 </Link>
                                 <Link to='/ComedyMovie'>
                                     <li>
-                                        <button type='button'>코미디 영화</button>
+                                        <button type='button' style={{borderRight:'1px solid #fff'}}>코미디 영화</button>
                                     </li>
                                 </Link>
                                 <Link to='/SFMovie'>
@@ -58,15 +64,15 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     그 안에서 지금껏 본 적 없던 강력한 존재의 기운을 느끼는데… <br/>
                     과연 거룩한 밤 팀은 악의 무리에 맞서 세상을 구원해 낼 수 있을까?",<br/>
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
+                <button type='button' className='play' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='movies'>
                 <h2 className='h2_1'>인기있는 한국 영화</h2>
                 <div className='movie1'>
                     <div className='movie'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularData.map((item,index) => (
                                 PopularData[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -74,68 +80,68 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>액션 영화</h2>
                 <div className='movie movie2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {ActionData.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>애니메이션 영화</h2>
                 <div className='movie movie3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {AniData.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>드라마 장르 영화</h2>
                 <div className='movie movie4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {DramaData.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>코미디 영화</h2>
                 <div className='movie movie5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {ComedyData.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>SF 영화</h2>
                 <div className='movie movie6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {SFData.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>
