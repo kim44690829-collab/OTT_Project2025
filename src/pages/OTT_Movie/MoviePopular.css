@@ -7,6 +7,7 @@ body{
     width: 2000px;
     margin: 0 auto;
     position: relative;
+    background-color: #0c0c0c;
 }
 /* movieSub1 상단 이름 및 버튼 css */
 .sec_top{
@@ -46,7 +47,7 @@ body{
 .movieSub1_container .movieSub1_info{
     position: absolute;
     top: 200px;
-    left: 30px;
+    left: 60px;
 }
 .movieSub1_container .movieSub1_info h1{
     font-size: 50px;
@@ -56,7 +57,7 @@ body{
     color: #fff;
     line-height: 1.5em;
 }
-.movieSub1_container .movieSub1_info > button{
+/* .movieSub1_container .movieSub1_info > button{
     margin: 30px 5px 0 0;
     width: 150px;
     padding: 20px;
@@ -69,18 +70,49 @@ body{
     background-color: transparent;
     color: #fff;
     border: 1px solid #fff;
+} */
+.movieSub1_container .movieSub1_info .play{
+    color: #222;
+    width: 100px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-right: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 17px;
+}
+.movieSub1_container .movieSub1_info .play:hover{
+    background-color: #d9d9d9;
+}
+.movieSub1_container .movieSub1_info .detailInfo{
+    color: #fff;
+    width: 115px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: rgba(146, 146, 146, 0.7);
+    cursor: pointer;
+    font-size: 17px;
+}
+.movieSub1_container .movieSub1_info .detailInfo:hover{
+    background-color: rgba(146, 146, 146, 0.3);
 }
 .movieSub1_container h1{
     color: #fff;
 }
 /* movieSub1 ul */
 .movieSub1_container .movieSub1s{
-    background-color: #111;
+    background-color: #0c0c0c;
+    padding-bottom: 60px;
     margin-top: 150px;
 }
 .movieSub1_container ul{
     display: flex;
     gap: 6px;
+    transition: 0.5s;
 }
 .movieSub1_container h2{
     color: #333;
@@ -91,6 +123,7 @@ body{
     width: 350px;
     height: 200px;
     border-radius: 5px;
+    cursor: pointer;
 }
 /* 첫번째 ul li position으로 메인 이미지 위로 띄우기 위함 */
 .movieSub1_container .movieSub1s .movieSub11{

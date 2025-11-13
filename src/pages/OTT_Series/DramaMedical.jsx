@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../OTT_Series/DramaMedical.css'
 import { useState } from 'react'
+// 11-13 김광민 추가
+import { useContext } from 'react'
+import { OTTContext } from '../../api/OTT_Context'
+
 export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,MedicalDrama3,MedicalDrama4,MedicalDrama5}){
+    const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideRight, slideLeft} = useContext(OTTContext)
+
     return(
         <div className='DramaMedical_container'>
             <div className="sec_top">
@@ -21,15 +27,15 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                     또한 창조적인 생각과 결점없는 의학적 본능을 유감없이 발휘하는 최고의 의사이기도 하다. <br/>
                     천재적인 분석능력을 갖춘 전염병 전문의로서 그가 이제 인명을 살리기 위한 흥미롭고 미스터리한 의학의 퍼즐을 풀어간다.<br/>
                 </p>
-                <button type='button' style={{color:'black'}}>▶ 재생</button>
-                <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
+                <button type='button' className='play'>▶ 재생</button>
+                <button type='button' className='detailInfo'>ⓘ 상세 정보</button>
             </div>
             <div className='DramaMedicals'>
                 <h2 className='h2_1'>생명선 위에서</h2>
                 <div className='DramaMedical1'>
                     <div className='DramaMedical'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {MedicalDrama.map((item, index) => (
                                 MedicalDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
@@ -37,13 +43,13 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                 </div>
                 <h2 className='h2_2'>응급실 속 이야기</h2>
                 <div className='DramaMedical DramaMedical2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {MedicalDrama1.map((item, index) => (
                             MedicalDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
@@ -51,12 +57,12 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>마음과 메스 사이</h2>
                 <div className='DramaMedical DramaMedical3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {MedicalDrama2.map((item,index) => (
                             MedicalDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -64,12 +70,12 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>의료 현장의 하루</h2>
                 <div className='DramaMedical DramaMedical4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {MedicalDrama3.map((item,index) => (
                             MedicalDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -77,12 +83,12 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>치유와 갈등의 기록</h2>
                 <div className='DramaMedical DramaMedical5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {MedicalDrama4.map((item,index) => (
                             MedicalDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -90,12 +96,12 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>회복을 향한 도전</h2>
                 <div className='DramaMedical DramaMedical6'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama5.map((item,index) => (
                             MedicalDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
@@ -103,7 +109,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>

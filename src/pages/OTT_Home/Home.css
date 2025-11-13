@@ -114,24 +114,28 @@
 /* 02. 오늘 대한민국의 TOP10 영화 */
 .xall .all .Top10_series{
     position: absolute;
-    top: 24%;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 400;
 }
 .xall .all .Top10_series .title02{
     font-size: 19px;
     font-weight: 550;
-    margin: 15px 70px;
+    margin: 15px 0px;
 }
 .xall .all .Top10_series ul{
     display: flex;
-    width: 1200px;
-    gap: 35px;
-    margin-left: 100px;
+    gap: 6px;
+    width: 1780px;
+    padding: 0 50px;
+    position: relative;
 }
 .xall .all .Top10_series ul li{
-    width: 354px;
+    width: 350px;
     height: 200px;
     position: relative;
-    margin: 0 160px 0 50px;
+    margin: 0 186px 0 50px;
 }
 .xall .all .Top10_series ul li .num1{
     font-size: 206px;
@@ -162,10 +166,78 @@
     z-index: 60;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
+/* 슬라이드 */
+.xall .all .Top10_series .slide{
+    display: flex;
+    width: 1780px;
+    position: relative;
+    overflow: hidden;
+    
+}
+/* Top 10 슬라이드 버튼 (left btn) */
+.xall .all .Top10_series .left{
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 500;
+}
+.xall .all .Top10_seriesst03 .left:hover{
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+/* Top 10 슬라이드 버튼 (right btn) */
+.xall .all .Top10_series .right{
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 200px;
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 500;
+}
+.xall .all .Top10_series .right:hover{
+    /* border: 1px solid #fff; */
+    background-color: rgba(0,0,0,0.7);
+}
 
 /* 하단 장르별 리스트 */
 .xall .all .list{
     margin-left: 70px;
+}
+
+.xall .all .list .list03 .slide .like_list{
+    width: 350px;
+    height : 200px;
+    border-radius : 5px;
+    cursor: pointer;
+    background-color: rgba(105, 105, 105, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xall .all .list .list03 .slide .like_list p{
+    font-size: 60px;
+    color: #bdbdbd;
+    border: 2px solid #bdbdbd;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;           /* p 태그 기본 margin 제거 */
+    padding-bottom: 8px;        /* padding이 있다면 제거 */
 }
 
 /* 03. 액션 & 어드벤처 영화 */
@@ -188,13 +260,76 @@
 }
 .xall .all .list .list03 .action_movie{
     display: flex;
-    gap:15px;
+    gap: 6px;
+    width: 1780px;
 }
 .xall .all .list .list03 .action_movie li img{
-    width: 295px;
+    width: 350px;
     height : 200px;
     border-radius : 5px;
     cursor: pointer;
+}
+/* 슬라이드 */
+.xall .all .list .list03 .slide{
+    display: flex;
+    width: 1780px;
+    position: relative;
+    overflow: hidden;
+}
+/* Top 10 슬라이드 버튼 (left btn) */
+.xall .all .Top10_series .left{
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.xall .all .Top10_seriesst03 .left:hover{
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* 슬라이드 버튼 (left btn) */
+.xall .all .list .list03 .left{
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.xall .all .list .list03 .left:hover{
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+/* 슬라이드 버튼 (right btn) */
+.xall .all .list .list03 .right{
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 6px;
+    top: 0;
+    height: 200px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.xall .all .list .list03 .right:hover{
+    /* border: 1px solid #fff; */
+    background-color: rgba(0,0,0,0.7);
+}
+.xall .all .list .list03 button i{
+    font-size: 20px;
 }
 
 /* 모두보기 모달창 */
@@ -233,12 +368,12 @@
 .xall > p{
     display: inline-block;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 300;
     padding: 15px;
     position: fixed;
-    top: 80px;
-    right: 180px;   
+    top: 130px;
+    right: 380px;   
     z-index: 200;
 }
 .xall .all .overlay .modal h3{

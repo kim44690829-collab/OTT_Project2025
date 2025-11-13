@@ -10,7 +10,7 @@ export default function Like({children}){
     const [openB,setOpenB] = useState(false)
     const [ModalOpen,setModalOpen]=useState(false)
     return(
-        <section>
+        <section className="section_Like">
             <div className="Like">
                 <h1>내가 찜한 리스트</h1>
                 <button type="button" onClick={()=>setModalOpen(!ModalOpen)}>찜한 목록 모두 지우기</button>
