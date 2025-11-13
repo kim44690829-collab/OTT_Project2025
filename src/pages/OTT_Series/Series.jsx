@@ -79,7 +79,9 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                 <h2 className='h2_1'>세계적으로 인기있는 시리즈</h2>
                 <div className='series1'>
                     <div className='series'>
-                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularDrama.map((item) => (
                                 <li key={item.id}>
@@ -87,13 +89,17 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                                 </li>
                             ))}
                         </ul>
-                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                     {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-12 수정 */}
                 </div>
                 <h2 className='h2_2'>한국 시리즈</h2>
                 <div className='series series2'>
-                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {KoreaDrama.map((item) => (
                             <li key={item.id}>
@@ -101,11 +107,15 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>해외 시리즈</h2>
                 <div className='series series2'>
-                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {OverseasDrama.map((item) => (
                             <li key={item.id}>
@@ -113,11 +123,15 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>범죄 시리즈</h2>
                 <div className='series series3'>
-                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {CrimeDrama.map((item) => (
                             <li key={item.id}>
@@ -125,11 +139,15 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>애니메이션</h2>
                 <div className='series series4'>
-                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniDrama.map((item) => (
                             <li key={item.id}>
@@ -137,11 +155,15 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>매디컬 시리즈</h2>
                 <div className='series series5'>
-                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama.map((item) => (
                             <li key={item.id}>
@@ -149,7 +171,9 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

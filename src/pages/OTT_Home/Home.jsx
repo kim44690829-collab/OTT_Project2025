@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { OTTContext } from "../../api/OTT_Context";
 //11-13 정호준 모달 import
 import ModalB from "../OTT_ModalB/ModalB";
+import { LikeAuth } from "../OTT_Like/LikeAutn";
+import { Link } from "react-router-dom";
 
 export default function Home({
     data,
@@ -32,6 +34,8 @@ export default function Home({
 
     //
     const {currentX, currentX1, currentX2, currentX3, currentX4, currentX5, slideLeft,slideRight} = useContext(OTTContext)
+    //
+    const {wishlist}=useContext(LikeAuth);
 
     // title에 마우스오버하면 모두보기 > 보이기
     const [isMouseover,setIsmouseover]=useState(null);
@@ -45,7 +49,7 @@ export default function Home({
         {id:1, title:'한국 드라마',dataName: KoreaDrama, dataAll: KoreaDrama1, dataAll02: KoreaDrama2 },
         {id:2, title:'오늘 대한민국의 TOP10 드라마',dataName: PopularDramaData, dataAll: PopularDrama1, dataAll02: PopularDrama2 },
         {id:3, title:'코미디 영화',dataName:ComedyData, dataAll: ComedyData02, dataAll02: ComedyData03},
-        {id:4, title:'내가 찜한 리스트',dataName:'ActionData'},
+        {id:4, title:'내가 찜한 리스트',dataName: wishlist },
         {id:5, title:'애니메이션 영화',dataName: AniData, dataAll: AniData02, dataAll02: AniData03},
         {id:6, title:'SF 영화',dataName: SFData, dataAll: SFData02, dataAll02: SFData03},
     ]
@@ -90,14 +94,14 @@ export default function Home({
     // 슬라이드 함수 11-13 김광민
     const slideRight1 = (num) => {
         console.log(num)
-            if(currentX6 > -1334 && num === 7){
-                setCurrentX6(currentX6 - 780)
+            if(currentX6 > -400 && num === 7){
+                setCurrentX6(currentX6 - 330)
             }
         }
     const slideLeft1 = (num) => {
         console.log('slideLeft')
         if(currentX6 < 0 && num === 7){
-            setCurrentX6(currentX6 + 780)
+            setCurrentX6(currentX6 + 330)
         }
     } 
 
@@ -110,6 +114,10 @@ export default function Home({
 
 
 
+    // const [slide,setSlide]=useState(false);
+
+    const [slideNum,setSlideNum]=useState(null);
+ 
     return(
     <div className="xall">
         {isAll && <p onClick={()=>{setIsAll(false);setToggle(false)}}>✕</p>}
@@ -126,19 +134,19 @@ export default function Home({
                     </div>
                     <p className="mainPart_text">{top10[main].overview}</p>
                     <button className="play" type="button">▶ 재생</button>
-                    <button className="detail" type="button">상세 정보</button>
+                    <button className="detail" type="button">ⓘ 상세 정보</button>
                 </div>
                 <div className="gra"></div>
             </div>
             {/* 02. 오늘 대한민국의 TOP10 영화 */}
-            <div className="Top10_series">
+            <div className="Top10_series" onMouseOver={()=>setSlideNum(0)} onMouseLeave={()=>setSlideNum(null)}>
                 <p className="title02">오늘 대한민국의 TOP10 영화</p>
                 {/* <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button> */}
                 {/* 슬라이드 */}
                 <div className="slide">
-                    <button type='button' className='left' onClick={() => {slideLeft1(7)}}>
+                    {slideNum === 0 ?<button type='button' className='left' onClick={() => {slideLeft1(7)}}>
                         <i className="fa-solid fa-chevron-left"></i>
-                    </button>
+                    </button> : null}
                     <ul className="action_movie" style={{marginLeft:`${currentX6}px`}}>
                         {top10.map((item,index)=>(
                             top10.backdrop_path !== null?
@@ -149,36 +157,37 @@ export default function Home({
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight1(7)}}>
+                    {slideNum === 0 ?<button type='button' className='right' onClick={() => {slideRight1(7)}}>
                         <i className="fa-solid fa-chevron-right"></i>
-                    </button>
+                    </button>:null}
                 </div>
             </div>
             <div className="list">
                 {/* 07. 내가 찜한 리스트 */}
-                <div className="list03">
+                <div className="list03" onMouseOver={()=>setIsmouseover(4)} onMouseLeave={()=>setIsmouseover(null)}>
                     <div className="textPart">
                         <p className="title03">{titleArr[4].title}</p>
+                        <Link to={'/Like'}>{isMouseover === 4? <span className="seeAll" onClick={()=>{setIsAll(!false)}}> 모두보기</span>:null}</Link>
                     </div>
                     {/* 슬라이드 */}
                     <div className="slide">
-                        <button type='button' className='left' onClick={() => slideLeft(4)}>
+                        {/* <button type='button' className='left' onClick={() => slideLeft(4)}>
                             <i class="fa-solid fa-chevron-left" onClick={() => slideLeft(4)}></i>
-                        </button>
+                        </button> */}
                         <div className="like_list">
                             {/* <p>원하는 시리즈, 영화를 찜해보세요</p> */}
                             <p>+</p>
                         </div>
-                            {/* <ul className="action_movie" style={{marginLeft:`${currentX3}px`}}>
-                                {titleArr[4].dataName.map((item)=>(
+                            <ul className="action_movie" style={{marginLeft:'8px'}}>
+                                {titleArr[4].dataName.slice(0,4).map((item)=>(
                                     <li key={item.id}>
                                         <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
                                     </li>
                                 ))}
-                            </ul> */}
-                        <button type='button' className='right' onClick={() => {slideRight(4)}}>
+                            </ul>
+                        {/* <button type='button' className='right' onClick={() => {slideRight(4)}}>
                             <i class="fa-solid fa-chevron-right" onClick={() => slideRight(4)}></i>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 
@@ -191,7 +200,7 @@ export default function Home({
                     {/* 슬라이드 */}
                     <div className="slide">
                         <button type='button' className='left' onClick={() => slideLeft(1)}>
-                            <i class="fa-solid fa-chevron-left" onClick={() => slideLeft(1)}></i>
+                            <i class="fa-solid fa-chevron-left"></i>
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX}px`}}>
                             {titleArr[0].dataName.map((item)=>(
@@ -201,7 +210,7 @@ export default function Home({
                             ))}
                         </ul>
                         <button type='button' className='right' onClick={() => {slideRight(1)}}>
-                            <i class="fa-solid fa-chevron-right" onClick={() => slideRight(1)}></i>
+                            <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
@@ -214,7 +223,7 @@ export default function Home({
                     {/* 슬라이드 */}
                     <div className="slide">
                         <button type='button' className='left' onClick={() => slideLeft(2)}>
-                            <i class="fa-solid fa-chevron-left" onClick={() => slideLeft(2)}></i>
+                            <i class="fa-solid fa-chevron-left"></i>
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX1}px`}}>
                             {titleArr[1].dataName.map((item)=>(
@@ -224,7 +233,7 @@ export default function Home({
                             ))}
                         </ul>
                         <button type='button' className='right' onClick={() => {slideRight(2)}}>
-                            <i class="fa-solid fa-chevron-right" onClick={() => slideRight(2)}></i>
+                            <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>

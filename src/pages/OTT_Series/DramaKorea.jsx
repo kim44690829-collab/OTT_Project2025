@@ -34,7 +34,9 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                 <h2 className='h2_1' style={{color:'black'}}>마음을 여는 이야기</h2>
                 <div className='DramaKorea1'>
                     <div className='DramaKorea'>
-                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {KoreaDrama.map((item, index) => (
                                 KoreaDrama[index].backdrop_path !== null ?
@@ -43,12 +45,16 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
                 <h2 className='h2_2'>숨 가쁜 전개 속으로</h2>
                 <div className='DramaKorea DramaKorea2'>
-                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {KoreaDrama1.map((item, index) => (
                             KoreaDrama1[index].backdrop_path !== null ? 
@@ -57,11 +63,15 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>하루를 담은 순간들</h2>
                 <div className='DramaKorea DramaKorea3'>
-                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {KoreaDrama2.map((item,index) => (
                             KoreaDrama2[index].backdrop_path !== null ?
@@ -70,11 +80,15 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>현실 너머 풍경</h2>
                 <div className='DramaKorea DramaKorea4'>
-                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {KoreaDrama3.map((item,index) => (
                             KoreaDrama3[index].backdrop_path !== null ?
@@ -83,11 +97,15 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>시선을 끄는 이야기들</h2>
                 <div className='DramaKorea DramaKorea5'>
-                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {KoreaDrama4.map((item,index) => (
                             KoreaDrama4[index].backdrop_path !== null ?
@@ -96,11 +114,15 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>가볍게 빠져드는 밤</h2>
                 <div className='DramaKorea DramaKorea6'>
-                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {KoreaDrama5.map((item,index) => (
                             KoreaDrama5[index].backdrop_path !== null ?
@@ -109,7 +131,9 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
             {/* 11-13 정호준 수정 상세보기 모달 */}
