@@ -5,7 +5,6 @@ import ModalS from '../OTT_ModalS/ModalS'
 import ModalB from '../OTT_ModalB/ModalB'
 // 11-13 김광민 추가
 import { useContext } from 'react'
-// import { OTTContext } from '../../api/OTT_Context'
 import { OTTContext } from '../../api/OTT_Context'
 
 export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama,AniDrama,MedicalDrama}){

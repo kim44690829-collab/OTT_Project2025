@@ -4,6 +4,7 @@
 .xall{
     width: 100%;
     height: 100vh;
+    margin-bottom: 2050px;
 }
 .xall .all{
     background-color: #171717 ;
@@ -114,7 +115,7 @@
 /* 02. 오늘 대한민국의 TOP10 영화 */
 .xall .all .Top10_series{
     position: absolute;
-    top: 25%;
+    top: 23%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 400;
@@ -130,6 +131,7 @@
     width: 1780px;
     padding: 0 50px;
     position: relative;
+    transition: 0.3s;
 }
 .xall .all .Top10_series ul li{
     width: 350px;
@@ -139,7 +141,7 @@
 }
 .xall .all .Top10_series ul li .num1{
     font-size: 206px;
-    line-height: 185px;
+    line-height: 192px;
     margin: 0;
     color: #0b0b0b;
     position: absolute;
@@ -149,7 +151,7 @@
 }
 .xall .all .Top10_series ul li .num2{
     font-size: 206px;
-    line-height: 186px;
+    line-height: 192px;
     margin: 0;
     position: absolute;
     bottom: 0;
@@ -190,7 +192,7 @@
 }
 .xall .all .Top10_seriesst03 .left:hover{
     border: 1px solid #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
 }
 /* Top 10 슬라이드 버튼 (right btn) */
 .xall .all .Top10_series .right{
@@ -208,7 +210,7 @@
 }
 .xall .all .Top10_series .right:hover{
     /* border: 1px solid #fff; */
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
 }
 
 /* 하단 장르별 리스트 */
@@ -217,19 +219,22 @@
 }
 
 .xall .all .list .list03 .slide .like_list{
-    width: 350px;
+    width: 430px;
     height : 200px;
     border-radius : 5px;
     cursor: pointer;
-    background-color: rgba(105, 105, 105, 0.4);
+    background-color: rgba(126, 126, 126, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.xall .all .list .list03 .slide .like_list:hover{
+    background-color: rgba(98, 98, 98, 0.2);
+}
 .xall .all .list .list03 .slide .like_list p{
     font-size: 60px;
-    color: #bdbdbd;
-    border: 2px solid #bdbdbd;
+    color: #838383;
+    /* border: 2px solid #838383; */
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -262,6 +267,7 @@
     display: flex;
     gap: 6px;
     width: 1780px;
+    transition: 0.5s;
 }
 .xall .all .list .list03 .action_movie li img{
     width: 350px;
@@ -272,12 +278,14 @@
 /* 슬라이드 */
 .xall .all .list .list03 .slide{
     display: flex;
-    width: 1780px;
+    width: 1774px;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
 }
-/* Top 10 슬라이드 버튼 (left btn) */
-.xall .all .Top10_series .left{
+
+/* 슬라이드 버튼 (left btn) */
+.xall .all .list .list03 .left{
     padding: 10px;
     border-radius: 5px;
     position: absolute;
@@ -289,44 +297,26 @@
     border: 1px solid transparent;
     cursor: pointer;
 }
-.xall .all .Top10_seriesst03 .left:hover{
-    border: 1px solid #fff;
-    background-color: rgba(0,0,0,0.7);
-}
-
-/* 슬라이드 버튼 (left btn) */
-.xall .all .list .list03 .left{
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 200px;
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
 .xall .all .list .list03 .left:hover{
-    border: 1px solid #fff;
-    background-color: rgba(0,0,0,0.7);
+    /* border: 1px solid #fff; */
+    background-color: rgba(0,0,0,0.5);
 }
 /* 슬라이드 버튼 (right btn) */
 .xall .all .list .list03 .right{
     padding: 10px;
     border-radius: 5px;
     position: absolute;
-    right: 6px;
+    right: 0;
     top: 0;
     height: 200px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.2);
     color: #fff;
     border: 1px solid transparent;
     cursor: pointer;
 }
 .xall .all .list .list03 .right:hover{
     /* border: 1px solid #fff; */
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
 }
 .xall .all .list .list03 button i{
     font-size: 20px;
@@ -340,7 +330,7 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0,0,0,0.6);
-    z-index: 100;
+    z-index: 1000;
 }
 .xall .all .overlay .modal{
     width: 1136px;
@@ -374,7 +364,7 @@
     position: fixed;
     top: 130px;
     right: 380px;   
-    z-index: 200;
+    z-index: 2000;
 }
 .xall .all .overlay .modal h3{
     /* display: inline-block; */

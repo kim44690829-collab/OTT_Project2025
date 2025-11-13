@@ -7,12 +7,24 @@ import { useLocation } from "react-router-dom";
 
 import '../OTT_Header/Header.css'
 
-export default function Header({PopularData}){
+export default function Header({PopularData, PopularData1, PopularData2, PopularData3, PopularData4, PopularData5,
+        ActionData, ActionData1, ActionData2, ActionData3, ActionData4, ActionData5,
+        AniData, AniData1, AniData2, AniData3, AniData4, AniData5,
+        DramaData, DramaData1, DramaData2, DramaData3, DramaData4, DramaData5,
+        ComedyData, ComedyData1, ComedyData2, ComedyData3, ComedyData4, ComedyData5,
+        SFData, SFData1, SFData2, SFData3, SFData4, SFData5,
+        PopularDrama, PopularDrama1, PopularDrama2, PopularDrama3, PopularDrama4, PopularDrama5,
+        KoreaDrama, KoreaDrama1, KoreaDrama2, KoreaDrama3, KoreaDrama4, KoreaDrama5,
+        OverseasDrama, OverseasDrama1, OverseasDrama2, OverseasDrama3, OverseasDrama4, OverseasDrama5,
+        CrimeDrama, CrimeDrama1, CrimeDrama2, CrimeDrama3, CrimeDrama4, CrimeDrama5,
+        AniDrama, AniDrama1, AniDrama2, AniDrama3, AniDrama4, AniDrama5,
+        MedicalDrama, MedicalDrama1, MedicalDrama2, MedicalDrama3, MedicalDrama4, MedicalDrama5}){
+
     // 인풋 박스 on/off
     const [inputBox, setInputBox] = useState(false)
     // 인풋 검색창
     const [inputText, setInputText] = useState('')
-    // const [filterList, setFilterList] = useState([])
+    const [filterList, setFilterList] = useState([])
     // 로그인 모달
     const [loginBtn, setLoginBtn] = useState(false)
     // 스크롤시 배경색 변경
@@ -61,23 +73,43 @@ export default function Header({PopularData}){
     //     AniDrama, AniDrama1, AniDrama2, AniDrama3, AniDrama4, AniDrama5,
     //     MedicalDrama, MedicalDrama1, MedicalDrama2, MedicalDrama3, MedicalDrama4, MedicalDrama5
     // ]
-    // useEffect(() => {
-    //     const mergedData = AllData
-
-    //     if(!inputText.trim()){
-    //         setFilterList(mergedData)
-    //         return
+    // console.log("검색어")
+    // console.log(PopularData[0].title)
+    // console.log(inputText)
+    // AllData.forEach((item,index) => {
+    //     if(AllData[index].name === inputText || AllData[index].title === inputText){
+    //         setFilterList(item)
+    //         console.log("여기 검색목록")
+    //         console.log(filterList)
     //     }
-    //     const resultFilter = mergedData.filter((item) => 
-    //         item.name?.toUpperCase().includes(inputText.toUpperCase())
-    //         || item.title?.toUpperCase().includes(inputText.toUpperCase())
+    // });
+    // console.log(PopularData.name)
+    // console.log('확인11')
+    // useEffect(() => {
+    //     // const mergedData = AllData
+
+    //     // if(!inputText.trim()){
+    //     //     setFilterList(mergedData)
+    //     //     return
+    //     // }
+
+    //     // for(let i=0; i<AllData.length;i++){
+    //     //     console.log(AllData[i].name)
+    //     //     // if(AllData[i].name || AllData[i].title){
+
+    //     //     // }
+    //     // }
+    //     const resultFilter = AllData.filter((item) => 
+    //         item.name.includes(inputText)
+    //         ||item.title.includes(inputText)
+    //         // || item.title.toUpperCase().includes(inputText.toUpperCase())
     //     )
     //     setFilterList(resultFilter)
     // }, [inputText])
 
-    // const inputHandeler = (e) => {
-    //     setInputText(e.target.value)
-    // }
+    const inputHandeler = (e) => {
+        setInputText(e.target.value)
+    }
     // HeadLeft - 탭 클릭시 색 변경
     const location = useLocation()
 
@@ -114,11 +146,11 @@ export default function Header({PopularData}){
                             <button type="button" onClick={() => setInputBox(false)}>✕</button>
                             <div className="inputBox">
                                 <i className="fa-solid fa-magnifying-glass inputButton" ></i>
-                                <input type="text" onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder="제목, 사람, 장르"></input>
-                                {inputText ? <p>"{inputText}" 검색 결과</p> : (<p>검색 결과가 없습니다.</p>)}
+                                <input type="text" onChange={inputHandeler} value={inputText} placeholder="제목, 사람, 장르"></input>
+                                {inputText ? <p>"{inputText}" 검색 결과</p> : ''}
                                 {/* 검색 결과 리스트 */}
-                                {/* <div className="searchResult">
-                                    <ul>
+                                <div className="searchResult">
+                                    <ul style={{marginTop: '20px'}}>
                                         {filterList.length > 0 ? (
                                         filterList.slice(0, 10).map((item, index) => (
                                             <li key={index}>
@@ -132,7 +164,7 @@ export default function Header({PopularData}){
                                         <p>검색 결과가 없습니다.</p>
                                         )}
                                     </ul>
-                                </div> */}
+                                </div>
                             </div>
                             {/* Top10 랭킹 */}
                             <div className="Top10">
