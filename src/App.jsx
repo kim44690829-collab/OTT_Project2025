@@ -71,6 +71,7 @@ function App() {
  
   return (
     <>
+    {/* 수정 */}
       {pathname === '/' || pathname === '/Login' ? null:<Header PopularData = {PopularData} /> }
           <Routes>
             <Route path='/' element={<Main PopularData ={PopularData}/>}/>
