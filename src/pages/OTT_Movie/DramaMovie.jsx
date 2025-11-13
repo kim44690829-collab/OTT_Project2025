@@ -15,12 +15,12 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
         <div className='movieDrama_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
-                    <h1>영화</h1>
+                    <h1 className='tagname'>영화</h1>
                 </Link>
                 <span>▶</span>
                 <h1>드라마 장르 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg'} />
             <div className='movieDrama_info'>
                 <h1>프랑켄슈타인</h1>
                 <p>

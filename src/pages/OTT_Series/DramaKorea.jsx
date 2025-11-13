@@ -16,12 +16,12 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
         <div className='DramaKorea_container'>
             <div className="sec_top">
                 <Link to='/Series'>
-                    <h1>시리즈</h1>
+                    <h1 className='tagname'>시리즈</h1>
                 </Link>
                 <span>▶</span>
-                <h1>한국 시리즈</h1>
+                <h1 >한국 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//cqkmEHLE4LjPHSqKdLt4pJFJv0f.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//cqkmEHLE4LjPHSqKdLt4pJFJv0f.jpg'} />
             <div className='DramaKorea_info'>
                 <h1>조각도시</h1>
                 <p>평범하게 살아가던 한 남자가 어느 날 갑자기 삶이 송두리째 조작돼 <br/>

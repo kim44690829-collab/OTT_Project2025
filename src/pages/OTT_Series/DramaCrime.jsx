@@ -16,7 +16,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
         <div className='DramaCrime_container'>
             <div className="sec_top">
                 <Link to='/Series'>
-                    <h1>시리즈</h1>
+                    <h1 className='tagname'>시리즈</h1>
                 </Link>
                 <span>▶</span>
                 <h1>범죄 시리즈</h1>

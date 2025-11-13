@@ -22,6 +22,9 @@ body{
     height: 70px;
     box-sizing: border-box;
 }
+.tagname:hover{
+    text-decoration: underline;
+}
 .sec_top > .dep1 > li > button{
     width: 100px;
     height: 40px;

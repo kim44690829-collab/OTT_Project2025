@@ -16,12 +16,12 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
         <div className='movieSF_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
-                    <h1>영화</h1>
+                    <h1 className='tagname'>영화</h1>
                 </Link>
                 <span>▶</span>
                 <h1>코미디 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} />
             <div className='movieSF_info'>
                 <h1>프레데터: 죽음의 땅</h1>
                 <p>

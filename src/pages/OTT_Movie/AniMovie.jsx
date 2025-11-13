@@ -16,12 +16,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
         <div className='movieAni_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
-                    <h1>영화</h1>
+                    <h1 className='tagname'>영화</h1>
                 </Link>
                 <span>▶</span>
                 <h1>애니메이션 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'} />
             <div className='movieAni_info'>
                 <h1>극장판 체인소 맨: 레제편</h1>
                 <p>

@@ -15,12 +15,12 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
         <div className='movieSub1_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
-                    <h1 style={{color:'black'}}>영화</h1>
+                    <h1 style={{color:'black'}} className='tagname'>영화</h1>
                 </Link>
                 <span style={{color:'black'}}>▶</span>
                 <h1 style={{color:'black'}}>인기있는 한국 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//yOFqBpJ0PEkBdQqalDEaeOiaKbz.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//yOFqBpJ0PEkBdQqalDEaeOiaKbz.jpg'} />
             <div className='movieSub1_info'>
                 <h1 style={{color:'black'}}>사마귀</h1>
                 <p style={{color:'black'}}>

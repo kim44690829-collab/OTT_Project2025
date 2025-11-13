@@ -16,12 +16,12 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
         <div className='DramaAni_container'>
             <div className="sec_top">
                 <Link to='/Series'>
-                    <h1>시리즈</h1>
+                    <h1 className='tagname'>시리즈</h1>
                 </Link>
                 <span>▶</span>
                 <h1>애니메이션</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//3AXLSxMuqyZt8HyrKKfrcJtkswD.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//3AXLSxMuqyZt8HyrKKfrcJtkswD.jpg'} />
             <div className='DramaAni_info'>
                 <h1>원펀맨</h1>
                 <p>

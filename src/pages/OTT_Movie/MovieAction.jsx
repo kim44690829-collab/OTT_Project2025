@@ -15,12 +15,12 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
         <div className='movieAction_container'>
             <div className="sec_top">
                 <Link to = '/Movie'>
-                    <h1>영화</h1>
+                    <h1 className='tagname'>영화</h1>
                 </Link>
                 <span>▶</span>
                 <h1>인기있는 액션 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} />
             <div className='movieAction_info'>
                 <h1>프레데터: 죽음의 땅</h1>
                 <p>

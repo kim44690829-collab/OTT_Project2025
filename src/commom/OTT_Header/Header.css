@@ -78,6 +78,9 @@
     font-size: 20px;
     color: #ffffffda;
 }
+.Header .HeadRight .iButton:hover{
+    color: #fff;
+}
 .Header .HeadRight .inputModal button{
     background-color: transparent;
     border: none;
@@ -104,6 +107,11 @@
 .Header .HeadRight .inputModal ul li p{
     margin-bottom: 5px;
     color: #ccc;
+}
+.Header .HeadRight .inputModal ul li p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #fff;
 }
 
 /* 유저 */

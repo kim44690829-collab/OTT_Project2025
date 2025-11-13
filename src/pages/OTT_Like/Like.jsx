@@ -17,7 +17,7 @@ export default function Like({children}){
                     <div className="msg"><p>아직 찜한 목록이 없습니다</p></div>
                     :
                     <div>
-                        <button type="button" onClick={()=>setModalOpen(!ModalOpen)}>찜한 목록 모두 지우기</button>
+                        <button type="button"onClick={()=>setModalOpen(!ModalOpen)}>찜한 목록 모두 지우기</button>
                         <div className="Like_container">
                             <ul>
                                 {wishlist.map((item)=>(

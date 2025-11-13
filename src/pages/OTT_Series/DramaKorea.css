@@ -92,6 +92,9 @@ body{
 .DramaKorea_container h1{
     color: #fff;
 }
+.DramaKorea_container .sec_top .tagname:hover{
+    text-decoration: underline;
+}
 /* DramaKorea ul */
 .DramaKorea_container .DramaKoreas{
     background-color: #0c0c0c;

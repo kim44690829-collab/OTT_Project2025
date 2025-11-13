@@ -56,7 +56,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </li>
                 </ul>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//5A01YSCPYoCOZOhh9tU7F3Htxkf.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//5A01YSCPYoCOZOhh9tU7F3Htxkf.jpg'} />
             <div className='movie_info'>
                 <h1>거룩한 밤: 데몬 헌터스</h1>
                 <p>

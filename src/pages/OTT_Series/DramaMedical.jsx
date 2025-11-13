@@ -16,12 +16,12 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
         <div className='DramaMedical_container'>
             <div className="sec_top">
                 <Link to='/Series'>
-                    <h1>시리즈</h1>
+                    <h1 className='tagname'>시리즈</h1>
                 </Link>
                 <span>▶</span>
                 <h1>매디컬 드라마</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//r0Q6eeN9L1ORL9QsV0Sg8ZV3vnv.jpg'} />
             <div className='DramaMedical_info'>
                 <h1>하우스</h1>
                 <p>

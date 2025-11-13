@@ -15,12 +15,12 @@ export default function ComedyMovie({ComedyData,ComedyData1,ComedyData2,ComedyDa
         <div className='movieComedy_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
-                    <h1>영화</h1>
+                    <h1 className='tagname'>영화</h1>
                 </Link>
                 <span>▶</span>
                 <h1>코미디 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kHOfxq7cMTXyLbj0UmdoGhT540O.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//kHOfxq7cMTXyLbj0UmdoGhT540O.jpg'} />
             <div className='movieComedy_info'>
                 <h1>애프터번</h1>
                 <p>

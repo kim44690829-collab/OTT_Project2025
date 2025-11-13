@@ -16,12 +16,12 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
         <div className='DramaOverseas_container'>
             <div className="sec_top">
                 <Link to='/Series'>
-                    <h1>시리즈</h1>
+                    <h1 className='tagname'>시리즈</h1>
                 </Link>
                 <span>▶</span>
                 <h1>해외 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//foGkPxpw9h8zln81j63mix5B7m8.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//foGkPxpw9h8zln81j63mix5B7m8.jpg'} />
             <div className='DramaOverseas_info'>
                 <h1>위쳐</h1>
                 <p>세계적인 판타지 대작이 넷플릭스 시리즈로 다시 태어난다. <br/>

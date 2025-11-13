@@ -15,12 +15,12 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
         <div className='dramaPopular_container'>
             <div className="sec_top">
                 <Link to='/Series'>
-                    <h1>시리즈</h1>
+                    <h1 className='tagname'>시리즈</h1>
                 </Link>
                 <span>▶</span>
                 <h1>세계적으로 인기있는 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg'} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+            <img src={'https://image.tmdb.org/t/p/original//2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg'}/>
             <div className='dramaPopular_info'>
                 <h1>그것: 웰컴 투 데리</h1>
                 <p>"그곳은 항상 사라짐으로 시작된다"<br/>

@@ -20,6 +20,9 @@ body{
     align-items: center;
     margin-top: 68px;
 }
+.tagname:hover{
+    text-decoration: underline;
+}
 .sec_top button{
     width: 70px;
     height: 30px;
