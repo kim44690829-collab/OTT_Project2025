@@ -34,7 +34,9 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                 <h2 className='h2_1'>생명선 위에서</h2>
                 <div className='DramaMedical1'>
                     <div className='DramaMedical'>
-                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {MedicalDrama.map((item, index) => (
                                 MedicalDrama[index].backdrop_path !== null ?
@@ -43,12 +45,16 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
                 <h2 className='h2_2'>응급실 속 이야기</h2>
                 <div className='DramaMedical DramaMedical2'>
-                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {MedicalDrama1.map((item, index) => (
                             MedicalDrama1[index].backdrop_path !== null ? 
@@ -57,11 +63,15 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>마음과 메스 사이</h2>
                 <div className='DramaMedical DramaMedical3'>
-                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {MedicalDrama2.map((item,index) => (
                             MedicalDrama2[index].backdrop_path !== null ?
@@ -70,11 +80,15 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>의료 현장의 하루</h2>
                 <div className='DramaMedical DramaMedical4'>
-                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {MedicalDrama3.map((item,index) => (
                             MedicalDrama3[index].backdrop_path !== null ?
@@ -83,11 +97,15 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>치유와 갈등의 기록</h2>
                 <div className='DramaMedical DramaMedical5'>
-                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {MedicalDrama4.map((item,index) => (
                             MedicalDrama4[index].backdrop_path !== null ?
@@ -96,11 +114,15 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>회복을 향한 도전</h2>
                 <div className='DramaMedical DramaMedical6'>
-                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama5.map((item,index) => (
                             MedicalDrama5[index].backdrop_path !== null ?
@@ -109,7 +131,9 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

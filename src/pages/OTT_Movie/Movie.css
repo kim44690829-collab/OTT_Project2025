@@ -51,7 +51,9 @@ body{
     padding: 0 20px;
     margin-top: 2px;
 }
-
+.sec_top .dep2 li > button:hover{
+    text-decoration: underline;
+}
 /* movie 메인 이미지 css */
 .movie_container > img{
     width: 2000px;
@@ -154,7 +156,8 @@ body{
 .movie_container .movies .movie{
     display: flex;
     position: relative;
-    width: 1780px;
+    width: 1774px;
+    border-radius: 5px;
     /* margin: 0 auto; */
     margin-left: 70px;
     overflow: hidden;
@@ -177,7 +180,7 @@ body{
 }
 .movie_container .movies .movie .left:hover,
 .movie_container .movies .movie1 .left:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
 }
 /* 영화 목록 오른쪽으로 이동하는 버튼 css */
@@ -195,6 +198,6 @@ body{
 }
 .movie_container .movies .movie .right:hover,
 .movie_container .movies .movie1 .lerightft:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
 }

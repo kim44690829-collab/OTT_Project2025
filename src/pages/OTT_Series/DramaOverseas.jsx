@@ -31,7 +31,9 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                 <h2 className='h2_1'>글로벌 화제작 모음</h2>
                 <div className='DramaOverseas1'>
                     <div className='DramaOverseas'>
-                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {OverseasDrama.map((item, index) => (
                                 OverseasDrama[index].backdrop_path !== null ?
@@ -40,12 +42,16 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                                 </li> : null
                             ))}
                         </ul>
-                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
                 <h2 className='h2_2'>세계로 펼쳐지는 이야기</h2>
                 <div className='DramaOverseas DramaOverseas2'>
-                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {OverseasDrama1.map((item, index) => (
                             OverseasDrama1[index].backdrop_path !== null ? 
@@ -54,11 +60,15 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>눈길을 끄는 해외 스토리</h2>
                 <div className='DramaOverseas DramaOverseas3'>
-                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {OverseasDrama2.map((item,index) => (
                             OverseasDrama2[index].backdrop_path !== null ?
@@ -67,11 +77,15 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                             </li> :null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>경계를 넘는 드라마</h2>
                 <div className='DramaOverseas DramaOverseas4'>
-                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {OverseasDrama3.map((item,index) => (
                             OverseasDrama3[index].backdrop_path !== null ?
@@ -80,11 +94,15 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>다양한 문화 속 드라마</h2>
                 <div className='DramaOverseas DramaOverseas5'>
-                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {OverseasDrama4.map((item,index) => (
                             OverseasDrama4[index].backdrop_path !== null ?
@@ -93,11 +111,15 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
                 <h2 className='h2_2'>지금 바로 보고 싶은 해외작</h2>
                 <div className='DramaOverseas DramaOverseas6'>
-                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {OverseasDrama5.map((item,index) => (
                             OverseasDrama5[index].backdrop_path !== null ?
@@ -106,7 +128,9 @@ export default function DramaOverseas({OverseasDrama,OverseasDrama1,OverseasDram
                             </li> : null
                         ))}
                     </ul>
-                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

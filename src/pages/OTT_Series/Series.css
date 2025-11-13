@@ -155,10 +155,11 @@
 .series_container .movies .series{
     display: flex;
     position: relative;
-    width: 1780px;
+    width: 1774px;
     margin-left: 70px;
     overflow: hidden;
     margin-right: 1780px;
+    border-radius: 5px;
 }
 .series_container .movies .h2_2{
     margin-left: 70px;
@@ -178,7 +179,7 @@
 }
 .series_container .movies .series .left:hover,
 .series_container .movies .series1 .left:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
 }
 /* 영화 목록 오른쪽으로 이동하는 버튼 css */
@@ -187,7 +188,7 @@
     padding: 10px;
     border-radius: 5px;
     position: absolute;
-    right: 6px;
+    right: 0;
     top: 0;
     height: 200px;
     background-color: rgba(0,0,0,0.5);;
@@ -196,7 +197,7 @@
 }
 .series_container .movies .series .right:hover,
 .series_container .movies .series1 .lerightft:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
 }
 /* 11-12 수정 */

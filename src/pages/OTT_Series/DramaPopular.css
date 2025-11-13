@@ -129,7 +129,8 @@ body{
 .dramaPopular_container .dramaPopulars .dramaPopular{
     display: flex;
     position: relative;
-    width: 1780px;
+    width: 1774px;
+    border-radius: 5px;
     /* margin: 0 auto; */
     margin-left: 70px;
     overflow: hidden;
@@ -152,7 +153,7 @@ body{
 }
 .dramaPopular_container .dramaPopulars .dramaPopular .left:hover,
 .dramaPopular_container .dramaPopulars .dramaPopular1 .left:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
 }
 /* 영화 목록 오른쪽으로 이동하는 버튼 css */
@@ -170,6 +171,6 @@ body{
 }
 .dramaPopular_container .dramaPopulars .dramaPopular .right:hover,
 .dramaPopular_container .dramaPopulars .dramaPopular1 .lerightft:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
 }
