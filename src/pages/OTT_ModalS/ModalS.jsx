@@ -1,11 +1,15 @@
 import "../OTT_ModalS/ModalS.css"
 import { useState,useEffect } from "react"
 import { Link } from "react-router-dom"
+import ModalB from "../OTT_ModalB/ModalB"
 
 
 
 export default function ModalS(props){
     console.log(props.item)
+    const [openB,setOpenB] = useState(false)
+    const [ModalOpen,setModalOpen]=useState(false)
+    
     
     const genre =(item)=>{
         if(item===14){
@@ -48,6 +52,15 @@ export default function ModalS(props){
         else if(item === 37){
             return '서부극'
         }
+        else if(item === 10765){
+            return 'SF & 판타지'
+        }
+        else if(item === 9648){
+            return '미스터리'
+        }
+        else if(item === 10759){
+            return '액션 & 어드벤처'
+        }
     }
     return (
         <div className="ModalS">
@@ -60,7 +73,7 @@ export default function ModalS(props){
                         <button type="button" className="LikeBtn">❤</button>
                     </div>
                     <div className="Ms_r_Btns">
-                        <button type="button" className="InfoBtn"><i class="fa-solid fa-angle-down"></i></button>
+                        <button type="button" className="InfoBtn" onClick={()=>setOpenB(!openB)}><i class="fa-solid fa-angle-down"></i></button>
                     </div>
                 </li>
                 <li>
@@ -76,6 +89,7 @@ export default function ModalS(props){
                     </ul>
                 </li>
             </ul>
+            {/* {openB && <ModalB item={props.item} setOpenB={setOpenB} openB={openB}/>} */}
         </div>
     )
 }

@@ -234,7 +234,6 @@ export default function Home({
                             </li>:null
                         ))}
                     </ul>}
-
                 </div>
             </div>}
         </div>

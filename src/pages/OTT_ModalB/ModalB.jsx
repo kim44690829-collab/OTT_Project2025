@@ -60,6 +60,7 @@ export default function ModalB(props){
     return(
         
         <div className="ModalB_container" >
+            <div className="modal_back" onClick={()=>props.setOpenB(!props.openB)}></div>
             <div className="ModalB_box">
                 <img src={`https://image.tmdb.org/t/p/original${props.item.backdrop_path}`} alt="" />
             </div>
