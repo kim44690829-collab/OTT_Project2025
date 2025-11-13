@@ -67,11 +67,12 @@ function App() {
   // console.log('경로')
   // console.log(paths);
 
+  const {pathname} = useLocation()
+ 
   return (
     <>
-    <LikeAuthProvider>
-      
-          <Header PopularData = {PopularData} />
+    {/* 수정 */}
+      {pathname === '/' || pathname === '/Login' ? null:<Header PopularData = {PopularData} /> }
           <Routes>
             <Route path='/' element={<Main PopularData ={PopularData}/>}/>
             <Route path='/Login' element={<Login />}/>
@@ -221,7 +222,6 @@ function App() {
             <Route path='/Like' element={<Like/>}/>
           </Routes>
           <Footer />
-      </LikeAuthProvider>
     </>
   )
 }
