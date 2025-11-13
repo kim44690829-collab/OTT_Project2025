@@ -7,18 +7,7 @@ import { useLocation } from "react-router-dom";
 
 import '../OTT_Header/Header.css'
 
-export default function Header({PopularData, PopularData1, PopularData2, PopularData3, PopularData4, PopularData5,
-        ActionData, ActionData1, ActionData2, ActionData3, ActionData4, ActionData5,
-        AniData, AniData1, AniData2, AniData3, AniData4, AniData5,
-        DramaData, DramaData1, DramaData2, DramaData3, DramaData4, DramaData5,
-        ComedyData, ComedyData1, ComedyData2, ComedyData3, ComedyData4, ComedyData5,
-        SFData, SFData1, SFData2, SFData3, SFData4, SFData5,
-        PopularDrama, PopularDrama1, PopularDrama2, PopularDrama3, PopularDrama4, PopularDrama5,
-        KoreaDrama, KoreaDrama1, KoreaDrama2, KoreaDrama3, KoreaDrama4, KoreaDrama5,
-        OverseasDrama, OverseasDrama1, OverseasDrama2, OverseasDrama3, OverseasDrama4, OverseasDrama5,
-        CrimeDrama, CrimeDrama1, CrimeDrama2, CrimeDrama3, CrimeDrama4, CrimeDrama5,
-        AniDrama, AniDrama1, AniDrama2, AniDrama3, AniDrama4, AniDrama5,
-        MedicalDrama, MedicalDrama1, MedicalDrama2, MedicalDrama3, MedicalDrama4, MedicalDrama5}){
+export default function Header({PopularData}){
 
     // 인풋 박스 on/off
     const [inputBox, setInputBox] = useState(false)
