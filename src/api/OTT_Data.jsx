@@ -959,13 +959,13 @@ export default function useOttData(){
     
     // 한국 드라마(시리즈)
     useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&page=2')
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=72911627295b4bb76b26422835ae51f0&language=ko-KR&sort_by=popularity.desc&with_genres=18&with_origin_country=KR&page=1')
         .then((res)=>{
             return res.json();
         })
         .then((data)=>{
             console.log('데이터 내용',data)
-            setPopularDrama1(data.results);
+            setKoreaDrama(data.results);
         })
         .finally(()=>{
             console.log('완료')
