@@ -1,39 +1,40 @@
 import { Link } from 'react-router-dom'
-import '../OTT_Movie/AniMovie.css'
+import '../OTT_Series/DramaPopular.css'
 import { useState } from 'react'
-export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
-    console.log(AniData2, '1')
+export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,PopularDrama3,PopularDrama4,PopularDrama5}){
     return(
-        <div className='movieAni_container'>
+        <div className='dramaPopular_container'>
             <div className="sec_top">
-                <Link to='/Movie'>
-                    <h1>영화</h1>
+                <Link to='/Series'>
+                    <h1>시리즈</h1>
                 </Link>
                 <span>▶</span>
-                <h1>애니메이션 영화</h1>
+                <h1>세계적으로 인기있는 시리즈</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'}/>
-            <div className='movieAni_info'>
-                <h1>극장판 체인소 맨: 레제편</h1>
-                <p>
-                    데블 헌터로 일하는 소년 ‘덴지’는 조직의 배신으로 죽음에 내몰린 순간 <br/>
-                    전기톱 악마견 ‘포치타’와의 계약으로 하나로 합쳐져 누구도 막을 수 없는 존재 <br/>
-                    ‘체인소 맨’으로 다시 태어난다. <br/>
-                    악마와 사냥꾼, 그리고 정체불명의 적들이 얽힌 잔혹한 전쟁 속에서 <br/>
-                    ‘레제’라는 이름의 미스터리한 소녀가 ‘덴지’ 앞에 나타나는데… <br/>
-                    ‘덴지’는 사랑이라는 감정에 이끌려 지금껏 가장 위험한 배틀에 몸을 던진다!<br/>
+            <img src={'https://image.tmdb.org/t/p/original//2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg'}/>
+            <div className='dramaPopular_info'>
+                <h1>그것: 웰컴 투 데리</h1>
+                <p>"그곳은 항상 사라짐으로 시작된다"<br/>
+                    1962년, 한 가족이 메인 주의 작은 마을 데리에 이사 오면서 <br/>
+                    연쇄적인 실종과 설명할 수 없는 불길한 징조가 퍼져나간다.<br/> 
+                    비밀을 감춘 하수도와 오래된 서커스의 그림자, 어른들은 외면하고 아이들은 속삭인다. <br/><br/>
+                    “<strong>무언가</strong>가 깨어났다고” <br/><br/>
+                    점점 커지는 공포 속에서 마을의 과거와 연결된 금기된 진실이 모습을 드러내기 시작하고, <br/>
+                    누구도 안전하지 않다는 사실이 선명해진다. <br/>
+                    그 미소의 주인이 다시 환영을 건네올 때, <br/>
+                    이들은 과연 무엇을 마주하게 될 것인가",
                 </p>
                 <button type='button' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
-            <div className='movieAnis'>
-                <h2 className='h2_1'>스크린 위의 애니메이션</h2>
-                <div className='movieAni1'>
-                    <div className='movieAni'>
+            <div className='dramaPopulars'>
+                <h2 className='h2_1'>글로벌 히트 스토리</h2>
+                <div className='dramaPopular1'>
+                    <div className='dramaPopular'>
                         <button type='button' className='left'>◁</button>
                         <ul>
-                            {AniData.map((item, index) => (
-                                AniData[index].backdrop_path !== null ?
+                            {PopularDrama.map((item, index) => (
+                                PopularDrama[index].backdrop_path !== null ?
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
@@ -42,12 +43,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>극장판 애니메이션 컬렉션</h2>
-                <div className='movieAni movieAni2'>
+                <h2 className='h2_2'>장르 넘버원!</h2>
+                <div className='dramaPopular dramaPopular2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData1.map((item, index) => (
-                            AniData1[index].backdrop_path !== null ? 
+                        {PopularDrama1.map((item, index) => (
+                            PopularDrama1[index].backdrop_path !== null ? 
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -55,12 +56,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>장벽을 넘는 애니 스토리</h2>
-                <div className='movieAni movieAni3'>
+                <h2 className='h2_2'>모두가 말하는 화제작</h2>
+                <div className='dramaPopular dramaPopular3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData2.map((item,index) => (
-                            AniData2[index].backdrop_path !== null ?
+                        {PopularDrama2.map((item,index) => (
+                            PopularDrama2[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> :null
@@ -68,12 +69,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 월드: 극장판 에디션</h2>
-                <div className='movieAni movieAni4'>
+                <h2 className='h2_2'>상상 그 이상</h2>
+                <div className='dramaPopular dramaPopular4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData3.map((item,index) => (
-                            AniData3[index].backdrop_path !== null ?
+                        {PopularDrama3.map((item,index) => (
+                            PopularDrama3[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -81,12 +82,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션의 극장 속 여정</h2>
-                <div className='movieAni movieAni5'>
+                <h2 className='h2_2'>가볍게 빠져드는</h2>
+                <div className='dramaPopular dramaPopular5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData4.map((item,index) => (
-                            AniData4[index].backdrop_path !== null ?
+                        {PopularDrama4.map((item,index) => (
+                            PopularDrama4[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -94,12 +95,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>극장 스펙터클 애니메이션</h2>
-                <div className='movieAni movieAni6'>
+                <h2 className='h2_2'>현실을 담다</h2>
+                <div className='dramaPopular dramaPopular6'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData5.map((item,index) => (
-                            AniData5[index].backdrop_path !== null ?
+                        {PopularDrama5.map((item,index) => (
+                            PopularDrama5[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null

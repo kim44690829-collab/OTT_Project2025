@@ -1,39 +1,41 @@
 import { Link } from 'react-router-dom'
-import '../OTT_Movie/AniMovie.css'
+import '../OTT_Movie/ComedyMovie.css'
 import { useState } from 'react'
-export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,AniData5}){
-    console.log(AniData2, '1')
+export default function ComedyMovie({ComedyData,ComedyData1,ComedyData2,ComedyData3,ComedyData4,ComedyData5}){
     return(
-        <div className='movieAni_container'>
+        <div className='movieComedy_container'>
             <div className="sec_top">
                 <Link to='/Movie'>
                     <h1>영화</h1>
                 </Link>
                 <span>▶</span>
-                <h1>애니메이션 영화</h1>
+                <h1>코미디 영화</h1>
             </div>
-            <img src={'https://image.tmdb.org/t/p/original//kfXgo2rMF1A19celCwLyQ4Xwpf8.jpg'}/>
-            <div className='movieAni_info'>
-                <h1>극장판 체인소 맨: 레제편</h1>
+            <img src={'https://image.tmdb.org/t/p/original//kHOfxq7cMTXyLbj0UmdoGhT540O.jpg'}/>
+            <div className='movieComedy_info'>
+                <h1>애프터번</h1>
                 <p>
-                    데블 헌터로 일하는 소년 ‘덴지’는 조직의 배신으로 죽음에 내몰린 순간 <br/>
-                    전기톱 악마견 ‘포치타’와의 계약으로 하나로 합쳐져 누구도 막을 수 없는 존재 <br/>
-                    ‘체인소 맨’으로 다시 태어난다. <br/>
-                    악마와 사냥꾼, 그리고 정체불명의 적들이 얽힌 잔혹한 전쟁 속에서 <br/>
-                    ‘레제’라는 이름의 미스터리한 소녀가 ‘덴지’ 앞에 나타나는데… <br/>
-                    ‘덴지’는 사랑이라는 감정에 이끌려 지금껏 가장 위험한 배틀에 몸을 던진다!<br/>
+                   인류가 사라진 땅, 보물 사냥꾼의 마지막 의뢰” <br/>
+                   태양폭풍으로 전 세계의 기술과 문명이 붕괴된 지 10년. <br/>
+                   생존자들은 폐허 속에서 잔존한 유물과 자원을 두고 치열한 경쟁을 벌인다. <br/>
+                   전직 군인이었던 제이크는 ‘보물 사냥꾼’으로 전락해 <br/>
+                   문명의 파편이 된 유물들을 회수해 생계와 희망을 이어 간다. <br/>
+                   그는 위험한 의뢰를 받고 프랑스로 향하게 되고, 그곳에서 프랑스 저항군 전사 드레아와 손을 맞잡는다. <br/>
+                   그러나 이번 목표는 단순한 보물이 아니다. <br/>
+                   인류의 마지막 상징이자 권력의 열쇠인 모나리자를 되찾는 그들의 여정은, <br/>
+                   전장 속에서 새로운 운명을 마주하게 되는데…<br/>
                 </p>
                 <button type='button' style={{color:'black'}}>▶ 재생</button>
                 <button type='button' className='detailInfo' style={{backgroundColor:'rgba(0,0,0,0.5)'}}>ⓘ 상세 정보</button>
             </div>
-            <div className='movieAnis'>
-                <h2 className='h2_1'>스크린 위의 애니메이션</h2>
-                <div className='movieAni1'>
-                    <div className='movieAni'>
+            <div className='movieComedys'>
+                <h2 className='h2_1'>인기있는 한국 영화</h2>
+                <div className='movieComedy1'>
+                    <div className='movieComedy'>
                         <button type='button' className='left'>◁</button>
                         <ul>
-                            {AniData.map((item, index) => (
-                                AniData[index].backdrop_path !== null ?
+                            {ComedyData.map((item, index) => (
+                                ComedyData[index].backdrop_path !== null ?
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
@@ -42,12 +44,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                         <button type='button' className='right'>▷</button>
                     </div>
                 </div>
-                <h2 className='h2_2'>극장판 애니메이션 컬렉션</h2>
-                <div className='movieAni movieAni2'>
+                <h2 className='h2_2'>액션 영화</h2>
+                <div className='movieComedy movieComedy2'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData1.map((item, index) => (
-                            AniData1[index].backdrop_path !== null ? 
+                        {ComedyData1.map((item, index) => (
+                            ComedyData1[index].backdrop_path !== null ? 
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -55,12 +57,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>장벽을 넘는 애니 스토리</h2>
-                <div className='movieAni movieAni3'>
+                <h2 className='h2_2'>애니메이션 영화</h2>
+                <div className='movieComedy movieComedy3'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData2.map((item,index) => (
-                            AniData2[index].backdrop_path !== null ?
+                        {ComedyData2.map((item,index) => (
+                            ComedyData2[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> :null
@@ -68,12 +70,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션 월드: 극장판 에디션</h2>
-                <div className='movieAni movieAni4'>
+                <h2 className='h2_2'>드라마 장르 영화</h2>
+                <div className='movieComedy movieComedy4'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData3.map((item,index) => (
-                            AniData3[index].backdrop_path !== null ?
+                        {ComedyData3.map((item,index) => (
+                            ComedyData3[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -81,12 +83,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>애니메이션의 극장 속 여정</h2>
-                <div className='movieAni movieAni5'>
+                <h2 className='h2_2'>코미디 영화</h2>
+                <div className='movieComedy movieComedy5'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData4.map((item,index) => (
-                            AniData4[index].backdrop_path !== null ?
+                        {ComedyData4.map((item,index) => (
+                            ComedyData4[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
@@ -94,12 +96,12 @@ export default function AniMovie({AniData,AniData1,AniData2,AniData3,AniData4,An
                     </ul>
                     <button type='button' className='right'>▷</button>
                 </div>
-                <h2 className='h2_2'>극장 스펙터클 애니메이션</h2>
-                <div className='movieAni movieAni6'>
+                <h2 className='h2_2'>SF 영화</h2>
+                <div className='movieComedy movieComedy6'>
                     <button type='button' className='left'>◁</button>
                     <ul>
-                        {AniData5.map((item,index) => (
-                            AniData5[index].backdrop_path !== null ?
+                        {ComedyData5.map((item,index) => (
+                            ComedyData5[index].backdrop_path !== null ?
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null

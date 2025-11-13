@@ -2,7 +2,28 @@
 import {useState,useEffect} from "react"
 import "./Home.css";
 
-export default function Home({data,ActionData,ActionData02,ActionData03,PopularDramaData,AniData,DramaData,ComedyData,SFData,AniData02,AniData03,ComedyData02,ComedyData03,SFData02,SFData03}){
+export default function Home({
+    data,
+    ActionData,
+    ActionData02,
+    ActionData03,
+    PopularDramaData,
+    AniData,
+    DramaData,
+    ComedyData,
+    SFData,
+    AniData02,
+    AniData03,
+    ComedyData02,
+    ComedyData03,
+    SFData02,
+    SFData03,
+    PopularDrama1,
+    PopularDrama2,
+    KoreaDrama,
+    KoreaDrama1,
+    KoreaDrama2,
+}){
 
     // title에 마우스오버하면 모두보기 > 보이기
     const [isMouseover,setIsmouseover]=useState(null);
@@ -13,38 +34,63 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
     // 각 항목 타이틀 배열
     const titleArr=[
         {id:0, title:'액션 & 어드벤처 영화', dataName: ActionData, dataAll: ActionData02, dataAll02: ActionData03},
-        {id:1, title:'힐링을 선사하는 드라마',dataName:'ActionData'},
-        {id:2, title:'오늘 대한민국의 TOP10 드라마',dataName: PopularDramaData},
+        {id:1, title:'한국 드라마',dataName: KoreaDrama, dataAll: KoreaDrama1, dataAll02: KoreaDrama2 },
+        {id:2, title:'오늘 대한민국의 TOP10 드라마',dataName: PopularDramaData, dataAll: PopularDrama1, dataAll02: PopularDrama2 },
         {id:3, title:'코미디 영화',dataName:ComedyData, dataAll: ComedyData02, dataAll02: ComedyData03},
         {id:4, title:'내가 찜한 리스트',dataName:'ActionData'},
         {id:5, title:'애니메이션 영화',dataName: AniData, dataAll: AniData02, dataAll02: AniData03},
         {id:6, title:'SF 영화',dataName: SFData, dataAll: SFData02, dataAll02: SFData03},
     ]
+    // console.log('드라마 확인',KoreaDrama);
 
     // 해당 항목 클릭한 
     const [clickIndex,setClickIndex]=useState(null);
 
     // top 10
-    const top10=data.slice(0,10);
+    const top10=PopularDramaData.slice(0,10);
 
     // 모달 -> 다음 페이지 더보기 버튼 클릭 시 항목 더보기 toggle
     const [toggle,setToggle]=useState(false);
 
    /*  let pictureNull=titleArr[clickIndex].dataAll; */
 
+   // 메인 화면 자동 변경
 
+   const [main,setMain]=useState(0);
+   useEffect(()=>{
+    let play=setInterval(()=>{
+        if(main >= 9){
+            setMain(0);
+        }else{
+            setMain(main+1);
+        }
+        
+        // setMain(top10[main+1].backdrop_path)
+    },10000);
+ 
+    return(()=>{clearInterval(play)});
+   },[main]);
+
+  console.log(main)
+//   for(let i=0; i<top10.length; i++){
+//        console.log(top10[i].title)
+//   }
+ 
     return(
+    <div className="xall">
+        {isAll && <p onClick={()=>{setIsAll(false);setToggle(false)}}>✕</p>}
         <div className="all">
             {/* 01. 맨 위 대표 메인 파트 */}
             <div className="mainPart">
-                <img src="https://image.tmdb.org/t/p/original/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg"/>
+                <img src={`https://image.tmdb.org/t/p/original/${top10[main].backdrop_path}`}/>
+                <div className="mainOverlay"></div>
                 <div className="content">
-                    <h1>movie name</h1>
+                    <h1>{top10[main].name}</h1>
                     <div className="rankPart">
                         <span className="rankBox">TOP<br/>10</span>
-                        <span className="mainPart_rank">오늘 영화 순위 6위</span>
+                        <span className="mainPart_rank">오늘 영화 순위 {main+1}위</span>
                     </div>
-                    <p className="mainPart_text">4명의 감독이 엮어낸 연작 영화. 살인 청부업자들의 위험한 직업을<br/> 중심으로 살인과 유혹, 혼돈의 세계가 펼쳐진다.</p>
+                    <p className="mainPart_text">{top10[main].overview}</p>
                     <button className="play" type="button">▶ 재생</button>
                     <button className="detail" type="button">상세 정보</button>
                 </div>
@@ -59,7 +105,7 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                         <li key={item.id}>
                             <h1 className="num1">{index+1}</h1>
                             <h1 className="num2">{index+1}</h1>
-                            <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
+                            <img src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}/>
                         </li> : null
                     ))}
                 </ul>
@@ -79,14 +125,14 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                         ))}
                     </ul>
                 </div>
-                {/* 04. 힐링을 선사하는 드라마 */}
+                {/* 04. 한국 드라마 */}
                 <div className="list03" onMouseOver={()=>setIsmouseover(1)} onMouseLeave={()=>setIsmouseover(null)}>
                     <div className="textPart">
                         <p className="title03">{titleArr[1].title}</p>
                         {isMouseover === 1? <span className="seeAll" onClick={()=>{setIsAll(!false);setClickIndex(1)}}>모두보기</span>:null}
                     </div>
                     <ul className="action_movie">
-                        {data.map((item)=>(
+                        {titleArr[1].dataName.map((item)=>(
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}/>
                             </li>
@@ -107,7 +153,7 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                         ))}
                     </ul>
                 </div>
-                {/* 06. 오늘 대한민국의 TOP10 드라마 */}
+                {/* 06. 코미디 */}
                 <div className="list03" onMouseOver={()=>setIsmouseover(3)} onMouseLeave={()=>setIsmouseover(null)}>
                     <div className="textPart">
                         <p className="title03">{titleArr[3].title}</p>
@@ -159,9 +205,10 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
             </div>
 
             {/* 모두보기 모달 */}
-            {isAll &&<div className="overlay">
+            
+            {isAll &&<div className="overlay" onClick={()=>setIsAll(false)}>
                  <div className="modal">
-                    <p onClick={()=>{setIsAll(false);setToggle(!toggle)}}>x</p>
+                    {/* <p onClick={()=>{setIsAll(false);setToggle(false)}}>✕</p> */}
                     <h3>{titleArr[clickIndex].title}</h3>
                     <span>회원님을 위한 오늘의 콘텐츠</span>
                     {/* 01 페이지 */}
@@ -175,8 +222,8 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                     </ul>
 
                     {/* 다음 페이지 더보기 버튼 */}
-                    <div className="line"></div>
-                    <strong onClick={()=>setToggle(!toggle)}>{toggle ? '▲':'▼'}</strong>
+                    <div className="line"><strong onClick={()=>setToggle(!toggle)}>{toggle ? '▲':'▼'}</strong></div>
+                    
 
                     {/* 02 페이지 */}
                     {toggle && <ul className="modalList">
@@ -191,5 +238,6 @@ export default function Home({data,ActionData,ActionData02,ActionData03,PopularD
                 </div>
             </div>}
         </div>
+    </div>
     )
 }

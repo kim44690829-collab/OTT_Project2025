@@ -1,21 +1,101 @@
 import '../OTT_Series/Series.css'
 import { useState,useEffect } from 'react'
-//11-12 수정
+import { Link } from 'react-router-dom'
 import ModalS from '../OTT_ModalS/ModalS'
 import ModalB from '../OTT_ModalB/ModalB'
 
 export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama,AniDrama,MedicalDrama}){
-    //11-12 수정
-    const [openS,setOpenS] = useState([])
+    const [MovieMenu, setMovieMenu] = useState(false)
+    const [openS,setOpenS] = useState(false)
     const [openB,setOpenB] = useState(false)
+    const [currentX, setCurrentX] = useState(0)
+    const [currentX1, setCurrentX1] = useState(0)
+    const [currentX2, setCurrentX2] = useState(0)
+    const [currentX3, setCurrentX3] = useState(0)
+    const [currentX4, setCurrentX4] = useState(0)
+    const [currentX5, setCurrentX5] = useState(0)
 
-    
+    const slideRight = (num) => {
+        console.log(num)
+            if(currentX > -5334 && num === 1){
+                setCurrentX(currentX - 1780)
+            }
+            else if(currentX1 > -5334 && num === 2 ){
+                setCurrentX1(currentX1 - 1780)
+            }else if(currentX2 > -5334 && num === 3  ){
+                setCurrentX2(currentX2 - 1780)
+                
+            }else if(currentX3 > -5334 && num === 4  ){
+                setCurrentX3(currentX3 - 1780)
+                
+            }else if(currentX4 > -5334 && num === 5 ){
+                setCurrentX4(currentX4 - 1780)
+                
+            }else if(currentX5 > -5334 && num === 6  ){
+                setCurrentX5(currentX5 - 1780)
+                
+            }
+    }
+    const slideLeft = (num) => {
+        if(currentX < 0 && num === 1){
+            setCurrentX(currentX + 1780)
+        }
+        else if(currentX1 < 0 && num === 2 ){
+            setCurrentX1(currentX1 + 1780)
+        }else if(currentX2 < 0 && num === 3){
+            setCurrentX2(currentX2 + 1780) 
+        }else if(currentX3 < 0 && num === 4){
+            setCurrentX3(currentX3 + 1780)    
+        }else if(currentX4 < 0 && num === 5){
+            setCurrentX4(currentX4 + 1780)    
+        }else if(currentX5 < 0 && num === 6){
+            setCurrentX5(currentX5 + 1780)            
+        }
+    } 
       
     return(
         <div className='series_container'>
             <div className="sec_top">
                 <h1>시리즈</h1>
-                <button type="button">장르 ▼</button>
+                <ul className='dep1'>
+                    <li><button type="button" onClick={() => setMovieMenu(!MovieMenu)}>장르 ▼</button></li>
+                    <li>
+                        {MovieMenu && (
+                            <ul className='dep2'>
+                                <Link to='/PopularDrama'>
+                                    <li>
+                                        <button type='button'>세계적으로 인기있는 시리즈</button>
+                                    </li>
+                                </Link>
+                                <Link to='/KoreaDrama'>
+                                    <li>
+                                        <button type='button'>한국 시리즈</button>
+                                    </li>
+                                </Link>
+                                <Link to='/OverseasDrama'>
+                                    <li>
+                                        <button type='button'>해외 시리즈</button>
+                                    </li>
+                                </Link>
+                                <Link to='/CrimeDrama'>
+                                    <li>
+                                        <button type='button'>범죄 시리즈</button>
+                                    </li>
+                                </Link>
+                                <Link to='/AniDrama'>
+                                    <li>
+                                        <button type='button'>애니메이션</button>
+                                    </li>
+                                </Link>
+                                <Link to='/MedicalDrama'>
+                                    <li>
+                                        <button type='button'>매디컬 시리즈</button>
+                                    </li>
+                                </Link>
+                            </ul>
+                        )}
+                    </li>
+                </ul>
             </div>
             <img src={'https://image.tmdb.org/t/p/original//2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg'}/>
             <div className='movie_info'>
@@ -37,77 +117,77 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                 <h2 className='h2_1'>세계적으로 인기있는 시리즈</h2>
                 <div className='series1'>
                     <div className='series'>
-                        <button type='button' className='left'>◁</button>
-                        <ul>
+                        <button type='button' className='left' onClick={() => slideLeft(1)}>◁</button>
+                        <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularDrama.map((item) => (
                                 <li key={item.id}>
                                     <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                                 </li>
                             ))}
                         </ul>
-                        <button type='button' className='right'>▷</button>
+                        <button type='button' className='right' onClick={() => {slideRight(1)}}>▷</button>
                     </div>
                     {openB && <ModalB item={openS} setOpenB={setOpenB} openB={openB}/>}{/* 11-12 수정 */}
                 </div>
                 <h2 className='h2_2'>한국 시리즈</h2>
                 <div className='series series2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(2)}>◁</button>
+                    <ul style={{marginLeft:`${currentX1}px`}}>
                         {KoreaDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(2)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>해외 시리즈</h2>
                 <div className='series series2'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(3)}>◁</button>
+                    <ul style={{marginLeft:`${currentX2}px`}}>
                         {OverseasDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(3)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>범죄 시리즈</h2>
                 <div className='series series3'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(4)}>◁</button>
+                    <ul style={{marginLeft:`${currentX3}px`}}>
                         {CrimeDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(4)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>애니메이션</h2>
                 <div className='series series4'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(5)}>◁</button>
+                    <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(5)}}>▷</button>
                 </div>
                 <h2 className='h2_2'>매디컬 시리즈</h2>
                 <div className='series series5'>
-                    <button type='button' className='left'>◁</button>
-                    <ul>
+                    <button type='button' className='left' onClick={() => slideLeft(6)}>◁</button>
+                    <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama.map((item) => (
                             <li key={item.id}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
                     </ul>
-                    <button type='button' className='right'>▷</button>
+                    <button type='button' className='right' onClick={() => {slideRight(6)}}>▷</button>
                 </div>
             </div>
         </div>
