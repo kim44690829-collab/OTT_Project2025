@@ -42,7 +42,7 @@ body{
 .sec_top .dep1 li .dep2{
     background-color: rgba(0,0,0,0.7);
     padding: 10px;
-    top: -18px;
+    top: -12px;
     left: 0;
 }
 .sec_top .dep2 li > button{
@@ -189,7 +189,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     position: absolute;
-    right: 6px;
+    right: 0;
     top: 0;
     height: 200px;
     background-color: rgba(0,0,0,0.5);;
