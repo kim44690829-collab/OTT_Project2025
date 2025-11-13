@@ -68,11 +68,87 @@ function App() {
   // console.log(paths);
 
   const {pathname} = useLocation()
- 
+ console.log(PopularData2)
+ console.log('헤더 확인')
   return (
     <>
     {/* 수정 */}
-      {pathname === '/' || pathname === '/Login' ? null:<Header PopularData = {PopularData} /> }
+      {pathname === '/' || pathname === '/Login' ? null
+      :
+      <Header 
+      // PopularDrama = {PopularDrama} 
+      // KoreaDrama = {KoreaDrama}
+      // OverseasDrama = {OverseasDrama}
+      // CrimeDrama = {CrimeDrama}
+      // AniDrama = {AniDrama}
+      // MedicalDrama = {MedicalDrama}
+      // PopularData={PopularData} 
+      // ActionData = {ActionData} 
+      // AniData = {AniData}
+      // DramaData = {DramaData}
+      // ComedyData = {ComedyData}
+      // SFData = {SFData}
+      // PopularData1 = {PopularData1} 
+      // PopularData2 = {PopularData2}
+      // PopularData3 = {PopularData3}
+      // PopularData4 = {PopularData4}
+      // PopularData5 = {PopularData5}
+      // ActionData1 = {ActionData1} 
+      // ActionData2 = {ActionData2}
+      // ActionData3 = {ActionData3}
+      // ActionData4 = {ActionData4}
+      // ActionData5 = {ActionData5}
+      // AniData1 = {AniData1}
+      // AniData2 = {AniData2}
+      // AniData3 = {AniData3}
+      // AniData4 = {AniData4}
+      // AniData5 = {AniData5}
+      // DramaData1 = {DramaData1}
+      // DramaData2 = {DramaData2}
+      // DramaData3 = {DramaData3}
+      // DramaData4 = {DramaData4}
+      // DramaData5 = {DramaData5}
+      // ComedyData1 = {ComedyData1}
+      // ComedyData2 = {ComedyData2}
+      // ComedyData3 = {ComedyData3}
+      // ComedyData4 = {ComedyData4}
+      // ComedyData5 = {ComedyData5}
+      // SFData1 = {SFData1}
+      // SFData2 = {SFData2}
+      // SFData3 = {SFData3}
+      // SFData4 = {SFData4}
+      // SFData5 = {SFData5}
+      // PopularDrama1 = {PopularDrama1}
+      // PopularDrama2 = {PopularDrama2}
+      // PopularDrama3 = {PopularDrama3}
+      // PopularDrama4 = {PopularDrama4}
+      // PopularDrama5 = {PopularDrama5}
+      // KoreaDrama1 = {KoreaDrama1}
+      // KoreaDrama2 = {KoreaDrama2}
+      // KoreaDrama3 = {KoreaDrama3}
+      // KoreaDrama4 = {KoreaDrama4}
+      // KoreaDrama5 = {KoreaDrama5}
+      // OverseasDrama1 = {OverseasDrama1}
+      // OverseasDrama2 = {OverseasDrama2}
+      // OverseasDrama3 = {OverseasDrama3}
+      // OverseasDrama4 = {OverseasDrama4}
+      // OverseasDrama5 = {OverseasDrama5}
+      // CrimeDrama1 = {CrimeDrama1}
+      // CrimeDrama2 = {CrimeDrama2}
+      // CrimeDrama3 = {CrimeDrama3}
+      // CrimeDrama4 = {CrimeDrama4}
+      // CrimeDrama5 = {CrimeDrama5}
+      // AniDrama1 = {AniDrama1}
+      // AniDrama2 = {AniDrama2}
+      // AniDrama3 = {AniDrama3}
+      // AniDrama4 = {AniDrama4}
+      // AniDrama5 = {AniDrama5}
+      // MedicalDrama1 = {MedicalDrama1}
+      // MedicalDrama2 = {MedicalDrama2}
+      // MedicalDrama3 = {MedicalDrama3}
+      // MedicalDrama4 = {MedicalDrama4}
+      // MedicalDrama5 = {MedicalDrama5}
+       /> }
           <Routes>
             <Route path='/' element={<Main PopularData ={PopularData}/>}/>
             <Route path='/Login' element={<Login />}/>
