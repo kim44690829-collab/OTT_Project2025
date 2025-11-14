@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 // import OTTPeovider from './api/OTT_Context.jsx'
@@ -11,9 +12,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <OTTPeovider>
       <LikeAuthProvider>
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
       </LikeAuthProvider>
     </OTTPeovider>
   </StrictMode>,
