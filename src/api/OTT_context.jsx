@@ -27,39 +27,39 @@ export default function OTTPeovider({children}){
     const slideRight = (num) => {
         console.log(num)
             if(currentX > -5334 && num === 1){
-                setCurrentX(currentX - 1780)
+                setCurrentX(currentX - 356)
             }
             else if(currentX1 > -5334 && num === 2 ){
-                setCurrentX1(currentX1 - 1780)
+                setCurrentX1(currentX1 - 356)
             }else if(currentX2 > -5334 && num === 3  ){
-                setCurrentX2(currentX2 - 1780)
+                setCurrentX2(currentX2 - 356)
                 
             }else if(currentX3 > -5334 && num === 4  ){
-                setCurrentX3(currentX3 - 1780)
+                setCurrentX3(currentX3 - 356)
                 
             }else if(currentX4 > -5334 && num === 5 ){
-                setCurrentX4(currentX4 - 1780)
+                setCurrentX4(currentX4 - 356)
                 
             }else if(currentX5 > -5334 && num === 6){
-                setCurrentX5(currentX5 - 1780)
+                setCurrentX5(currentX5 - 356)
             }else{
                 null;
             }
         }
     const slideLeft = (num) => {
         if(currentX < 0 && num === 1){
-            setCurrentX(currentX + 1780)
+            setCurrentX(currentX + 356)
         }
         else if(currentX1 < 0 && num === 2 ){
-            setCurrentX1(currentX1 + 1780)
+            setCurrentX1(currentX1 + 356)
         }else if(currentX2 < 0 && num === 3){
-            setCurrentX2(currentX2 + 1780) 
+            setCurrentX2(currentX2 + 356) 
         }else if(currentX3 < 0 && num === 4){
-            setCurrentX3(currentX3 + 1780)    
+            setCurrentX3(currentX3 + 356)    
         }else if(currentX4 < 0 && num === 5){
-            setCurrentX4(currentX4 + 1780)    
+            setCurrentX4(currentX4 + 356)    
         }else if(currentX5 < 0 && num === 6){
-            setCurrentX5(currentX5 + 1780)            
+            setCurrentX5(currentX5 + 356)            
         }else{
                 null;
             }

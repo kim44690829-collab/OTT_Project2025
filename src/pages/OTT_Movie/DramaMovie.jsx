@@ -13,6 +13,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
     const [openB,setOpenB] = useState(false)
     return(
         <div className='movieDrama_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Movie'>
                     <h1 className='tagname'>영화</h1>
@@ -40,8 +41,8 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {DramaData.map((item, index) => (
                                 DramaData[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                                 </li> : null
                             ))}
                         </ul>
@@ -58,7 +59,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {DramaData1.map((item, index) => (
                             DramaData1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -75,7 +76,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {DramaData2.map((item,index) => (
                             DramaData2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -92,7 +93,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {DramaData3.map((item,index) => (
                             DramaData3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -109,7 +110,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {DramaData4.map((item,index) => (
                             DramaData4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -126,7 +127,7 @@ export default function DramaMovie({DramaData,DramaData1,DramaData2,DramaData3,D
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {DramaData5.map((item,index) => (
                             DramaData5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

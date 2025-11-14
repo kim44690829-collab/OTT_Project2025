@@ -13,6 +13,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
     const [openB,setOpenB] = useState(false)
     return(
         <div className='movieAction_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to = '/Movie'>
                     <h1 className='tagname'>영화</h1>
@@ -41,8 +42,8 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {ActionData.map((item, index) => (
                                 ActionData[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -59,7 +60,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {ActionData1.map((item, index) => (
                             ActionData1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -76,7 +77,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {ActionData2.map((item,index) => (
                             ActionData2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -93,7 +94,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {ActionData3.map((item,index) => (
                             ActionData3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -110,7 +111,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {ActionData4.map((item,index) => (
                             ActionData4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -127,7 +128,7 @@ export default function MovieAction({ActionData, ActionData1, ActionData2, Actio
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {ActionData5.map((item,index) => (
                             ActionData5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

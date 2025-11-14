@@ -14,6 +14,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
 
     return(
         <div className='DramaCrime_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Series'>
                     <h1 className='tagname'>시리즈</h1>
@@ -42,8 +43,8 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {CrimeDrama.map((item, index) => (
                                 CrimeDrama[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -60,7 +61,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {CrimeDrama1.map((item, index) => (
                             CrimeDrama1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -77,7 +78,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {CrimeDrama2.map((item,index) => (
                             CrimeDrama2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -94,7 +95,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {CrimeDrama3.map((item,index) => (
                             CrimeDrama3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -111,7 +112,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {CrimeDrama4.map((item,index) => (
                             CrimeDrama4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -128,7 +129,7 @@ export default function DramaCrime({CrimeDrama,CrimeDrama1,CrimeDrama2,CrimeDram
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {CrimeDrama5.map((item,index) => (
                             CrimeDrama5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

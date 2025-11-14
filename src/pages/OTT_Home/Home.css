@@ -1,16 +1,16 @@
 *{
     color: #fff;
 }
-li > img:hover{
+/* li > img:hover{
     border: 3px solid #aaa;
-}
+} */
 .xall{
     width: 100%;
     height: 100vh;
     margin-bottom: 2050px;
 }
 .xall .all{
-    background-color: #171717 ;
+    background-color: #0c0c0c ;
     width: 100%;
     /* height: 100vh; */
     position: relative;
@@ -43,7 +43,7 @@ li > img:hover{
 .xall .all .mainPart .gra{
     width: 100%;
     height: 200px;
-    background: linear-gradient(to top,#171717,#00000000);
+    background: linear-gradient(to top,#0c0c0c,#00000000);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -134,7 +134,7 @@ li > img:hover{
     width: 1780px;
     padding: 0 50px;
     position: relative;
-    transition: 0.3s;
+    transition: 1.0s;
 }
 .xall .all .Top10_series ul li{
     width: 350px;
@@ -272,11 +272,34 @@ li > img:hover{
     width: 1780px;
     transition: 0.5s;
 }
+.xall .all .list .list03 .action_movie li{
+    position: relative;
+}
+.xall .all .list .list03 .action_movie li:hover::after{
+    content: '+';
+    font-size: 100px;
+    font-weight: 300;
+    color: #efefef;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height : 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.4);
+    z-index: 500;
+    cursor: pointer;
+}
 .xall .all .list .list03 .action_movie li img{
     width: 350px;
     height : 200px;
     border-radius : 5px;
     cursor: pointer;
+    /* position: relative; */
 }
 /* 슬라이드 */
 .xall .all .list .list03 .slide{
@@ -299,6 +322,7 @@ li > img:hover{
     color: #fff;
     border: 1px solid transparent;
     cursor: pointer;
+    z-index: 600;
 }
 .xall .all .list .list03 .left:hover{
     /* border: 1px solid #fff; */
@@ -316,6 +340,7 @@ li > img:hover{
     color: #fff;
     border: 1px solid transparent;
     cursor: pointer;
+    z-index: 600;
 }
 .xall .all .list .list03 .right:hover{
     /* border: 1px solid #fff; */

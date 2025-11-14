@@ -117,11 +117,34 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+.movieSF_container ul li{
+    position: relative;
+}
+.movieSF_container .movieSF ul li:hover::after{
+    content: '+';
+    font-size: 100px;
+    font-weight: 300;
+    color: #efefef;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height : 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.4);
+    z-index: 500;
+    cursor: pointer;
+}
 /* 첫번째 ul li position으로 메인 이미지 위로 띄우기 위함 */
 .movieSF_container .movieSFs .movieSF1{
     position: absolute;
     top: 900px;
     left: 0px;
+    z-index: 100;
 }
 .movieSF_container .movieSFs .h2_1{
     position: absolute;
@@ -153,6 +176,7 @@ body{
     background-color: rgba(0,0,0,0.5);
     color: #fff;
     border: 1px solid transparent;
+    z-index: 600;
 }
 .movieSF_container .movieSFs .movieSF .left:hover,
 .movieSF_container .movieSFs .movieSF1 .left:hover{
@@ -171,9 +195,13 @@ body{
     background-color: rgba(0,0,0,0.5);;
     color: #fff;
     border: 1px solid transparent;
+    z-index: 600;
 }
 .movieSF_container .movieSFs .movieSF .right:hover,
 .movieSF_container .movieSFs .movieSF1 .lerightft:hover{
     /* border: 1px solid #fff; */
     background-color: rgba(0,0,0,0.7);
+}
+button{
+    cursor: pointer;
 }

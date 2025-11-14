@@ -14,6 +14,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
 
     return(
         <div className='DramaKorea_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Series'>
                     <h1 className='tagname'>시리즈</h1>
@@ -40,8 +41,8 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {KoreaDrama.map((item, index) => (
                                 KoreaDrama[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -58,7 +59,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {KoreaDrama1.map((item, index) => (
                             KoreaDrama1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -75,7 +76,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {KoreaDrama2.map((item,index) => (
                             KoreaDrama2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -92,7 +93,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {KoreaDrama3.map((item,index) => (
                             KoreaDrama3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -109,7 +110,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {KoreaDrama4.map((item,index) => (
                             KoreaDrama4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -126,7 +127,7 @@ export default function DramaKorea({KoreaDrama,KoreaDrama1,KoreaDrama2,KoreaDram
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {KoreaDrama5.map((item,index) => (
                             KoreaDrama5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

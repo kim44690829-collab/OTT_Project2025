@@ -14,6 +14,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
 
     return(
         <div className='DramaMedical_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Series'>
                     <h1 className='tagname'>시리즈</h1>
@@ -44,8 +45,8 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {MedicalDrama.map((item, index) => (
                                 MedicalDrama[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -62,7 +63,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {MedicalDrama1.map((item, index) => (
                             MedicalDrama1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -79,7 +80,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {MedicalDrama2.map((item,index) => (
                             MedicalDrama2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -96,7 +97,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {MedicalDrama3.map((item,index) => (
                             MedicalDrama3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -113,7 +114,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {MedicalDrama4.map((item,index) => (
                             MedicalDrama4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -130,7 +131,7 @@ export default function DramaMedical({MedicalDrama,MedicalDrama1,MedicalDrama2,M
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama5.map((item,index) => (
                             MedicalDrama5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

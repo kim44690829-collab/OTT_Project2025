@@ -13,6 +13,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
     const [openB,setOpenB] = useState(false)
     return(
         <div className='movieSub1_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Movie'>
                     <h1 style={{color:'black'}} className='tagname'>영화</h1>
@@ -42,8 +43,8 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularData.map((item, index) => (
                                 PopularData[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -60,7 +61,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {PopularData1.map((item, index) => (
                             PopularData1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -77,7 +78,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {PopularData2.map((item,index) => (
                             PopularData2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -94,7 +95,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {PopularData3.map((item,index) => (
                             PopularData3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -111,7 +112,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {PopularData4.map((item,index) => (
                             PopularData4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -128,7 +129,7 @@ export default function MoviePopular({PopularData, PopularData1, PopularData2, P
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {PopularData5.map((item,index) => (
                             PopularData5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

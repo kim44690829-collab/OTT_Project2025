@@ -14,6 +14,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
     const [openB,setOpenB] = useState(false)
     return(
         <div className='movie_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <h1>영화</h1>
                 <ul className='dep1'>
@@ -80,8 +81,8 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularData.map((item,index) => (
                                 PopularData[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -97,7 +98,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </button>
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {ActionData.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
@@ -113,7 +114,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </button>
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {AniData.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
@@ -129,7 +130,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </button>
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {DramaData.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
@@ -145,7 +146,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </button>
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {ComedyData.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}
@@ -161,7 +162,7 @@ export default function Movie({PopularData, ActionData, AniData, DramaData, Come
                     </button>
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {SFData.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li>
                         ))}

@@ -14,6 +14,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
 
     return(
         <div className='DramaAni_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Series'>
                     <h1 className='tagname'>시리즈</h1>
@@ -22,6 +23,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                 <h1>애니메이션</h1>
             </div>
             <img src={'https://image.tmdb.org/t/p/original//3AXLSxMuqyZt8HyrKKfrcJtkswD.jpg'} />
+            
             <div className='DramaAni_info'>
                 <h1>원펀맨</h1>
                 <p>
@@ -44,8 +46,8 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {AniDrama.map((item, index) => (
                                 AniDrama[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}` } alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}` } alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -62,7 +64,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {AniDrama1.map((item, index) => (
                             AniDrama1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -79,7 +81,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {AniDrama2.map((item,index) => (
                             AniDrama2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -96,7 +98,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {AniDrama3.map((item,index) => (
                             AniDrama3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -113,8 +115,8 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniDrama4.map((item,index) => (
                             AniDrama4[index].backdrop_path !== null ?
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                             </li> : null
                         ))}
                     </ul>
@@ -130,7 +132,7 @@ export default function DramaAni({AniDrama,AniDrama1,AniDrama2,AniDrama3,AniDram
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {AniDrama5.map((item,index) => (
                             AniDrama5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

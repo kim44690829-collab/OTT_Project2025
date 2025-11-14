@@ -13,6 +13,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
     const [openB,setOpenB] = useState(false)
     return(
         <div className='dramaPopular_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Series'>
                     <h1 className='tagname'>시리즈</h1>
@@ -46,8 +47,8 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularDrama.map((item, index) => (
                                 PopularDrama[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -64,7 +65,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {PopularDrama1.map((item, index) => (
                             PopularDrama1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -81,7 +82,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {PopularDrama2.map((item,index) => (
                             PopularDrama2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -98,7 +99,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {PopularDrama3.map((item,index) => (
                             PopularDrama3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -115,7 +116,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {PopularDrama4.map((item,index) => (
                             PopularDrama4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -132,7 +133,7 @@ export default function DramaPopular({PopularDrama,PopularDrama1,PopularDrama2,P
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {PopularDrama5.map((item,index) => (
                             PopularDrama5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

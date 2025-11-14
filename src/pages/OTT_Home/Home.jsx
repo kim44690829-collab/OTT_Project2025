@@ -204,8 +204,8 @@ export default function Home({
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX}px`}}>
                             {titleArr[0].dataName.map((item)=>(
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                                 </li>
                             ))}
                         </ul>
@@ -227,8 +227,8 @@ export default function Home({
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX1}px`}}>
                             {titleArr[1].dataName.map((item)=>(
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                                 </li>
                             ))}
                         </ul>
@@ -250,8 +250,8 @@ export default function Home({
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX2}px`}}>
                         {titleArr[2].dataName.map((item)=>(
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                             </li>
                         ))}
                     </ul>
@@ -273,8 +273,8 @@ export default function Home({
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX3}px`}}>
                         {titleArr[3].dataName.map((item)=>(
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                             </li>
                         ))}
                     </ul>
@@ -298,8 +298,8 @@ export default function Home({
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX4}px`}}>
                         {titleArr[5].dataName.map((item)=>(
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                             </li>
                         ))}
                     </ul>
@@ -321,8 +321,8 @@ export default function Home({
                         </button>
                         <ul className="action_movie" style={{marginLeft:`${currentX5}px`}}>
                         {titleArr[6].dataName.map((item)=>(
-                            <li key={item.id}>
-                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />
                             </li>
                         ))}
                     </ul>

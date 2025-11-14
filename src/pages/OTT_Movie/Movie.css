@@ -144,11 +144,34 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+.movie_container ul li{
+    position: relative;
+}
+.movie_container .movies ul li:hover::after{
+    content: '+';
+    font-size: 100px;
+    font-weight: 300;
+    color: #efefef;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height : 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.4);
+    z-index: 500;
+    cursor: pointer;
+}
 /* 첫번째 ul li position으로 메인 이미지 위로 띄우기 위함 */
 .movie_container .movies .movie1{
     position: absolute;
     top: 900px;
     left: 0px;
+    z-index: 100;
 }
 .movie_container .movies .h2_1{
     position: absolute;
@@ -180,6 +203,7 @@ body{
     background-color: rgba(0,0,0,0.5);
     color: #fff;
     border: 1px solid transparent;
+    z-index: 600;
 }
 .movie_container .movies .movie .left:hover,
 .movie_container .movies .movie1 .left:hover{
@@ -198,6 +222,7 @@ body{
     background-color: rgba(0,0,0,0.5);;
     color: #fff;
     border: 1px solid transparent;
+    z-index: 600;
 }
 .movie_container .movies .movie .right:hover,
 .movie_container .movies .movie1 .lerightft:hover{

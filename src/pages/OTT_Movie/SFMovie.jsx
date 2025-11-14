@@ -14,6 +14,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
 
     return(
         <div className='movieSF_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <Link to='/Movie'>
                     <h1 className='tagname'>영화</h1>
@@ -42,8 +43,8 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {SFData.map((item, index) => (
                                 SFData[index].backdrop_path !== null ?
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />
                                 </li> : null
                             ))}
                         </ul>
@@ -60,7 +61,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {SFData1.map((item, index) => (
                             SFData1[index].backdrop_path !== null ? 
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -77,7 +78,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {SFData2.map((item,index) => (
                             SFData2[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> :null
                         ))}
@@ -94,7 +95,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {SFData3.map((item,index) => (
                             SFData3[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -111,7 +112,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {SFData4.map((item,index) => (
                             SFData4[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}
@@ -128,7 +129,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {SFData5.map((item,index) => (
                             SFData5[index].backdrop_path !== null ?
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>
                             </li> : null
                         ))}

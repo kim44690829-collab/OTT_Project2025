@@ -35,8 +35,8 @@
 .ModalB_container .ModalB_box > ul >li >.Title_logo{
     display: inline-block;
     box-sizing: border-box;
-    height: 80px;
-    font-size: 80px;
+    height: 60px;
+    font-size: 60px;
     margin-top: 20px;
     overflow: hidden;
 }
@@ -53,10 +53,11 @@
     color: #000;
     border-radius: 5px;
     font-size: 25px;
-    margin-right: 6px;
+    margin-right: 16px;
+    border: none;
 }
 .ModalB_container .ModalB_box > ul .MB_btn_group .play_btn:hover{
-    background-color: #ccc;
+    background-color: #dfdfdf;
     cursor: pointer;    
 }
 .ModalB_container .ModalB_box > ul .MB_btn_group .like_btn{
@@ -100,7 +101,7 @@
 .ModalB_container .ModalB_box > ul .info_group{
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
+    padding-top: 80px;
 }
 .ModalB_container .ModalB_box .close_btn{
     width: 36px;
@@ -121,9 +122,11 @@
 .ModalB_container .ModalB_box > ul .info_group .L_info{
     width: 600px;
     padding-right: 100px;
+    padding-top: 15px;
 }
 .ModalB_container .ModalB_box > ul .info_group .L_info >p{
     margin-bottom: 10px;
+    line-height: 20px;
 }
 .ModalB_container .ModalB_box > ul .info_group .L_info >p >img{
     width: 24px;

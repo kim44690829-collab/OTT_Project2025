@@ -17,6 +17,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
       
     return(
         <div className='series_container'>
+            <div className='gra01'></div>
             <div className="sec_top">
                 <h1>시리즈</h1>
                 <ul className='dep1 series_dep1'>
@@ -84,8 +85,8 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                         </button>
                         <ul style={{marginLeft:`${currentX}px`}}>
                             {PopularDrama.map((item) => (
-                                <li key={item.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
+                                <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} />{/* 11-12 수정 */}
                                 </li>
                             ))}
                         </ul>
@@ -102,7 +103,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     </button>
                     <ul style={{marginLeft:`${currentX1}px`}}>
                         {KoreaDrama.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
@@ -118,7 +119,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     </button>
                     <ul style={{marginLeft:`${currentX2}px`}}>
                         {OverseasDrama.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
@@ -134,7 +135,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     </button>
                     <ul style={{marginLeft:`${currentX3}px`}}>
                         {CrimeDrama.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
@@ -150,7 +151,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     </button>
                     <ul style={{marginLeft:`${currentX4}px`}}>
                         {AniDrama.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}
@@ -166,7 +167,7 @@ export default function Series({PopularDrama,KoreaDrama,OverseasDrama,CrimeDrama
                     </button>
                     <ul style={{marginLeft:`${currentX5}px`}}>
                         {MedicalDrama.map((item) => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={()=>{setOpenB(!openB);setOpenS(item);}}>
                                 <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title} onClick={()=>{setOpenB(!openB);setOpenS(item);}}/>{/* 11-12 수정 */}
                             </li>
                         ))}

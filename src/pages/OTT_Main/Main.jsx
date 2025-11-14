@@ -6,7 +6,7 @@ import { OTTContext } from "../../api/OTT_Context";
 
 import '../OTT_Main/Main.css'
 
-export default function Main({PopularData}){
+export default function Main({PopularDramaData}){
     const [isOpen, setIsOpen] = useState(null)
 
     const toggleHandeler = (index) => {
@@ -28,6 +28,10 @@ export default function Main({PopularData}){
             setCurrentX(currentX + 265)
         }
     } 
+
+    // const poster=[];
+    const posterArr=PopularDramaData.filter((item)=>item.poster_path !== null);
+
 
     return(
         <div className="Main">
@@ -52,7 +56,7 @@ export default function Main({PopularData}){
                         <i className="fa-solid fa-chevron-left" onClick={() => slideLeft(1)}></i>
                         <div className="slideBox">
                             <ul className="Top10" style={{marginLeft:`${currentX}px`}}>
-                                {PopularData.slice(0, 10).map((item, index) => (
+                                {posterArr.slice(0, 10).map((item, index) => (
                                     <li key={index}>
                                         <h2 className="TOP10_H2">{index + 1}</h2>
                                         <h2 className="TOP10_H2Border">{index + 1}</h2>
