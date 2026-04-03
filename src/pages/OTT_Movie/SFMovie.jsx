@@ -20,7 +20,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                     <h1 className='tagname'>영화</h1>
                 </Link>
                 <span>▶</span>
-                <h1>코미디 영화</h1>
+                <h1>SF 영화</h1>
             </div>
             <img src={'https://image.tmdb.org/t/p/original//82lM4GJ9uuNvNDOEpxFy77uv4Ak.jpg'} />
             <div className='movieSF_info'>
@@ -34,7 +34,7 @@ export default function SFMovie({SFData,SFData1,SFData2,SFData3,SFData4,SFData5}
                 <button type='button' className='detailInfo' >ⓘ 상세 정보</button>
             </div>
             <div className='movieSFs'>
-                <h2 className='h2_1'>인기있는 한국 영화</h2>
+                <h2 className='h2_1'>인기있는 SF 영화</h2>
                 <div className='movieSF1'>
                     <div className='movieSF'>
                         <button type='button' className='left' onClick={() => slideLeft(1)}>
