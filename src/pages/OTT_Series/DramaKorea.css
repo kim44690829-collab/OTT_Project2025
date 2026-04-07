@@ -151,6 +151,7 @@ body{
     position: absolute;
     top: 800px;
     left: 70px;
+    z-index: 999;
 }
 /* 첫번째 ul의 li를 제외한 나머지 ul li */
 .DramaKorea_container .DramaKoreas .DramaKorea{

@@ -39,7 +39,7 @@ export default function ComedyMovie({ComedyData,ComedyData1,ComedyData2,ComedyDa
                 <button type='button' className='detailInfo' >ⓘ 상세 정보</button>
             </div>
             <div className='movieComedys'>
-                <h2 className='h2_1'>인기있는 한국 영화</h2>
+                <h2 className='h2_1'>인기있는 코미디 영화</h2>
                 <div className='movieComedy1'>
                     <div className='movieComedy'>
                         <button type='button' className='left' onClick={() => slideLeft(1)}>
